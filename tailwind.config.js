@@ -5,6 +5,14 @@ module.exports = {
   theme: {
     container: {
     },
+    extend: {
+      fontFamily: {
+        averta: ["Muli", "sans-serif"],
+      },
+      colors: {
+        blue: '#0086D6',
+      },
+    },
   },
   plugins: [],
 }
