@@ -138,3 +138,41 @@
         border-radius: 50%;
     }
   }
+
+  .servicesListing_card {
+    width: 320px; /* Set your desired width */
+    height: 355px; /* Set your desired height */
+    background-size: cover; /* Cover the entire div with the background image */
+    background-position: center;
+    border-radius: 15px;
+  }
+
+  .servicesListing_card::after {
+    content: ""; /* Create a pseudo-element to act as the overlay */
+    position: absolute; /* Position the overlay relative to its parent div */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+    z-index: 1; /* Ensure the overlay is above the background image */
+    border-radius: 15px;
+}
+
+.proejcts_thumbnail__wrapper {
+    img {
+        border-radius: 15px;
+    }
+}
+
+.projectListing-1 {
+    .grid {
+        .proejcts_thumbnail__wrapper {
+            order: 2;
+        }
+
+        .projects_content__wrapper {
+            order: 1;
+        }
+    }
+}

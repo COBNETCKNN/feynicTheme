@@ -15,7 +15,7 @@ function feynictheme_post_types() {
         'menu_icon' => 'dashicons-hammer',
         'rewrite' => array('slug' => 'project'),
         'has_archive' => true,
-        'supports' => array('thumbnail', 'title'),
+        'supports' => array('thumbnail', 'title', 'editor'),
         'show_in_rest' => true,
         'show_in_nav_menus' => true
     ));

@@ -25,6 +25,8 @@ add_image_size('footer-accrediations', 240, 70, true);
 add_image_size('social-media', 35, 35, true);
 add_image_size('whoweworkwith-thumbnail', 250, 420, true);
 add_image_size('partners-carousel', 150, 120, true);
+add_image_size('services-thumbnail', 320, 355, true);
+add_image_size('blog-thumbnail', 600, 400, true);
 
 
 // Disabling editor on certain pages
