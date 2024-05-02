@@ -8,4 +8,39 @@ jQuery(document).ready(function (jQuery) {
       jQuery('.content').css('margin-top', '0px');
     }
   });
+
+  // Owl carousel
+  var owl = jQuery('.owl-carousel');
+  owl.owlCarousel({
+    nav: true,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    responsive: {
+      0: {
+        items: 2,
+        margin: 50
+      },
+      400: {
+        items: 2,
+        margin: 40
+      },
+      600: {
+        items: 2,
+        margin: 40
+      },
+      960: {
+        items: 5,
+        margin: 50
+      },
+      1200: {
+        items: 5,
+        margin: 50
+      },
+      1440: {
+        items: 5,
+        margin: 50
+      }
+    }
+  });
 });

@@ -113,3 +113,28 @@
         border-radius: 10px;
     }
   }
+
+  .owl-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item_partners__carousel {
+    img {
+        width: 15%;
+        aspect-ratio: 4.5/2;
+        object-fit: contain;
+    }
+  }
+
+  .owl-dots,
+  .owl-nav {
+    display: none;
+  }
+
+  .objectiveCard_number {
+    span {
+        border-radius: 50%;
+    }
+  }
