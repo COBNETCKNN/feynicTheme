@@ -222,7 +222,7 @@
                     ?>
 
                     <div class="servicesListing_card p-5 relative" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
-                        <h4 class="text-white font-averta text-3xl text-start font-bold absolute bottom-5 z-10"><?php echo the_title(); ?></h4>
+                        <h4 class="text-white font-averta text-2xl text-start font-bold absolute bottom-5 z-10"><?php echo the_title(); ?></h4>
                         <a class="w-full h-full absolute top-0 right-0 z-20" href="<?php echo the_permalink(); ?>"></a>
                     </div>
 
@@ -252,80 +252,154 @@
     </div>
 </section>
 
+<!-- Projects Section -->
 <section id="Projects" class="bg-white py-14">
     <div class="container mx-auto">
         <div class="mx-10">
         <?php 
-                // The Query
-                $projectArgs = array(
-                    'post_type' => 'project',   // Specify the custom post type
-                    'posts_per_page' => 3,      // Number of posts to display
-                    'orderby' => 'date',        // Order by date
-                    'order' => 'DESC',           // Sort in descending order
-                );
+            // The Query
+            $projectArgs = array(
+                'post_type' => 'project',   // Specify the custom post type
+                'posts_per_page' => 3,      // Number of posts to display
+                'orderby' => 'date',        // Order by date
+                'order' => 'DESC',           // Sort in descending order
+            );
 
-                $projectsQuery = new WP_Query($projectArgs); 
+            $projectsQuery = new WP_Query($projectArgs); 
 
-                $i = 0;
-                
-                // The Loop
-                if ($projectsQuery->have_posts()) :
-                    while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); ?>
+            $i = 0;
+            
+            // The Loop
+            if ($projectsQuery->have_posts()) :
+                while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); ?>
 
-                    <div class="projects_wrapper py-14 projectListing-<?php echo $i; ?>">
-                        <div class="grid grid-cols-7 gap-10">
-                            <!-- Project Thumbnail -->
-                            <div class="proejcts_thumbnail__wrapper my-auto col-span-3">
-                                <?php 
-                                // Get the ID of the post
-                                $project_post_id = get_the_ID();
+                <div class="projects_wrapper py-14 projectListing-<?php echo $i; ?>">
+                    <div class="grid grid-cols-7 gap-10">
+                        <!-- Project Thumbnail -->
+                        <div class="proejcts_thumbnail__wrapper my-auto col-span-3">
+                            <?php 
+                            // Get the ID of the post
+                            $project_post_id = get_the_ID();
 
-                                // Get the featured image URL with custom size
-                                $projectImageUrl = get_the_post_thumbnail_url($project_post_id, 'blog-thumbnail');
+                            // Get the featured image URL with custom size
+                            $projectImageUrl = get_the_post_thumbnail_url($project_post_id, 'blog-thumbnail');
 
-                                // Display the image
-                                if ($projectImageUrl) {
-                                    echo '<img src="' . esc_url($projectImageUrl) . '" alt="' . esc_attr(get_the_title()) . '" />';
-                                } ?>
-                            </div>
-                            <!-- Project Content -->
-                            <div class="my-auto projects_content__wrapper col-span-3">
-                                <h3 class="text-black font-averta text-3xl font-bold mb-5"><?php the_title(); ?></h3>
-                                <div class="text-black text-normal font-averta">
-                                    <?php echo the_content(); ?>
-                                </div>
-                                <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center w-fit text-lg font-semibold mt-5" type="button" href="<?php echo the_permalink(); ?>">
-                                <span>Read More</span>
-                                <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_509_229)">
-                                    <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_509_229">
-                                    <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>    
-                                </a>
-                            </div>
-                            <div class="col-span-1"></div>
+                            // Display the image
+                            if ($projectImageUrl) {
+                                echo '<img src="' . esc_url($projectImageUrl) . '" alt="' . esc_attr(get_the_title()) . '" />';
+                            } ?>
                         </div>
+                        <!-- Project Content -->
+                        <div class="my-auto projects_content__wrapper col-span-3">
+                            <h3 class="text-black font-averta text-3xl font-bold mb-5"><?php the_title(); ?></h3>
+                            <div class="text-black text-normal font-averta">
+                                <?php echo the_content(); ?>
+                            </div>
+                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center w-fit text-lg font-semibold mt-5" type="button" href="<?php echo the_permalink(); ?>">
+                            <span>Read More</span>
+                            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_509_229)">
+                                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_509_229">
+                                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>    
+                            </a>
+                        </div>
+                        <div class="col-span-1"></div>
                     </div>
-                <?php
-                    $i++;
-                    endwhile;
-                else :
-                    // No posts found
-                    echo 'No projects found';
-                endif; 
-                wp_reset_postdata();
-                ?>
+                </div>
+            <?php
+                $i++;
+                endwhile;
+            else :
+                // No posts found
+                echo 'No projects found';
+            endif; 
+            wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>
 
+<!-- Testimonial Section -->
 <section id="testimonial" class="bg-blue py-14">
+    <div class="container mx-auto">
+        <div class="mx-10">
+            <h2 class="text-white text-center font-averta text-5xl text-black font-bold mb-7">Testimonial</h2>
+            <div class="grid grid-cols-2 gap-12 pt-5 pb-20">
 
+            <?php 
+            // The Query
+            $projectArgs = array(
+                'post_type' => 'testimonial',   // Specify the custom post type
+                'posts_per_page' => 1,      // Number of posts to display
+                'orderby' => 'date',        // Order by date
+                'order' => 'DESC',           // Sort in descending order
+            );
+
+            $projectsQuery = new WP_Query($projectArgs); 
+            
+            // The Loop
+            if ($projectsQuery->have_posts()) :
+                while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); 
+                
+                $vimeoVideoID = get_field('vimeo_video_id');
+                ?>
+
+                <!-- Vimeo Video -->
+                <div class="testmionialVimeo_wrapper h-[400px] relative">
+                    <div class='embed-container'>
+                        <iframe src='https://player.vimeo.com/video/<?php echo $vimeoVideoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                    <a class="bg-white py-2 px-7 rounded-xl text-black flex items-center w-fit text-lg font-semibold mt-5 absolute -bottom-20" type="button" href="<?php echo get_post_type_archive_link('testimonial')?>">
+                        <span>Customer Stories</span>
+                        <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_509_229)">
+                            <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_509_229">
+                            <rect width="19" height="12" fill="black" transform="translate(0.5)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>    
+                    </a>
+                </div>
+                <!-- Content Area -->
+                <div class="my-auto">
+                    <h3 class="text-white text-start font-averta text-3xl text-black font-medium mb-7">Quote from testimonial</h3>
+                    <?php if( have_rows('testimonial_informations') ): ?>
+                        <?php while( have_rows('testimonial_informations') ): the_row();  
+                        
+                        $testimonialFullName = get_sub_field('testimonial_full_name');
+                        $testimonialPosition = get_sub_field('testimonial_position');
+                        $testimonialCompanyName = get_sub_field('testimonial_company_name');
+                        ?>
+
+                        <h5 class="text-white font-averta font-light text-xl mb-2">Full name: <span class="font-bold"><?php echo $testimonialFullName; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-xl mb-2">Position: <span class="font-bold"><?php echo $testimonialPosition; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-xl mb-2">Company Name: <span class="font-bold"><?php echo $testimonialCompanyName; ?></span></h5>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
+            <?php
+                endwhile;
+            else :
+                // No posts found
+                echo 'No testimonials found';
+            endif; 
+            wp_reset_postdata();
+            ?>
+            </div>
+        </div>
+    </div>
 </section>
+
+<!-- Blog Section -->
 
 <?php get_footer() ?>

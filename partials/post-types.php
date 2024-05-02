@@ -57,7 +57,7 @@ function feynictheme_post_types() {
     ));
 
     // Testimonials post type
-    register_post_type('testmionial', array(
+    register_post_type('testimonial', array(
         'public' => true,
         'labels' => array( 
             'name' => 'Testimonials',
