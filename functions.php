@@ -27,6 +27,7 @@ add_image_size('whoweworkwith-thumbnail', 250, 420, true);
 add_image_size('partners-carousel', 150, 120, true);
 add_image_size('services-thumbnail', 320, 355, true);
 add_image_size('blog-thumbnail', 600, 400, true);
+add_image_size('post-carousel', 410, 250, true);
 
 
 // Disabling editor on certain pages

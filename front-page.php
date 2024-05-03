@@ -95,10 +95,11 @@
     </div>
 </section>
 
+<!-- Partners Section -->
 <section id="partners" class="py-16 bg-blue">
     <div class="container mx-auto">
         <div class="mx-10">
-            <div class="owl-carousel owl-theme">
+            <div class="owl-partners owl-carousel owl-theme">
                 <?php if( have_rows('homepage_partners_carousel') ): ?>
                     <?php while( have_rows('homepage_partners_carousel') ): the_row(); 
 
@@ -401,5 +402,60 @@
 </section>
 
 <!-- Blog Section -->
+<section id="Blog" class="pt-14 bg-white">
+    <div class="container mx-auto">
+        <div class="mx-10">
+            <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
+            <!-- Post Carousel -->
+            <?php 
+            // The Query
+            $projectArgs = array(
+                'post_type' => 'post',   // Specify the custom post type
+                'posts_per_page' => -1,      // Number of posts to display
+                'orderby' => 'date',        // Order by date
+                'order' => 'DESC',           // Sort in descending order
+            );
+
+            $projectsQuery = new WP_Query($projectArgs); ?>
+
+
+            <div class="owl-blog owl-carousel owl-theme my-8">
+                <?php            
+                // The Loop
+                if ($projectsQuery->have_posts()) :
+                    while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); 
+                    
+                    $categories = get_the_category();
+                    ?>
+
+                    <div class="item blogCarousel_wrapper min-h-[450px]">
+                        <?php the_post_thumbnail('post-carousel'); ?>
+                        <div class="mt-3 mb-4">
+                            <?php
+                            foreach ( $categories as $category ) {
+                                // Display the category name
+                                echo '<a href="" class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</a>';
+                            }
+                            ?>
+                        </div>
+                        <h4 class="text-black font-averta font-bold text-xl mb-2"><?php echo the_title(); ?></h4>
+                        <div class="text-black font-averta font-medium text-sm leading-tight">
+                            <?php echo wp_trim_words(get_the_content(), 22);  ?>
+                        </div>
+                    </div>
+
+                <?php
+                    endwhile;
+                else :
+                    // No posts found
+                    echo 'No testimonials found';
+                endif; 
+                wp_reset_postdata();
+                ?>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 <?php get_footer() ?>

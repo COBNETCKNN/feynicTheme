@@ -13,6 +13,7 @@ module.exports = {
         blue: '#0086D6',
       },
       fontSize: {
+        'sm': '1rem',
         '2xl': '2.125rem',
         '3xl': '2.625rem',
         '4xl': '3.125rem',
