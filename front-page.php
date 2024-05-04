@@ -17,9 +17,9 @@
                         ?>
 
                         <h1 class="text-black font-averta text-6xl font-bold w-[50%] leading-tight mb-7"><?php echo $heroHeading; ?></h1>
-                        <p class="font-averta text-lg font-medium leading-snug w-[80%] mb-7"><?php echo $heroSubText; ?></p>
+                        <p class="font-averta text-sm font-medium leading-snug w-[72%] mb-7"><?php echo $heroSubText; ?></p>
                         <div class="heroButtons flex justify-between w-[70%]">
-                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center text-lg font-semibold" type="button" href="<?php echo get_post_type_archive_link('service')?>">
+                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center text-lg font-semibold" type="button" href="<?php echo site_url('/what-we-do')?>">
                             <span>What We Do</span>
                             <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_509_229)">
@@ -141,7 +141,7 @@
                             ?>
 
                             <h2 class="font-averta text-5xl text-black font-bold mb-5"><?php echo $workWithUsHeading; ?></h2>
-                            <div class="font-averta text-lg font-light leading-tight w-[80%] mb-7"><?php echo $workWithUsSubtext; ?></div>
+                            <div class="font-averta text-sm font-light leading-tight w-[80%] mb-7"><?php echo $workWithUsSubtext; ?></div>
                             <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center w-fit text-lg font-semibold" type="button" href="<?php echo site_url('/contact-us')?>">
                             <span>Work With Feynic</span>
                             <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -176,10 +176,10 @@
                                 <!-- Objectives Card -->
                                 <div class="objectivesCard bg-black py-8 px-9 my-3 rounded-2xl min-h-[205px] flex">
                                     <div class="objectiveCard_number mr-4">
-                                        <span class="text-black text-3xl font-bold bg-white py-1 px-4"><?php echo $i; ?></span>
+                                        <span class="text-black text-3xl font-bold bg-white py-1 px-5"><?php echo $i; ?></span>
                                     </div>
                                     <div class="objectiveCard_content">
-                                        <h3 class="text-white text-3xl font-averta font-bold mb-2"><?php echo $objectiveTitle; ?></h3>
+                                        <h3 class="text-white text-xl font-averta font-bold mb-2"><?php echo $objectiveTitle; ?></h3>
                                         <div class="text-white text-normal font-averta">
                                             <?php echo $objectiveDescription; ?>
                                             <?php $i++; ?>
@@ -381,9 +381,9 @@
                         $testimonialCompanyName = get_sub_field('testimonial_company_name');
                         ?>
 
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Full name: <span class="font-bold"><?php echo $testimonialFullName; ?></span></h5>
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Position: <span class="font-bold"><?php echo $testimonialPosition; ?></span></h5>
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Company Name: <span class="font-bold"><?php echo $testimonialCompanyName; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Full name: <span class="font-bold"><?php echo $testimonialFullName; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Position: <span class="font-bold"><?php echo $testimonialPosition; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Company Name: <span class="font-bold"><?php echo $testimonialCompanyName; ?></span></h5>
 
                         <?php endwhile; ?>
                     <?php endif; ?>
@@ -409,21 +409,21 @@
             <!-- Post Carousel -->
             <?php 
             // The Query
-            $projectArgs = array(
+            $blogArgs = array(
                 'post_type' => 'post',   // Specify the custom post type
                 'posts_per_page' => -1,      // Number of posts to display
                 'orderby' => 'date',        // Order by date
                 'order' => 'DESC',           // Sort in descending order
             );
 
-            $projectsQuery = new WP_Query($projectArgs); ?>
+            $blogQuery = new WP_Query($blogArgs); ?>
 
 
             <div class="owl-blog owl-carousel owl-theme my-8">
                 <?php            
                 // The Loop
-                if ($projectsQuery->have_posts()) :
-                    while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); 
+                if ($blogQuery->have_posts()) :
+                    while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
                     
                     $categories = get_the_category();
                     ?>
@@ -434,14 +434,15 @@
                             <?php
                             foreach ( $categories as $category ) {
                                 // Display the category name
-                                echo '<a href="" class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</a>';
+                                echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
                             }
                             ?>
                         </div>
-                        <h4 class="text-black font-averta font-bold text-xl mb-2"><?php echo the_title(); ?></h4>
+                        <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
                         <div class="text-black font-averta font-medium text-sm leading-tight">
                             <?php echo wp_trim_words(get_the_content(), 22);  ?>
                         </div>
+                        <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
                     </div>
 
                 <?php
@@ -455,7 +456,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
 <?php get_footer() ?>

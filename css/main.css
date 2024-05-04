@@ -546,6 +546,12 @@ video {
 .bottom-5 {
   bottom: 1.25rem;
 }
+.left-0 {
+  left: 0px;
+}
+.left-5 {
+  left: 1.25rem;
+}
 .right-0 {
   right: 0px;
 }
@@ -579,9 +585,17 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 .my-7 {
   margin-top: 1.75rem;
@@ -658,6 +672,9 @@ video {
 .h-\[400px\] {
   height: 400px;
 }
+.h-\[430px\] {
+  height: 430px;
+}
 .h-full {
   height: 100%;
 }
@@ -679,8 +696,14 @@ video {
 .w-\[600px\] {
   width: 600px;
 }
+.w-\[645px\] {
+  width: 645px;
+}
 .w-\[70\%\] {
   width: 70%;
+}
+.w-\[72\%\] {
+  width: 72%;
 }
 .w-\[80\%\] {
   width: 80%;
@@ -716,6 +739,9 @@ video {
 .justify-start {
   justify-content: flex-start;
 }
+.justify-end {
+  justify-content: flex-end;
+}
 .justify-center {
   justify-content: center;
 }
@@ -727,6 +753,9 @@ video {
 }
 .gap-12 {
   gap: 3rem;
+}
+.gap-32 {
+  gap: 8rem;
 }
 .gap-4 {
   gap: 1rem;
@@ -782,10 +811,6 @@ video {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -830,6 +855,10 @@ video {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -837,6 +866,10 @@ video {
 .py-32 {
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 .py-8 {
   padding-top: 2rem;
@@ -851,6 +884,9 @@ video {
 .pb-5 {
   padding-bottom: 1.25rem;
 }
+.pt-14 {
+  padding-top: 3.5rem;
+}
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -860,9 +896,6 @@ video {
 .pt-7 {
   padding-top: 1.75rem;
 }
-.pt-14 {
-  padding-top: 3.5rem;
-}
 .text-center {
   text-align: center;
 }
@@ -871,6 +904,9 @@ video {
 }
 .font-averta {
   font-family: Muli, sans-serif;
+}
+.text-2\.5xl {
+  font-size: 2.375rem;
 }
 .text-2xl {
   font-size: 2.125rem;
@@ -882,8 +918,7 @@ video {
   font-size: 3.125rem;
 }
 .text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 3.75rem;
 }
 .text-6xl {
   font-size: 3.75rem;
@@ -894,15 +929,13 @@ video {
   line-height: 1.5rem;
 }
 .text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.25rem;
 }
 .text-sm {
   font-size: 1rem;
 }
 .text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.75rem;
 }
 .font-bold {
   font-weight: 700;
@@ -931,6 +964,10 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(0 134 214 / var(--tw-text-opacity));
 }
 .text-neutral-800 {
   --tw-text-opacity: 1;
@@ -1121,7 +1158,8 @@ ul.subnav,
   border-radius: 15px;
 }
 
-.servicesListing_card::after {
+.servicesListing_card::after,
+.whatWeDo_whoWeWorkWith__card::after {
   content: ""; /* Create a pseudo-element to act as the overlay */
   position: absolute; /* Position the overlay relative to its parent div */
   top: 0;
@@ -1156,6 +1194,50 @@ ul.subnav,
 
 .blogCarousel_wrapper img {
   border-radius: 10px;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child):after {
+  content: "";
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5em;
+  color: #5c5c5c;
+}
+
+.breadcrumb a:hover, .breadcrumb a:focus {
+  color: #0086D6;
+}
+
+.pageHero_image {
+  background-size: cover;
+  background-position: center;
+}
+
+.pageHero_image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 134, 214, 0.5);
+  z-index: 1;
+  border-radius: 15px;
 }
 
 .hover\:text-blue:hover {
