@@ -31,6 +31,8 @@ add_image_size('post-carousel', 410, 250, true);
 add_image_size('page-hero', false, 430, true);
 add_image_size('whoweworkwith-partners', 645, 250, true);
 add_image_size('whoweworkwith-casestudies', 430, 250, true);
+add_image_size('singleService-hero', false, 550, true);
+add_image_size('approach-thumbnail', 620, 400, true);
 
 
 // Disabling editor on certain pages

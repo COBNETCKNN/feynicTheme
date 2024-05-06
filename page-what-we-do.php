@@ -247,9 +247,9 @@
                         $testimonialCompanyName = get_sub_field('testimonial_company_name');
                         ?>
 
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Full name: <span class="font-bold"><?php echo $testimonialFullName; ?></span></h5>
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Position: <span class="font-bold"><?php echo $testimonialPosition; ?></span></h5>
-                        <h5 class="text-white font-averta font-light text-xl mb-2">Company Name: <span class="font-bold"><?php echo $testimonialCompanyName; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Full name: <span class="font-bold"><?php echo $testimonialFullName; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Position: <span class="font-bold"><?php echo $testimonialPosition; ?></span></h5>
+                        <h5 class="text-white font-averta font-light text-lg mb-2">Company Name: <span class="font-bold"><?php echo $testimonialCompanyName; ?></span></h5>
 
                         <?php endwhile; ?>
                     <?php endif; ?>
@@ -271,25 +271,25 @@
 <section id="Blog" class="pt-14 bg-white">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h3 class="text-start text-black font-averta text-2xl font-bold">Useful Resources</h3>
+            <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
             <!-- Post Carousel -->
             <?php 
             // The Query
-            $projectArgs = array(
+            $blogArgs = array(
                 'post_type' => 'post',   // Specify the custom post type
                 'posts_per_page' => -1,      // Number of posts to display
                 'orderby' => 'date',        // Order by date
                 'order' => 'DESC',           // Sort in descending order
             );
 
-            $projectsQuery = new WP_Query($projectArgs); ?>
+            $blogQuery = new WP_Query($blogArgs); ?>
 
 
             <div class="owl-blog owl-carousel owl-theme my-8">
                 <?php            
                 // The Loop
-                if ($projectsQuery->have_posts()) :
-                    while ($projectsQuery->have_posts()) : $projectsQuery->the_post(); 
+                if ($blogQuery->have_posts()) :
+                    while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
                     
                     $categories = get_the_category();
                     ?>
@@ -300,14 +300,15 @@
                             <?php
                             foreach ( $categories as $category ) {
                                 // Display the category name
-                                echo '<a href="" class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</a>';
+                                echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
                             }
                             ?>
                         </div>
-                        <h4 class="text-black font-averta font-bold text-xl mb-2"><?php echo the_title(); ?></h4>
+                        <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
                         <div class="text-black font-averta font-medium text-sm leading-tight">
                             <?php echo wp_trim_words(get_the_content(), 22);  ?>
                         </div>
+                        <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
                     </div>
 
                 <?php
@@ -322,6 +323,5 @@
         </div>
     </div>
 </section>
-    
 
 <?php get_footer() ?>
