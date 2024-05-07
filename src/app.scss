@@ -200,7 +200,8 @@
     border-radius: 15px;
 }
 
-.proejcts_thumbnail__wrapper {
+.proejcts_thumbnail__wrapper,
+.spotlightContent_image {
     img {
         border-radius: 15px;
     }
@@ -268,7 +269,8 @@
 }
 
 .pageHero_image,
-.singleServiceHero_wrapper {
+.singleServiceHero_wrapper,
+.singlePartnerHero_wrapper {
     background-size: cover;
     background-position: center;
 }
@@ -296,7 +298,19 @@
     z-index: 1;
 }
 
-.approachImage_wrapper {
+.singlePartnerHero_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.approachImage_wrapper,
+.guidanceForGrowthImage_wrapper {
     img {
         border-radius: 15px;
     }

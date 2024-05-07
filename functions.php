@@ -33,6 +33,8 @@ add_image_size('whoweworkwith-partners', 645, 250, true);
 add_image_size('whoweworkwith-casestudies', 430, 250, true);
 add_image_size('singleService-hero', false, 550, true);
 add_image_size('approach-thumbnail', 620, 400, true);
+add_image_size('guidancefor-growth', 450, 490, true);
+
 
 
 // Disabling editor on certain pages
