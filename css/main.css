@@ -671,6 +671,9 @@ video {
 .mt-7 {
   margin-top: 1.75rem;
 }
+.ml-3 {
+  margin-left: 0.75rem;
+}
 .block {
   display: block;
 }
@@ -935,6 +938,9 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pb-14 {
+  padding-bottom: 3.5rem;
+}
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -943,6 +949,9 @@ video {
 }
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .pt-14 {
   padding-top: 3.5rem;
@@ -1346,6 +1355,12 @@ ul.subnav,
   border-radius: 15px;
 }
 
+.biography_wrapper p {
+  padding-bottom: 10px;
+}
+.biography_wrapper strong {
+  font-size: 20px;
+}
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(0 134 214 / var(--tw-text-opacity));

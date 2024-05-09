@@ -186,7 +186,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="header_navItem" href="#">About</a></li>
+                        <li><a class="header_navItem" href="<?php echo site_url('/about')?>">About</a></li>
                     </ul>
                 </nav>
             </div>

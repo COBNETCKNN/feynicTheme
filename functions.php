@@ -34,12 +34,15 @@ add_image_size('whoweworkwith-casestudies', 430, 250, true);
 add_image_size('singleService-hero', false, 550, true);
 add_image_size('approach-thumbnail', 620, 400, true);
 add_image_size('guidancefor-growth', 450, 490, true);
+add_image_size('about-team', 500, 500, true);
+add_image_size('contact-icon', 35, 35, true);
+add_image_size('about-accreditations', 400, 400, true);
 
 
 
 // Disabling editor on certain pages
 function remove_pages_editor() {
-    $disabled_pages = array(32, 16, 128);
+    $disabled_pages = array(32, 16, 128, 213);
 
     $current_page_id = get_the_ID();
 
