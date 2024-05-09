@@ -89,7 +89,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                             <span class="text-black text-1xl font-bold bg-white py-0.5 px-4"><?php echo $i; ?></span>
                         </div>
                         <div class="objectiveCard_content">
-                            <h3 class="text-white text-xl font-averta font-bold mb-2"><?php echo $howWeHelpTitle; ?></h3>
+                            <h3 class="text-white text-xl font-averta font-bold mb-2 w-[50%]"><?php echo $howWeHelpTitle; ?></h3>
                             <div class="text-white text-normal font-averta">
                                 <?php echo $howWeHelpDescription; ?>
                                 <?php $i++; ?>
