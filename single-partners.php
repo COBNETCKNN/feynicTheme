@@ -6,7 +6,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 
 
 <!-- Hero Section -->
-<div id="singlePartnerHero" class="h-[550px] w-full relative">
+<section id="singlePartnerHero" class="h-[550px] w-full relative">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singlePartner_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -49,7 +49,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Hero Content Section -->
 <section id="singlePartnerHeroContent" class="py-36 bg-white">

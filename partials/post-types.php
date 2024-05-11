@@ -6,11 +6,11 @@ function feynictheme_post_types() {
     register_post_type('project', array(
         'public' => true,
         'labels' => array( 
-            'name' => 'Projects',
-            'add_new_item' => 'Add New Project',
-            'edit_item' => 'Edit Project',
-            'all_items' => 'All Projects',
-            'singular_name' => 'Project',
+            'name' => 'Insights',
+            'add_new_item' => 'Add New Insight',
+            'edit_item' => 'Edit Insight',
+            'all_items' => 'All Insights',
+            'singular_name' => 'Insight',
         ),
         'menu_icon' => 'dashicons-hammer',
         'rewrite' => array('slug' => 'project'),

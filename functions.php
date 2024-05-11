@@ -37,6 +37,8 @@ add_image_size('guidancefor-growth', 450, 490, true);
 add_image_size('about-team', 500, 500, true);
 add_image_size('contact-icon', 35, 35, true);
 add_image_size('about-accreditations', 400, 400, true);
+add_image_size('project-testimonial', 85, 85, true);
+add_image_size('block-image', 750, 450, true);
 
 
 

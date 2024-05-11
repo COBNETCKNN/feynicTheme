@@ -4,7 +4,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 ?>
 
 <!-- Hero Section -->
-<div id="singleServiceHero" class="h-[550px] w-full relative">
+<section id="singleServiceHero" class="h-[550px] w-full relative">
     <div class="w-full h-full singleServiceHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singleService_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -45,7 +45,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Hero Content Section -->
 <section id="singleServiceHeroContent" class="py-36 bg-white">

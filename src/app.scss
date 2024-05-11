@@ -310,7 +310,9 @@
 }
 
 .approachImage_wrapper,
-.guidanceForGrowthImage_wrapper {
+.guidanceForGrowthImage_wrapper,
+.companyCredentialsImage_wrapper,
+.singleInsight_contentImage__wrapper {
     img {
         border-radius: 15px;
     }
@@ -323,5 +325,33 @@
 
   strong {
     font-size: 20px;
+  }
+}
+
+.sharing_socialMedia {
+  width: 32px;
+  height: 32px;
+
+  a {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.sharing_sociaMedia__linkedin {
+    background-image: url('../assets/icons/linkedin_icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sharing_sociaMedia__twitter {
+  background-image: url('../assets/icons/twitter_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.singleProject_companyLogo {
+  img {
+    border-radius: 50%;
   }
 }
