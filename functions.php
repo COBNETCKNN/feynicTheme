@@ -44,7 +44,7 @@ add_image_size('block-image', 750, 450, true);
 
 // Disabling editor on certain pages
 function remove_pages_editor() {
-    $disabled_pages = array(32, 16, 128, 213);
+    $disabled_pages = array(32, 16, 128, 213, 91);
 
     $current_page_id = get_the_ID();
 

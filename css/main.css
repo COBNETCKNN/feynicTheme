@@ -555,8 +555,14 @@ video {
 .right-0 {
   right: 0px;
 }
+.right-10 {
+  right: 2.5rem;
+}
 .top-0 {
   top: 0px;
+}
+.top-24 {
+  top: 6rem;
 }
 .z-10 {
   z-index: 10;
@@ -714,14 +720,24 @@ video {
 .h-\[430px\] {
   height: 430px;
 }
+.h-\[450px\] {
+  height: 450px;
+}
 .h-\[550px\] {
   height: 550px;
+}
+.h-\[600px\] {
+  height: 600px;
 }
 .h-full {
   height: 100%;
 }
 .h-screen {
   height: 100vh;
+}
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .min-h-\[120px\] {
   min-height: 120px;
@@ -749,6 +765,9 @@ video {
 }
 .w-\[50\%\] {
   width: 50%;
+}
+.w-\[530px\] {
+  width: 530px;
 }
 .w-\[600px\] {
   width: 600px;
@@ -965,6 +984,10 @@ video {
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+.py-48 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
 .py-7 {
   padding-top: 1.75rem;
@@ -1425,9 +1448,128 @@ ul.subnav,
   border-radius: 50%;
 }
 
+.contactPage_contactForm p {
+  padding-bottom: 32px;
+}
+.contactPage_contactForm select {
+  padding: 8px 8px;
+  border-radius: 10px;
+}
+.contactPage_contactForm input {
+  margin: 8px 0;
+  border-radius: 10px;
+  width: 100% !important;
+}
+
+.contactForm_grid input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  font-size: 22px;
+  font-weight: 200;
+}
+.contactForm_grid span, .contactForm_grid p {
+  color: white !important;
+}
+
+.contactForm_reason {
+  margin-top: 30px;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 10px;
+  font-size: 22px;
+  font-weight: 200;
+  border-bottom: 1px solid white;
+}
+
+.wpcf7-form option {
+  background-color: #0086D6;
+  font-weight: 200;
+}
+
+.wpcf7-text:focus, .wpcf7-textarea:focus {
+  outline: none;
+}
+
+.wpcf7-form-control-wrap textarea {
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  height: 100px;
+  padding: 10px 10px;
+}
+
+.wpcf7-form label {
+  font-size: 22px;
+  font-weight: 200;
+  padding: 10px 10px;
+}
+.wpcf7-form p {
+  margin-top: 30px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #fff !important;
+  opacity: 1;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #fff !important;
+  opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #fff !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #fff !important;
+  opacity: 1;
+}
+
+.contactForm_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+}
+
+.wpcf7-submit {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+
+.wpcf7-submit::after {
+  content: url(assets/icons/feynicTheme_arrow.svg);
+  width: 200px;
+  height: 200px;
+}
+
+.contactForm_heading {
+  font-size: 50px;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.submitButton_wrapper {
+  text-align: center;
+}
+
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(0 134 214 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 @media (min-width: 768px) {

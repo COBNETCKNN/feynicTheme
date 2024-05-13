@@ -355,3 +355,134 @@
     border-radius: 50%;
   }
 }
+
+// Contact Form
+.contactPage_contactForm {
+
+  p {
+      padding-bottom: 32px;
+  }
+
+  select {
+      padding: 8px 8px;
+      border-radius: 10px;
+  }
+
+  input {
+      margin: 8px 0;
+      border-radius: 10px;
+      width: 100% !important;
+  }
+
+}
+
+.contactForm_grid {
+  input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    font-size: 22px;
+    font-weight: 200;
+  }
+
+  span, p {
+    color: white !important;
+  }
+
+
+}
+
+.contactForm_reason {
+  margin-top: 30px;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 10px;
+  font-size: 22px;
+  font-weight: 200;
+  border-bottom: 1px solid white;
+}
+
+.wpcf7-form option {
+  background-color: #0086D6;
+  font-weight: 200;
+}
+
+.wpcf7-text:focus, .wpcf7-textarea:focus {
+  outline:none;
+}
+
+.wpcf7-form-control-wrap {
+  textarea {
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    height: 100px;
+    padding: 10px 10px;
+  }
+}
+
+.wpcf7-form {
+  label {
+    font-size: 22px;
+    font-weight: 200;
+    padding: 10px 10px;
+  }
+
+  p {
+    margin-top: 30px;
+  }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #fff !important;
+  opacity: 1;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #fff !important;
+  opacity: 1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #fff !important;
+  opacity: 1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #fff !important;
+  opacity: 1;
+  }
+
+.contactForm_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 40px;
+}
+
+.wpcf7-submit {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 10px;
+  
+}
+
+.wpcf7-submit::after {
+  content: url(assets/icons/feynicTheme_arrow.svg);
+  width: 200px;
+  height: 200px;
+}
+
+
+.contactForm_heading {
+  font-size: 50px;
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.submitButton_wrapper {
+  text-align: center;
+}
