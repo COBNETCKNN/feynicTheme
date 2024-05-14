@@ -729,15 +729,15 @@ video {
 .h-\[600px\] {
   height: 600px;
 }
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .h-full {
   height: 100%;
 }
 .h-screen {
   height: 100vh;
-}
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
 }
 .min-h-\[120px\] {
   min-height: 120px;
@@ -988,6 +988,10 @@ video {
 .py-48 {
   padding-top: 12rem;
   padding-bottom: 12rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .py-7 {
   padding-top: 1.75rem;
@@ -1412,7 +1416,8 @@ ul.subnav,
 .approachImage_wrapper img,
 .guidanceForGrowthImage_wrapper img,
 .companyCredentialsImage_wrapper img,
-.singleInsight_contentImage__wrapper img {
+.singleInsight_contentImage__wrapper img,
+.singlePost_image__wrapper img {
   border-radius: 15px;
 }
 
@@ -1438,8 +1443,20 @@ ul.subnav,
   background-repeat: no-repeat;
 }
 
+.sharing_sociaMedia__linkedin__white {
+  background-image: url("../assets/icons/linkedin_icon_white.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .sharing_sociaMedia__twitter {
   background-image: url("../assets/icons/twitter_icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sharing_sociaMedia__twitter__white {
+  background-image: url("../assets/icons/twitter_icon_white.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }

@@ -76,19 +76,18 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                         $facebookUrl = 'https://www.facebook.com/sharer/sharer.php?u='.$url;
                         $twitterUrl = 'http://twitter.com/intent/tweet?text=Currently reading &lt;'.$title.'&gt;&amp;url=&lt;'.$url.'?&gt;';
                         $linkedInUrl = 'http://www.linkedin.com/shareArticle?mini=true&amp;url=&lt;'.$url.'&gt;&amp;title=&lt;'.$title.'&gt;&amp;summary=&amp;source=&lt;'.$siteName.'?&gt;';
-
                     ?>
 
-                        <div class="share-social block">
-                        <div class="line hidden md:block"></div>
-                        <div class="font-averta font-bold text-lg text-black">Share:</div>
-                        <div class="share-social_wrapper flex justify-start mt-2">
-                            <!-- Linkedin sharing icon -->
-                            <a href="<?php echo $linkedInUrl; ?>" target="_blank" class="sharing_socialMedia sharing_sociaMedia__linkedin mr-3"></a>
-                            <!-- Twitter sharing icon -->
-                            <a href="<?php echo $twitterUrl; ?>" target="_blank" class="sharing_socialMedia sharing_sociaMedia__twitter"></a>
-                        </div>
-                        </div>
+                    <div class="share-social block">
+                    <div class="line hidden md:block"></div>
+                    <div class="font-averta font-bold text-lg text-black">Share:</div>
+                    <div class="share-social_wrapper flex justify-start mt-2">
+                        <!-- Linkedin sharing icon -->
+                        <a href="<?php echo $linkedInUrl; ?>" target="_blank" class="sharing_socialMedia sharing_sociaMedia__linkedin mr-3"></a>
+                        <!-- Twitter sharing icon -->
+                        <a href="<?php echo $twitterUrl; ?>" target="_blank" class="sharing_socialMedia sharing_sociaMedia__twitter"></a>
+                    </div>
+                    </div>
                 </div>
                 <?php endwhile; ?>
             <?php endif; ?>

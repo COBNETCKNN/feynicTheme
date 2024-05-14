@@ -312,7 +312,8 @@
 .approachImage_wrapper,
 .guidanceForGrowthImage_wrapper,
 .companyCredentialsImage_wrapper,
-.singleInsight_contentImage__wrapper {
+.singleInsight_contentImage__wrapper,
+.singlePost_image__wrapper {
     img {
         border-radius: 15px;
     }
@@ -344,11 +345,24 @@
     background-repeat: no-repeat;
 }
 
+.sharing_sociaMedia__linkedin__white {
+  background-image: url('../assets/icons/linkedin_icon_white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .sharing_sociaMedia__twitter {
   background-image: url('../assets/icons/twitter_icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.sharing_sociaMedia__twitter__white {
+  background-image: url('../assets/icons/twitter_icon_white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 
 .singleProject_companyLogo {
   img {
