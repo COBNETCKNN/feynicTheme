@@ -736,9 +736,6 @@ video {
 .h-full {
   height: 100%;
 }
-.h-screen {
-  height: 100vh;
-}
 .min-h-\[120px\] {
   min-height: 120px;
 }
@@ -989,10 +986,6 @@ video {
   padding-top: 12rem;
   padding-bottom: 12rem;
 }
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
@@ -1088,9 +1081,6 @@ video {
 }
 .font-semibold {
   font-weight: 600;
-}
-.italic {
-  font-style: italic;
 }
 .leading-9 {
   line-height: 2.25rem;
@@ -1580,15 +1570,51 @@ ul.subnav,
   text-align: center;
 }
 
+.pageContent_wrapper h2 {
+  font-size: 3.125rem;
+  margin-top: 1.2rem;
+}
+.pageContent_wrapper h3 {
+  font-size: 2.688rem;
+  margin-top: 1.2rem;
+}
+.pageContent_wrapper h4 {
+  font-size: 2.375rem;
+  margin-top: 1.2rem;
+}
+.pageContent_wrapper h5 {
+  font-size: 2.125rem;
+  margin-top: 1.2rem;
+}
+.pageContent_wrapper h6 {
+  font-size: 1.813rem;
+  margin-top: 1.2rem;
+}
+.pageContent_wrapper p {
+  font-size: 1.125rem;
+}
+.pageContent_wrapper p a {
+  text-decoration: underline;
+}
+.pageContent_wrapper p a:hover {
+  text-decoration: none;
+}
+.pageContent_wrapper ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-top: 0.5rem;
+}
+.pageContent_wrapper ul li {
+  margin-top: 0.2rem;
+  maring-bottom: 0.2rem;
+}
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(0 134 214 / var(--tw-text-opacity));
 }
-
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
-
 @media (min-width: 768px) {
 
   .md\:block {

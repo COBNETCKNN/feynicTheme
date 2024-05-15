@@ -500,3 +500,54 @@
 .submitButton_wrapper {
   text-align: center;
 }
+
+// Page Template
+.pageContent_wrapper {
+  h2 {
+    font-size: 3.125rem;
+    margin-top: 1.2rem;
+  }
+
+  h3 {
+    font-size: 2.688rem;
+    margin-top: 1.2rem;
+  }
+
+  h4 {
+    font-size: 2.375rem;
+    margin-top: 1.2rem;
+  }
+
+  h5 {
+    font-size: 2.125rem;
+    margin-top: 1.2rem;
+  }
+
+  h6 {
+    font-size: 1.813rem;
+    margin-top: 1.2rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+
+    a {
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    margin-top: 0.5rem;
+
+    li {
+      margin-top: 0.2rem;
+      maring-bottom: 0.2rem;
+    }
+  }
+}
