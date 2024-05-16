@@ -440,7 +440,9 @@
                         </div>
                         <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
                         <div class="text-black font-averta font-medium text-sm leading-tight">
-                            <?php echo wp_trim_words(get_the_content(), 22);  ?>
+                            <?php 
+                            $excerptTextPost = get_field('single_blog_excerpt_text');
+                            echo wp_trim_words($excerptTextPost, 22);  ?>
                         </div>
                         <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
                     </div>

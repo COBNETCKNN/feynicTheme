@@ -39,6 +39,7 @@ add_image_size('contact-icon', 35, 35, true);
 add_image_size('about-accreditations', 400, 400, true);
 add_image_size('project-testimonial', 85, 85, true);
 add_image_size('block-image', 750, 450, true);
+add_image_size('archive-featured', 500, 300, true);
 
 
 
@@ -51,5 +52,7 @@ function remove_pages_editor() {
     if (in_array($current_page_id, $disabled_pages)) {
         remove_post_type_support('page', 'editor');
     }
+
+    remove_post_type_support( 'post', 'editor' );
 }
 add_action('add_meta_boxes', 'remove_pages_editor');

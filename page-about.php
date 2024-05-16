@@ -17,6 +17,7 @@
                 </li>
             </ol>
         </nav>
+        </div>
         <?php if( have_rows('about_hero_content') ): ?>
             <?php while( have_rows('about_hero_content') ): the_row();    
 
