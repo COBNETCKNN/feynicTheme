@@ -24,6 +24,7 @@
     </div>
 </section>
 
+
 <!-- Featured post -->
 <section id="blogArchiveFeatured">
     <div class="container mx-auto">
@@ -93,11 +94,42 @@
     </div>
 </section>
 
-<!-- Ajax filter and Search bar -->
-<section id="filters" class="py-14 bg-white">
+<!-- Categories Ajax filter and Search bar -->
+<section id="filterSearchBar" class="pt-14 bg-white">
     <div class="container mx-auto">
-        <div class="flex justify-start">
-            <h4 class="text-black font-averta font-bold text-2xl">*here will go filters and search bar for posts*</h4>
+        <div class="flex justify-between">
+            <div class="custom-select w-fit">
+                <!-- Categories Ajax filter -->
+                <?php
+                // Fetch all categories
+                $categories = get_categories(); ?>
+
+                <div class="custom-select-wrapper">
+                <div class="custom-select py-5 px-7">
+                    <div class="custom-select-trigger">Select Category</div>
+
+                    <ul class="custom-options">
+                        <li class="custom-option" data-value="">All posts</li>
+                        <?php foreach ($categories as $category) : ?>
+                            <li class="custom-option" data-value="<?php echo esc_attr($category->term_id); ?>">
+                                <?php echo esc_html($category->name); ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <input type="hidden" id="category-filter" name="category-filter">
+                </div>
+            </div>
+            <!-- Search bar -->
+            <div class="">
+            <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
+                <div class="flex">
+                    <label class="screen-reader-text" for="s">Search for:</label>
+                    <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search..."/>
+                    <button type="submit" id="searchsubmit" class="searchsubmit relative"></button>
+                </div>
+            </form>
+            </div>
         </div>
     </div>
 </section>
@@ -105,63 +137,47 @@
 <!-- Posts query --->
 <section id="postsQuery" class="py-14 bg-white">
     <div class="container mx-auto">
-        <div class="grid grid-cols-3 gap-14">
-            <?php 
-            $first_post = get_posts(array(
-                'post_type'      => 'post',
-                'posts_per_page' => 1, // Get only the first post
-                'orderby'        => 'date',
-                'order'          => 'DESC',
-            ));
+        <div id="posts-container">
+            <div class="grid grid-cols-3 gap-14">
+                <?php 
+                $first_post = get_posts(array(
+                    'post_type'      => 'post',
+                    'posts_per_page' => 1, // Get only the first post
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                ));
 
-            $exclude_ids = array();
-            if ($first_post) {
-                $exclude_ids[] = $first_post[0]->ID; // Get the ID of the first post and exclude it
-            }
+                $exclude_ids = array();
+                if ($first_post) {
+                    $exclude_ids[] = $first_post[0]->ID; // Get the ID of the first post and exclude it
+                }
 
-            $blogPostsArgs = array(
-                'post_type' => 'post', 
-                'posts_per_page' => -1,
-                'orderby'        => 'date',
-                'order'          => 'DESC',
-                'post__not_in'   => $exclude_ids,
-            );
+                $blogPostsArgs = array(
+                    'post_type' => 'post', 
+                    'posts_per_page' => -1,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'post__not_in'   => $exclude_ids,
+                );
 
-            $blogPostsQuery = new WP_Query($blogPostsArgs); 
+                $blogPostsQuery = new WP_Query($blogPostsArgs); 
 
-            if ($blogPostsQuery->have_posts()) :
-                while ($blogPostsQuery->have_posts()) : $blogPostsQuery->the_post(); 
-                
-                $blogCategories = get_the_category();
+                if ($blogPostsQuery->have_posts()) :
+                    while ($blogPostsQuery->have_posts()) : $blogPostsQuery->the_post(); 
+                    ?>
+
+                    <!-- Post card -->
+                    <?php get_template_part('partials/post', 'card'); ?>
+
+                <?php
+                    endwhile;
+                else :
+                    // No posts found
+                    echo 'No posts were found.';
+                endif; 
+                wp_reset_postdata();
                 ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px] relative">
-                    <?php the_post_thumbnail('archive-featured'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $blogCategories as $blogCategory ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $blogCategory->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php 
-                        $excerptTextPost = get_field('single_blog_excerpt_text');
-                        echo wp_trim_words($excerptTextPost, 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No posts were found.';
-            endif; 
-            wp_reset_postdata();
-            ?>
+            </div>
         </div>
     </div>
 </section>

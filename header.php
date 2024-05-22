@@ -33,14 +33,14 @@
             <div class="">
                 <nav class="navbar">
                     <ul class="font-averta font-normal"> 
-                        <li class="header_listItem"><a class="text-black transition ease-in-out delay-150 hover:text-blue" href="#">Home</a></li>
+                        <li class="header_listItem"><a class="text-black transition ease-in-out delay-150 hover:text-blue" href="<?php echo home_url(); ?>">Home</a></li>
                         <li><a class="flex items-center text-black transition ease-in-out delay-150 hover:text-blue" href="#">What We Do <div class="nav_arrow p-2 inline-block" style="font-size:1.3em;">&#8250;</div></a>
                             <div class="whatwedoNav bg-blue p-14 rounded-2xl">
                                 <div class="grid grid-cols-3 gap-4">
                                     <!-- What we Do -->
                                     <div class="">
                                         <!-- Services links -->
-                                        <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">What We Do</h3>
+                                        <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">What We Do</h3>
                                         <ul class="text-start">
                                             <?php
                                                 // The Query for Services
@@ -58,20 +58,20 @@
                                             ?>
 
                                                 <li class="py-1">
-                                                    <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                    <a class="text-white font-averta font-light text-lg" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                 </li>
 
                                             <?php 
                                                 endwhile;
                                             else :
-                                                // No posts found
-                                                echo 'No projects found';
+                                                // No pages found
+                                                echo 'No pages found';
                                             endif; 
                                             wp_reset_postdata();
                                             ?>
                                         </ul>
                                         <div class="flex justify-start pt-7">
-                                            <a class="bg-white py-2 px-5 rounded-xl text-black font-averta font-bold flex items-center" href="" type="button">
+                                            <a class="bg-white py-2 px-5 rounded-xl text-black font-averta font-bold flex items-center" href="#whatWeDo" type="button">
                                             <span>View all </span>
                                             <svg class="mt-1 ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_509_229)">
@@ -89,7 +89,7 @@
                                     <!-- Who We Work With -->
                                     <div class="">
                                         <!-- Services links -->
-                                        <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">Who We Work With</h3>
+                                        <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">Who We Work With</h3>
                                         <ul class="text-start">
                                             <?php
                                                 // The Query for Services
@@ -107,14 +107,14 @@
                                             ?>
 
                                                 <li class="py-1">
-                                                    <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                    <a class="text-white font-averta font-light text-lg" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                                 </li>
 
                                             <?php 
                                                 endwhile;
                                             else :
-                                                // No posts found
-                                                echo 'No projects found';
+                                                // No pages found
+                                                echo 'No pages found';
                                             endif; 
                                             wp_reset_postdata();
                                             ?>
@@ -127,31 +127,32 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="flex items-center text-black transition ease-in-out delay-150 hover:text-blue" href="#">Insights<div class="nav_arrow p-2 inline-block" style="font-size:1.3em;">&#8250;</div></a>
+                        <li>
+                            <a class="flex items-center text-black transition ease-in-out delay-150 hover:text-blue" href="#">Insights<div class="nav_arrow p-2 inline-block" style="font-size:1.3em;">&#8250;</div></a>
                             <div class="insightsNav bg-blue p-14 rounded-2xl">
-                                <div class="grid grid-cols-2 gap-4 max-w-[700px]">
+                                <div class="grid grid-cols-2 gap-4 max-w-[800px]">
                                     <!-- Insights -->
                                     <div class="">
                                         <!-- Services links -->
-                                        <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">Insights</h3>
+                                        <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">Insights</h3>
                                         <ul class="text-start">
                                             <li class="py-1">
-                                                <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>">Blogs</a>
+                                                <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/blog')?>">Blogs</a>
                                             </li>
                                             <li class="py-1">
-                                                <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>">Events</a>
+                                                <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/blog')?>">Events</a>
                                             </li>
                                             <li class="py-1">
-                                                <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>">Case Studies</a>
+                                                <a class="text-white font-averta font-light text-lg" href="#">Case Studies</a>
                                             </li>
                                             <li class="py-1">
-                                                <a class="text-white font-averta font-light text-xl" href="<?php the_permalink(); ?>">Testimonials</a>
+                                                <a class="text-white font-averta font-light text-lg" href="#">Testimonials</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <!-- Recent Blog Posts -->
                                     <div class="">
-                                    <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">Recent Articles</h3>
+                                    <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">Recent Articles</h3>
                                     <?php
                                         $blogArgs = array(
                                             'post_type' => 'post',
@@ -163,15 +164,21 @@
 
                                         if ( $blogQuery->have_posts() ) :
                                             while ( $blogQuery->have_posts() ) : $blogQuery->the_post(); 
-                                            
+                                            $navBlogPostFeaturedImage = get_the_post_thumbnail_url();
                                             ?>
                                             
-                                            <div class="blogPost_wrapper mb-10 flex justify-start">
-                                                <div class="navbar_blogpost__image my-auto">
-                                                    <?php the_post_thumbnail('nav-blog'); ?>
+                                            <div class="blogPost_wrapper mb-5 grid grid-cols-3 gap-10 relative">
+                                                <div class="col-span-1">
+                                                    <div class="navBlog_image__wrapper h-[100px] w-[130px]">
+                                                        <?php the_post_thumbnail('nav-blog'); ?>
+                                                    </div>
                                                 </div>
-                                                <div class="text-start ml-5 text-white font-averta">
-                                                    <?php the_title(); ?>
+                                                <div class="col-span-2">
+                                                    <div class="text-start ml-5 text-white font-averta">
+                                                        <a href="<?php the_permalink(); ?>">
+                                                            <?php the_title(); ?>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -186,13 +193,13 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a class="header_navItem" href="<?php echo site_url('/about')?>">About</a></li>
+                        <li class="header_listItem"><a class="text-black transition ease-in-out delay-150 hover:text-blue" href="<?php echo site_url('/about-us')?>">About</a></li>
                     </ul>
                 </nav>
             </div>
             <!-- Get in touch button -->
             <div class="">
-                <a class="bg-blue py-3 px-5 rounded-2xl text-white text-lg font-semibold flex items-center" href="" type="button">
+                <a class="bg-blue py-2 px-5 rounded-xl text-white text-lg font-semibold flex items-center" href="<?php echo site_url('/contact-us')?>" type="button">
                     <span class="">Get In Touch</span>
                     <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_509_229)">
@@ -207,9 +214,5 @@
                 </a>
             </div>
         </div>
-
-
     </div>
-
-
 </header>

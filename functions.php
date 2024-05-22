@@ -20,7 +20,7 @@ add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' ); 
 
 // Custom Image Sizes
-add_image_size('nav-blog', 250, 100, true);
+add_image_size('nav-blog', 135, 120, true);
 add_image_size('footer-accrediations', 240, 70, true);
 add_image_size('social-media', 35, 35, true);
 add_image_size('whoweworkwith-thumbnail', 250, 420, true);
@@ -40,6 +40,7 @@ add_image_size('about-accreditations', 400, 400, true);
 add_image_size('project-testimonial', 85, 85, true);
 add_image_size('block-image', 750, 450, true);
 add_image_size('archive-featured', 500, 300, true);
+add_image_size('related-project', 470, 300, true);
 
 
 
@@ -56,3 +57,33 @@ function remove_pages_editor() {
     remove_post_type_support( 'post', 'editor' );
 }
 add_action('add_meta_boxes', 'remove_pages_editor');
+
+
+// Exclude node_modules from exporting All In One Migration Plugin
+add_filter( 'ai1wm_exclude_themes_from_export',
+function ( $exclude_filters ) {
+  $exclude_filters[] = 'feynicTheme/node_modules'; // insert your theme name
+  return $exclude_filters;
+} );
+
+// Ajax filter for categories
+function enqueue_custom_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('category-filter', get_template_directory_uri() . '/ajax/category-filter.js', array('jquery'), null, true);
+    wp_localize_script('category-filter', 'ajax_params', array(
+        'ajax_url' => admin_url('admin-ajax.php')
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+// Ajax callback function
+require_once('ajax/category-filter.php');
+
+// Excluding pages from search results
+function exclude_pages_from_search($query) {
+    if ($query->is_search && !is_admin()) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'exclude_pages_from_search');

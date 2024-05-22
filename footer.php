@@ -27,46 +27,55 @@
             <div class="grid grid-cols-5 gap-4">
                 <!-- Quick Links -->
                 <div class="">
-                    <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">Quick Links</h3>
+                    <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">Quick Links</h3>
                     <ul class="text-start">
-                        <li class="py-0.5">
-                            <a class="text-white font-averta font-light text-xl" href="#">Home</a>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo home_url(); ?>">Home</a>
                         </li>
-                        <li class="py-0.5">
-                            <a class="text-white font-averta font-light text-xl" href="#">Services</a>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="#whatWeDo">Services</a>
                         </li>
-                        <li class="py-0.5">
-                            <a class="text-white font-averta font-light text-xl" href="#">About Feynic Technology</a>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/about')?>">About Feynic Technology</a>
                         </li>
-                        <li class="py-0.5">
-                            <a class="text-white font-averta font-light text-xl" href="#">Insighs</a>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/blog')?>">Insighs</a>
                         </li>
-                        <li class="py-0.5">
-                            <a class="text-white font-averta font-light text-xl" href="#">Contact</a>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/contact-us')?>">Contact</a>
                         </li>
                     </ul>
                 </div>
                 <!-- What We Do -->
                 <div class="">
-                <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">What We Do</h3>
+                <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">What We Do</h3>
                     <ul class="text-start">
                         <li class="py-1">
-                            <a class="text-white font-averta font-light text-xl" href="#">Strategy & Transformation</a>
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/services/emerging-technology')?>">Emerging Technology</a>
+                        </li>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/services/community-ecosystems')?>">Community & Ecosystems</a>
+                        </li>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/services/commerical-modelling')?>">Commerical Modelling</a>
+                        </li>
+                        <li class="py-1">
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/services/strategy-transformation')?>">Strategy & Transformation</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Who We Help -->
                 <div class="">
-                <h3 class="text-white font-averta font-bold text-2xl text-start pb-3">Who We Help</h3>
+                <h3 class="text-white font-averta font-bold text-2xlg text-start pb-3">Who We Help</h3>
                     <ul class="text-start">
                         <li class="py-1">
-                            <a class="text-white font-averta font-light text-xl" href="#">Founders</a>
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/partners/founders')?>">Founders</a>
                         </li>
                         <li class="py-1">
-                            <a class="text-white font-averta font-light text-xl" href="#">Investors</a>
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/partners/investors')?>">Investors</a>
                         </li>
                         <li class="py-1">
-                            <a class="text-white font-averta font-light text-xl" href="#">Institutions</a>
+                            <a class="text-white font-averta font-light text-lg" href="<?php echo site_url('/partners/institutions')?>">Institutions</a>
                         </li>
                     </ul>
                 </div>
@@ -155,7 +164,9 @@
             </div>
             <div class="flex justify-between mt-32 pt-3 border-t border-white text-white font-averta font-light">
                 <span>Copyright Feynic Technology <?php echo date("Y"); ?></span>
+                <a class="footerCredential_link" href="https://www.sensostudio.co/">
                 <span>Created By Senso Studio</span>
+                </a>
             </div>
         </div>
     </section>

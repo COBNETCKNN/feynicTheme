@@ -67,16 +67,11 @@
                         if ($partnersQuery->have_posts()) :
                             while ($partnersQuery->have_posts()) : $partnersQuery->the_post(); 
                             
-                            $partnersThumbnail = get_field('who_we_work_with_thumbnail');
-                            $partnersThumbnailSize = 'whoweworkwith-thumbnail'; ?>
-
-                            <div class="hero_partners__thumbnails">
-                                <a href="<?php echo the_permalink(); ?>">
-                                    <?php 
-                                    if( $partnersThumbnail ) {
-                                        echo wp_get_attachment_image( $partnersThumbnail, $partnersThumbnailSize );
-                                    }
-                                    ?>
+                            $partnersFeaturedImageUrl = get_the_post_thumbnail_url(get_the_ID(), 'whoweworkwith-thumbnail'); 
+                            ?>
+                            <div class="hero_partners__thumbnails h-[420px] w-[250px] rounded-2xl relative"  style="background-image: url('<?php echo esc_url($partnersFeaturedImageUrl); ?>');">
+                                <h2 class="text-white font-averta font-bold text-3xl absolute bottom-5 left-3 z-30 leading-tight">For <br><?php the_title(); ?></h2>
+                                <a class="absolute z-40 top-0 left-0 w-full h-full"href="<?php echo the_permalink(); ?>">
                                 </a>
                             </div>
 

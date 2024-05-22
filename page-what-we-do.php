@@ -7,7 +7,7 @@
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-semibold mb-10">
         <ol>
             <li>
-            <a href=#>Home</a>
+            <a href="<?php echo site_url(); ?>">Home</a>
             </li>
             <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
             <li>
