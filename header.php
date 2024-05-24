@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="header_listItem"><a class="text-black transition ease-in-out delay-150 hover:text-blue" href="<?php echo site_url('/about-us')?>">About</a></li>
+                        <li class="header_listItem"><a class="text-black transition ease-in-out delay-150 hover:text-blue" href="<?php echo site_url('/about')?>">About</a></li>
                     </ul>
                 </nav>
             </div>

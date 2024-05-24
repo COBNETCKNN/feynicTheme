@@ -46,7 +46,7 @@ add_image_size('related-project', 470, 300, true);
 
 // Disabling editor on certain pages
 function remove_pages_editor() {
-    $disabled_pages = array(32, 16, 128, 213, 91);
+    $disabled_pages = array(32, 16, 128, 213, 91, 359);
 
     $current_page_id = get_the_ID();
 

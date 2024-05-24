@@ -53,8 +53,12 @@
       position: relative;
   }
   
-  .navbar li:hover .whatwedoNav { display: block; }
-  .navbar li:hover .insightsNav { display: block; }
+  .navbar li:hover .whatwedoNav { 
+    display: block;
+  }
+  .navbar li:hover .insightsNav { 
+    display: block;
+  }
   
   ul.subnav,
   .whatwedoNav {
