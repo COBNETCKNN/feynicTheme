@@ -146,7 +146,7 @@
                                                 <a class="text-white font-averta font-light text-lg" href="#">Case Studies</a>
                                             </li>
                                             <li class="py-1">
-                                                <a class="text-white font-averta font-light text-lg" href="#">Testimonials</a>
+                                                <a class="text-white font-averta font-light text-lg" href="<?php echo get_post_type_archive_link('testimonial')?>">Testimonials</a>
                                             </li>
                                         </ul>
                                     </div>
