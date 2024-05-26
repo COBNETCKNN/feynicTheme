@@ -1,9 +1,9 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="hero" class="py-32">
+<section id="hero">
     <div class="container mx-auto">
-        <div class="mx-14">
+        <div class="mx-10 h-[90vh] flex items-center">
             <div class="grid grid-cols-5 gap-4">
                 <!-- Content Area -->
                 <div class="col-span-2">
@@ -16,34 +16,14 @@
 
                         ?>
 
-                        <h1 class="text-black font-averta text-6xl font-bold w-[50%] leading-tight mb-7"><?php echo $heroHeading; ?></h1>
+                        <h1 class="text-black font-averta text-5lg font-bold w-[50%] leading-tight mb-7"><?php echo $heroHeading; ?></h1>
                         <p class="font-averta text-sm font-medium leading-snug w-[72%] mb-7"><?php echo $heroSubText; ?></p>
                         <div class="heroButtons flex justify-between w-[70%]">
-                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center text-lg font-semibold" type="button" href="<?php echo site_url('/what-we-do')?>">
-                            <span>What We Do</span>
-                            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_509_229)">
-                                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_509_229">
-                                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                                </clipPath>
-                                </defs>
-                            </svg>    
+                            <a href="<?php echo site_url('/what-we-do')?>">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>What We Do</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
-                            <a class="bg-black py-2 px-7 rounded-xl text-white flex items-center text-lg font-semibold" type="button" href="<?php echo get_post_type_archive_link('project')?>">
-                            <span>Our Work</span>
-                            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_509_229)">
-                                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_509_229">
-                                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                                </clipPath>
-                                </defs>
-                            </svg>    
+                            <a href="#Projects">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-black px-6 py-2 font-medium text-white text-lg"><span>Our Work</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
                         </div>
                     <?php endwhile; ?>
@@ -90,35 +70,6 @@
     </div>
 </section>
 
-<!-- Partners Section -->
-<section id="partners" class="py-16 bg-blue">
-    <div class="container mx-auto">
-        <div class="mx-10">
-            <div class="owl-partners owl-carousel owl-theme">
-                <?php if( have_rows('homepage_partners_carousel') ): ?>
-                    <?php while( have_rows('homepage_partners_carousel') ): the_row(); 
-
-                        // Get sub field values.
-                        $partnersGallery = get_sub_field('homepage_partners_gallery');
-                        $partnersSize = 'full';?>
-
-
-                            <?php
-                            if( $partnersGallery ): ?>
-                                <?php foreach( $partnersGallery as $partnersImage ): ?>
-                                    <div class="item item_partners__carousel">
-                                        <?php echo wp_get_attachment_image( $partnersImage, $partnersSize ); ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Work With Feynic Section -->
 <section id="workWithFeynic" class="py-20 bg-white">
     <div class="container mx-auto">
@@ -137,20 +88,9 @@
 
                             <h2 class="font-averta text-5xl text-black font-bold mb-5"><?php echo $workWithUsHeading; ?></h2>
                             <div class="font-averta text-sm font-light leading-tight w-[80%] mb-7"><?php echo $workWithUsSubtext; ?></div>
-                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center w-fit text-lg font-semibold" type="button" href="<?php echo site_url('/contact-us')?>">
-                            <span>Work With Feynic</span>
-                            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_509_229)">
-                                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_509_229">
-                                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                                </clipPath>
-                                </defs>
-                            </svg>    
+                            <a href="<?php echo site_url('/contact-us')?>">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>Work With Feynic</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
-
                             <?php endwhile; ?>
                         <?php endif; ?>
                         </div>
@@ -231,19 +171,11 @@
                 wp_reset_postdata();
                 ?>
             </div>
-            <a class="bg-black py-2 px-7 rounded-xl text-white flex mx-auto items-center w-fit text-lg font-semibold mt-5" type="button" href="<?php echo get_post_type_archive_link('service')?>">
-            <span>Discover Capabilities</span>
-            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_509_229)">
-                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_509_229">
-                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                </clipPath>
-                </defs>
-            </svg>    
-            </a>
+            <div class="flex justify-center">
+                <a href="<?php echo site_url('/what-we-do')?>">
+                    <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-black px-6 py-2 font-medium text-white text-lg"><span>Discover Capabilities</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -288,21 +220,11 @@
                         <!-- Project Content -->
                         <div class="my-auto projects_content__wrapper col-span-3">
                             <h3 class="text-black font-averta text-3xl font-bold mb-5"><?php the_title(); ?></h3>
-                            <div class="text-black text-normal font-averta">
+                            <div class="text-black text-normal font-averta mb-5">
                                 <?php echo the_content(); ?>
                             </div>
-                            <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center w-fit text-lg font-semibold mt-5" type="button" href="<?php echo the_permalink(); ?>">
-                            <span>Read More</span>
-                            <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_509_229)">
-                                <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                                </g>
-                                <defs>
-                                <clipPath id="clip0_509_229">
-                                <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                                </clipPath>
-                                </defs>
-                            </svg>    
+                            <a href="<?php echo the_permalink(); ?>">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>Read More</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
                         </div>
                         <div class="col-span-1"></div>
@@ -351,18 +273,8 @@
                     <div class='embed-container'>
                         <iframe src='https://player.vimeo.com/video/<?php echo $vimeoVideoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
-                    <a class="bg-white py-2 px-7 rounded-xl text-black flex items-center w-fit text-lg font-semibold mt-5 absolute -bottom-20" type="button" href="<?php echo get_post_type_archive_link('testimonial')?>">
-                        <span>Customer Stories</span>
-                        <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_509_229)">
-                            <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="black"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_509_229">
-                            <rect width="19" height="12" fill="black" transform="translate(0.5)"/>
-                            </clipPath>
-                            </defs>
-                        </svg>    
+                    <a class="mt-5 absolute -bottom-20" href="<?php echo get_post_type_archive_link('testimonial')?>">
+                        <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-medium text-black text-lg"><span>Customer Stories</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                     </a>
                 </div>
                 <!-- Content Area -->
@@ -399,58 +311,56 @@
 <!-- Blog Section -->
 <section id="Blog" class="pt-14 bg-white">
     <div class="container mx-auto">
-        <div class="mx-10">
-            <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-            <!-- Post Carousel -->
-            <?php 
-            // The Query
-            $blogArgs = array(
-                'post_type' => 'post',   // Specify the custom post type
-                'posts_per_page' => -1,      // Number of posts to display
-                'orderby' => 'date',        // Order by date
-                'order' => 'DESC',           // Sort in descending order
-            );
+        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
+        <!-- Post Carousel -->
+        <?php 
+        // The Query
+        $blogArgs = array(
+            'post_type' => 'post',   // Specify the custom post type
+            'posts_per_page' => -1,      // Number of posts to display
+            'orderby' => 'date',        // Order by date
+            'order' => 'DESC',           // Sort in descending order
+        );
 
-            $blogQuery = new WP_Query($blogArgs); ?>
+        $blogQuery = new WP_Query($blogArgs); ?>
 
 
-            <div class="owl-blog owl-carousel owl-theme my-8">
-                <?php            
-                // The Loop
-                if ($blogQuery->have_posts()) :
-                    while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                    
-                    $categories = get_the_category();
-                    ?>
-
-                    <div class="item blogCarousel_wrapper min-h-[450px]">
-                        <?php the_post_thumbnail('post-carousel'); ?>
-                        <div class="mt-3 mb-4">
-                            <?php
-                            foreach ( $categories as $category ) {
-                                // Display the category name
-                                echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                            }
-                            ?>
-                        </div>
-                        <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                        <div class="text-black font-averta font-medium text-sm leading-tight">
-                            <?php 
-                            $excerptTextPost = get_field('single_blog_excerpt_text');
-                            echo wp_trim_words($excerptTextPost, 22);  ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                    </div>
-
-                <?php
-                    endwhile;
-                else :
-                    // No posts found
-                    echo 'No testimonials found';
-                endif; 
-                wp_reset_postdata();
+        <div class="owl-blog owl-carousel owl-theme my-8">
+            <?php            
+            // The Loop
+            if ($blogQuery->have_posts()) :
+                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
+                
+                $categories = get_the_category();
                 ?>
-            </div>
+
+                <div class="item blogCarousel_wrapper min-h-[450px]">
+                    <?php the_post_thumbnail('post-carousel'); ?>
+                    <div class="mt-3 mb-4">
+                        <?php
+                        foreach ( $categories as $category ) {
+                            // Display the category name
+                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
+                        }
+                        ?>
+                    </div>
+                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
+                    <div class="text-black font-averta font-medium text-sm leading-tight">
+                        <?php 
+                        $excerptTextPost = get_field('single_blog_excerpt_text');
+                        echo wp_trim_words($excerptTextPost, 22);  ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
+                </div>
+
+            <?php
+                endwhile;
+            else :
+                // No posts found
+                echo 'No testimonials found';
+            endif; 
+            wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>

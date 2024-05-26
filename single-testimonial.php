@@ -79,20 +79,22 @@
 <!-- Content Blocks -->
 <section id="singlePostContentBlocks" class="py-14 bg-white">
     <div class="container mx-auto">
-    <?php
-        if( have_rows('content_blocks') ):
-            while ( have_rows('content_blocks') ) : the_row(); ?>
-
-                <div class="py-7">
-                    <?php
-                        include 'blocks/singlePost/' . get_row_layout() . '.php';
-                    ?>
-                </div>
-
+        <div class="mx-10">
             <?php
-            endwhile;
-        endif; 
-    ?>
+                if( have_rows('content_blocks') ):
+                    while ( have_rows('content_blocks') ) : the_row(); ?>
+
+                        <div class="py-7">
+                            <?php
+                                include 'blocks/singlePost/' . get_row_layout() . '.php';
+                            ?>
+                        </div>
+
+                    <?php
+                    endwhile;
+                endif; 
+            ?>
+        </div>
     </div>
 </section>
 

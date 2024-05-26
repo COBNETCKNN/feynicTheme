@@ -33,6 +33,22 @@
     font-weight: 700;
   }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  box-shadow: 0px 12px 18px 0px rgba(0,0,0,0.07);
+-webkit-box-shadow: 0px 12px 18px 0px rgba(0,0,0,0.07);
+-moz-box-shadow: 0px 12px 18px 0px rgba(0,0,0,0.07);
+}
+
 .navbar {	
     text-align: center;
   }
@@ -53,30 +69,38 @@
       position: relative;
   }
   
-  .navbar li:hover .whatwedoNav { 
-    display: block;
-  }
-  .navbar li:hover .insightsNav { 
-    display: block;
-  }
-  
   ul.subnav,
   .whatwedoNav {
       min-width: 66px;
-      display: none;
+      min-height: 400px;
+      opacity: 0;
+      visibility: hidden;
       position: absolute;
       overflow: hidden;
-      right: 30%;
+      right: 23%;
       z-index: 9999;
+      transition: opacity 0.8s ease;
   }
 
   .insightsNav {
     min-width: 66px;
-    display: none;
+    min-height: 400px;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     overflow: hidden;
     right: 20%;
     z-index: 9999;
+    transition: opacity 0.8s ease;
+  }
+
+  .navbar li:hover .whatwedoNav { 
+    opacity: 1;
+    visibility: visible;
+  }
+  .navbar li:hover .insightsNav { 
+    opacity: 1;
+    visibility: visible;
   }
   
   .subnav li { display: block; }
@@ -281,6 +305,11 @@
     background-position: center;
 }
 
+.singlePartnerHero_wrapper,
+.singleServiceHero_wrapper  {
+  border-radius: 0 0 30px 30px;
+}
+
 .pageHero_image::after {
     content: "";
     position: absolute;
@@ -302,6 +331,7 @@
     height: 100%;
     background-color: rgba(0, 134, 214, 0.5); 
     z-index: 1;
+    border-radius: 0 0 30px 30px;
 }
 
 .singlePartnerHero_wrapper::after {
@@ -313,6 +343,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); 
   z-index: 1;
+  border-radius: 0 0 30px 30px;
 }
 
 .hero_partners__thumbnails::after {
@@ -619,9 +650,8 @@ select {
   font-size: 1.15rem;
   padding: 0.675em 6em 0.675em 1em;
   background-color: #fff;
-  border: 1px solid #caced1;
   border-radius: 0.25rem;
-  color: #000;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -724,4 +754,9 @@ select {
   color: white;
   left: 20%;
   top: 10%;
+}
+
+.mx-10 {
+  margin-left: 5vh;
+  margin-right: 5vh;
 }

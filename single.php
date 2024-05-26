@@ -12,7 +12,7 @@
                 </li>
                 <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
                 <li>
-                <a href="#">Insights</a>
+                <a href="<?php echo site_url('/blog')?>">Insights</a>
                 </li>
                 <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
                 <li>

@@ -31,11 +31,13 @@
 <!-- Page Description -->
 <section id="Description" class="py-10 bg-white">
     <div class="container mx-auto">
-        <div class="whatWeDo_heroSubtext__wrapper">
-            <?php 
-            $heroSubtext = get_field('whatwedo_hero_subtext');
-            ?>
-            <h2 class="font-averta text-black font-normal text-2.5xl text-center"><?php echo $heroSubtext; ?></h2>
+        <div class="mx-10">
+            <div class="whatWeDo_heroSubtext__wrapper">
+                <?php 
+                $heroSubtext = get_field('whatwedo_hero_subtext');
+                ?>
+                <h2 class="font-averta text-black font-normal text-2.5xl text-center"><?php echo $heroSubtext; ?></h2>
+            </div>
         </div>
     </div>
 </section>
@@ -43,93 +45,97 @@
 <!-- What We Do Section -->
 <section id="whatWeDo" class="py-20 bg-white">
     <div class="container mx-auto">
-        <div class="servicesListing py-10 flex justify-between items-center">
-            <?php 
-            // The Query
-            $serviceArgs = array(
-                'post_type' => 'service',   // Specify the custom post type
-                'posts_per_page' => -1,      // Number of posts to display
-                'orderby' => 'date',        // Order by date
-                'order' => 'DESC',           // Sort in descending order
-            );
+        <div class="mx-10">
+            <div class="servicesListing py-10 flex justify-between items-center">
+                <?php 
+                // The Query
+                $serviceArgs = array(
+                    'post_type' => 'service',   // Specify the custom post type
+                    'posts_per_page' => -1,      // Number of posts to display
+                    'orderby' => 'date',        // Order by date
+                    'order' => 'DESC',           // Sort in descending order
+                );
 
-            $serviceQuery = new WP_Query($serviceArgs); 
-            
-            // The Loop
-            if ($serviceQuery->have_posts()) :
-                while ($serviceQuery->have_posts()) : $serviceQuery->the_post(); 
+                $serviceQuery = new WP_Query($serviceArgs); 
                 
-                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'services-thumbnail');
+                // The Loop
+                if ($serviceQuery->have_posts()) :
+                    while ($serviceQuery->have_posts()) : $serviceQuery->the_post(); 
+                    
+                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'services-thumbnail');
+                    ?>
+
+                    <div class="servicesListing_card p-5 relative" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
+                        <h4 class="text-white font-averta text-2xl text-start font-bold absolute bottom-5 z-10"><?php echo the_title(); ?></h4>
+                        <a class="w-full h-full absolute top-0 right-0 z-20" href="<?php echo the_permalink(); ?>"></a>
+                    </div>
+
+                <?php
+                    endwhile;
+                else :
+                    // No posts found
+                    echo 'No projects found';
+                endif; 
+                wp_reset_postdata();
                 ?>
-
-                <div class="servicesListing_card p-5 relative" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
-                    <h4 class="text-white font-averta text-2xl text-start font-bold absolute bottom-5 z-10"><?php echo the_title(); ?></h4>
-                    <a class="w-full h-full absolute top-0 right-0 z-20" href="<?php echo the_permalink(); ?>"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No projects found';
-            endif; 
-            wp_reset_postdata();
-            ?>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="whoWeWorkWith" class="py-24 bg-white">
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 gap-4">
-            <!-- Content Area -->
-            <div class="my-auto">
-            <?php if( have_rows('what_we_do_who_we_work_with') ): ?>
-                <?php while( have_rows('what_we_do_who_we_work_with') ): the_row(); 
+        <div class="mx-10">
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Content Area -->
+                <div class="my-auto">
+                <?php if( have_rows('what_we_do_who_we_work_with') ): ?>
+                    <?php while( have_rows('what_we_do_who_we_work_with') ): the_row(); 
 
-                $whoWeWorkWithHeading = get_sub_field('who_we_work_with_heading');
-                $whoWeWorkWithSubtext = get_sub_field('who_we_work_with_subtext');
+                    $whoWeWorkWithHeading = get_sub_field('who_we_work_with_heading');
+                    $whoWeWorkWithSubtext = get_sub_field('who_we_work_with_subtext');
 
-                ?>
-
-                <h2 class="text-black font-averta text-xl font-bold mb-7"><?php echo $whoWeWorkWithHeading; ?></h2>
-                <p class="font-averta text-lg font-medium leading-snug w-[80%]"><?php echo $whoWeWorkWithSubtext; ?></p>
-                <?php endwhile; ?>
-            <?php endif; ?>
-            </div>
-            <!-- Partners query -->
-            <div class="my-auto flex justify-end">
-                <div class="">
-                    <?php
-                    // The Query
-                    $partnerArgs = array(
-                        'post_type' => 'partners',   // Specify the custom post type
-                        'posts_per_page' => 3,      // Number of posts to display
-                        'orderby' => 'date',        // Order by date
-                        'order' => 'DESC',           // Sort in descending order
-                    );
-
-                    $partnersQuery = new WP_Query($partnerArgs); 
-                    
-                    // The Loop
-                    if ($partnersQuery->have_posts()) :
-                        while ($partnersQuery->have_posts()) : $partnersQuery->the_post(); 
-                        
-                        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'whoweworkwith-partners'); ?>
-
-                        <div class="whatWeDo_whoWeWorkWith__card w-[645px] h-[250px] my-5 relative rounded-2xl" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
-                            <h4 class="text-white font-averta text-2xl text-start font-bold absolute bottom-5 left-5 z-10"><?php echo the_title(); ?></h4>
-                            <a class="w-full h-full absolute top-0 right-0 z-20" href="<?php echo the_permalink(); ?>"></a>
-                        </div>
-
-                        <?php
-                        endwhile;
-                    else :
-                        // No posts found
-                        echo 'No projects found';
-                    endif; 
-                    wp_reset_postdata();
                     ?>
+
+                    <h2 class="text-black font-averta text-xl font-bold mb-7"><?php echo $whoWeWorkWithHeading; ?></h2>
+                    <p class="font-averta text-lg font-medium leading-snug w-[80%]"><?php echo $whoWeWorkWithSubtext; ?></p>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+                </div>
+                <!-- Partners query -->
+                <div class="my-auto flex justify-end">
+                    <div class="">
+                        <?php
+                        // The Query
+                        $partnerArgs = array(
+                            'post_type' => 'partners',   // Specify the custom post type
+                            'posts_per_page' => 3,      // Number of posts to display
+                            'orderby' => 'date',        // Order by date
+                            'order' => 'DESC',           // Sort in descending order
+                        );
+
+                        $partnersQuery = new WP_Query($partnerArgs); 
+                        
+                        // The Loop
+                        if ($partnersQuery->have_posts()) :
+                            while ($partnersQuery->have_posts()) : $partnersQuery->the_post(); 
+                            
+                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'whoweworkwith-partners'); ?>
+
+                            <div class="whatWeDo_whoWeWorkWith__card w-[645px] h-[250px] my-5 relative rounded-2xl" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
+                                <h4 class="text-white font-averta text-2xl text-start font-bold absolute bottom-5 left-5 z-10"><?php echo the_title(); ?></h4>
+                                <a class="w-full h-full absolute top-0 right-0 z-20" href="<?php echo the_permalink(); ?>"></a>
+                            </div>
+
+                            <?php
+                            endwhile;
+                        else :
+                            // No posts found
+                            echo 'No projects found';
+                        endif; 
+                        wp_reset_postdata();
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,12 +145,14 @@
 <!-- Vimeo Video -->
 <section id="vimeoVideo" class="py-36 bg-white">
     <div class="container mx-auto">
-        <?php 
-            $whatWeDoVimeoVideoID = get_field('vimeo_video_section');
-        ?>
-        <div class="h-[400px] relative">
-            <div class='embed-container'>
-                <iframe src='https://player.vimeo.com/video/<?php echo $whatWeDoVimeoVideoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        <div class="mx-10">
+            <?php 
+                $whatWeDoVimeoVideoID = get_field('vimeo_video_section');
+            ?>
+            <div class="h-[400px] relative">
+                <div class='embed-container'>
+                    <iframe src='https://player.vimeo.com/video/<?php echo $whatWeDoVimeoVideoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -153,41 +161,43 @@
 <!-- Case Studies -->
 <section id="caseStudies" class="py-36 bg-white">
     <div class="container mx-auto">
-        <div class="grid grid-cols-3 gap-32">
-        <?php 
-            // Case Studies Query
-            $caseStudiesArgs = array(
-                'post_type' => 'post', 
-                'posts_per_page' => 3,  
-                'orderby' => 'date',
-                'order' => 'DESC',
-            );
+        <div class="mx-10">
+            <div class="grid grid-cols-3 gap-32">
+            <?php 
+                // Case Studies Query
+                $caseStudiesArgs = array(
+                    'post_type' => 'post', 
+                    'posts_per_page' => 3,  
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                );
 
-            $caseStudiesQuery = new WP_Query($caseStudiesArgs); ?>
+                $caseStudiesQuery = new WP_Query($caseStudiesArgs); ?>
 
-            <?php            
-            // The Loop
-            if ($caseStudiesQuery->have_posts()) :
-                while ($caseStudiesQuery->have_posts()) : $caseStudiesQuery->the_post(); ?>
+                <?php            
+                // The Loop
+                if ($caseStudiesQuery->have_posts()) :
+                    while ($caseStudiesQuery->have_posts()) : $caseStudiesQuery->the_post(); ?>
 
-                <div class="min-h-[450px] mx-auto relative">
-                    <?php the_post_thumbnail('whoweworkwith-casestudies'); ?>
-                    <h4 class="text-black font-averta font-bold text-xl my-2 leading-snug"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
+                    <div class="min-h-[450px] mx-auto relative">
+                        <?php the_post_thumbnail('whoweworkwith-casestudies'); ?>
+                        <h4 class="text-black font-averta font-bold text-xl my-2 leading-snug"><?php echo the_title(); ?></h4>
+                        <div class="text-black font-averta font-medium text-sm leading-tight">
+                            <?php echo wp_trim_words(get_the_content(), 22);  ?>
+                        </div>
+                        <a class="w-full h-full absolute top-0 left-0 z-10" href="<?php the_permalink(); ?>"></a>
                     </div>
-                    <a class="w-full h-full absolute top-0 left-0 z-10" href="<?php the_permalink(); ?>"></a>
-                </div>
 
 
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
+                <?php
+                    endwhile;
+                else :
+                    // No posts found
+                    echo 'No testimonials found';
+                endif; 
+                wp_reset_postdata();
+                ?>
+            </div>
         </div>
     </div>
 </section>
@@ -270,56 +280,54 @@
 <!-- Blog Section -->
 <section id="Blog" class="pt-14 bg-white">
     <div class="container mx-auto">
-        <div class="mx-10">
-            <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-            <!-- Post Carousel -->
-            <?php 
-            // The Query
-            $blogArgs = array(
-                'post_type' => 'post',   // Specify the custom post type
-                'posts_per_page' => -1,      // Number of posts to display
-                'orderby' => 'date',        // Order by date
-                'order' => 'DESC',           // Sort in descending order
-            );
+        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
+        <!-- Post Carousel -->
+        <?php 
+        // The Query
+        $blogArgs = array(
+            'post_type' => 'post',   // Specify the custom post type
+            'posts_per_page' => -1,      // Number of posts to display
+            'orderby' => 'date',        // Order by date
+            'order' => 'DESC',           // Sort in descending order
+        );
 
-            $blogQuery = new WP_Query($blogArgs); ?>
+        $blogQuery = new WP_Query($blogArgs); ?>
 
 
-            <div class="owl-blog owl-carousel owl-theme my-8">
-                <?php            
-                // The Loop
-                if ($blogQuery->have_posts()) :
-                    while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                    
-                    $categories = get_the_category();
-                    ?>
-
-                    <div class="item blogCarousel_wrapper min-h-[450px]">
-                        <?php the_post_thumbnail('post-carousel'); ?>
-                        <div class="mt-3 mb-4">
-                            <?php
-                            foreach ( $categories as $category ) {
-                                // Display the category name
-                                echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                            }
-                            ?>
-                        </div>
-                        <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                        <div class="text-black font-averta font-medium text-sm leading-tight">
-                            <?php echo wp_trim_words(get_the_content(), 22);  ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                    </div>
-
-                <?php
-                    endwhile;
-                else :
-                    // No posts found
-                    echo 'No testimonials found';
-                endif; 
-                wp_reset_postdata();
+        <div class="owl-blog owl-carousel owl-theme my-8">
+            <?php            
+            // The Loop
+            if ($blogQuery->have_posts()) :
+                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
+                
+                $categories = get_the_category();
                 ?>
-            </div>
+
+                <div class="item blogCarousel_wrapper min-h-[450px]">
+                    <?php the_post_thumbnail('post-carousel'); ?>
+                    <div class="mt-3 mb-4">
+                        <?php
+                        foreach ( $categories as $category ) {
+                            // Display the category name
+                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
+                        }
+                        ?>
+                    </div>
+                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
+                    <div class="text-black font-averta font-medium text-sm leading-tight">
+                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
+                </div>
+
+            <?php
+                endwhile;
+            else :
+                // No posts found
+                echo 'No testimonials found';
+            endif; 
+            wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>

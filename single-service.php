@@ -28,19 +28,9 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
             </div>
             <!-- Content -->
             <div class="relative z-10">
-                <h1 class="font-averta text-white font-bold text-6xl w-[40%] leading-tight"><?php echo the_title(); ?></h1>
-                <a class="bg-white py-2 px-5 rounded-xl text-black font-averta font-bold flex items-center w-fit mt-7" href="<?php echo site_url('/contact-us')?>" type="button">
-                <span>Speak To An Expert</span>
-                <svg class="mt-1 ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_509_229)">
-                    <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="black"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_509_229">
-                    <rect width="19" height="12" fill="black" transform="translate(0.5)"/>
-                    </clipPath>
-                    </defs>
-                </svg>
+                <h1 class="font-averta text-white font-bold text-6xl w-[40%] leading-tight mb-7"><?php echo the_title(); ?></h1>
+                <a href="<?php echo site_url('/contact-us')?>">
+                    <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-medium text-black text-lg"><span>Speak To An Expert</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                 </a>
             </div>
         </div>
@@ -199,18 +189,8 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
         <div class="getInTouch_wrapper">
             <h3 class="text-white font-averta text-center font-bold text-xl mb-6">Have any questions?</h3>
             <div class="flex justify-center">
-                <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center text-base font-semibold" type="button" href="<?php echo site_url('/contact-us')?>">
-                <span>Get In Touch</span>
-                <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_509_229)">
-                    <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_509_229">
-                    <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                    </clipPath>
-                    </defs>
-                </svg>    
+                <a href="<?php echo site_url('/contact-us')?>">
+                    <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>Get In Touch</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                 </a>
             </div>
         </div>
@@ -270,19 +250,9 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                     <div class="relatedProjectPost_wrapper p-14">
                         <img src="<?php echo get_the_post_thumbnail_url($relatedProejct->ID, 'related-project'); ?>" alt="">
                         <h2 class="text-black font-averta font-bold text-2xl mt-4"><?php echo $relatedProejct->post_title; ?></h2>
-                        <p class="font-averta text-sm font-medium leading-snug my-4"><?php echo wp_trim_words($relatedProjectExcerptText); ?></p>
-                        <a class="bg-blue py-2 px-7 rounded-xl text-white flex items-center text-base font-semibold w-fit" type="button" href="<?php echo get_page_link($relatedProejct->ID) ?>">
-                        <span>Read Case Study</span>
-                        <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="white" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_509_229)">
-                            <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="white"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_509_229">
-                            <rect width="19" height="12" fill="white" transform="translate(0.5)"/>
-                            </clipPath>
-                            </defs>
-                        </svg>    
+                        <p class="font-averta text-sm font-medium leading-snug my-4"><?php echo wp_trim_words($relatedProjectExcerptText); ?></p>  
+                        <a href="<?php echo get_page_link($relatedProejct->ID) ?>">
+                            <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>Read Case Study</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -311,18 +281,8 @@ if($relatedTestimonials) {?>
                             <div class='embed-container'>
                                 <iframe src='https://player.vimeo.com/video/<?php echo $relatedTestmionialVimeoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                             </div>
-                            <a class="bg-white py-2 px-7 rounded-xl text-black flex items-center w-fit text-lg font-semibold mt-5 absolute -bottom-20" type="button" href="<?php echo get_post_type_archive_link('testimonial')?>">
-                                <span>Customer Stories</span>
-                                <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_509_229)">
-                                    <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="black"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_509_229">
-                                    <rect width="19" height="12" fill="black" transform="translate(0.5)"/>
-                                    </clipPath>
-                                    </defs>
-                                </svg>    
+                            <a class="absolute -bottom-20" href="<?php echo get_page_link($post->ID) ?>">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-medium text-black text-lg"><span>Read Customer Story</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
                         </div>
                         <!-- Content Area -->
