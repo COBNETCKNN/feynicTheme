@@ -4,7 +4,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 ?>
 
 <!-- Hero Section -->
-<section id="singleProject" class="h-[550px] w-full relative">
+<section id="singleProject" class="h-[500px] w-full relative">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singleProject_url); ?>');">
         <div class="container mx-auto h-full w-full">
             <!-- Breadcrumbs -->
@@ -27,7 +27,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
             </nav>
             </div>
             <!-- Content -->
-            <div class="relative z-10 flex justify-start items-center h-full w-full">
+            <div class="relative z-10 pt-7">
                 <?php 
                 $singleInisghtHeroHeading = get_field('single_insight_hero_heading');
                 ?>

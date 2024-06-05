@@ -68,48 +68,90 @@ header {
       overflow: hidden;
       position: relative;
   }
-  
-  ul.subnav,
-  .whatwedoNav {
-      min-width: 66px;
-      min-height: 400px;
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      overflow: hidden;
-      right: 23%;
-      z-index: 9999;
-      transition: opacity 0.8s ease;
-  }
 
-  .insightsNav {
+/* Initial state */
+ul.subnav,
+.whatwedoNav,
+.insightsNav {
     min-width: 66px;
     min-height: 400px;
     opacity: 0;
     visibility: hidden;
     position: absolute;
     overflow: hidden;
-    right: 20%;
-    z-index: 9999;
-    transition: opacity 0.8s ease;
-  }
+    z-index: 9998;
+    transition: visibility 0.8s ease;
+}
 
-  .navbar li:hover .whatwedoNav { 
-    opacity: 1;
+/* Specific position for the menus */
+.whatwedoNav {
+    right: 23%;
+}
+
+.insightsNav {
+    right: 20%;
+}
+
+/* Hover state for whatwedoNav */
+.navbar li:hover .whatwedoNav {
+    animation: fadeIn 0.8s forwards; /* Apply fade-in animation */
     visibility: visible;
-  }
-  .navbar li:hover .insightsNav { 
-    opacity: 1;
+}
+
+.navbar li:hover .whatwedoNav .whatwedoNav_content__wrapper {
+    animation-delay: 1s;
+    animation: fadeIn 2s;
+}
+
+/* Non-hover state for whatwedoNav */
+.navbar li .whatwedoNav {
+    animation: fadeOut 0.8s forwards; /* Apply fade-out animation */
+}
+
+/* Hover state for insightsNav */
+.navbar li:hover .insightsNav {
+    animation: fadeIn 0.8s forwards; /* Apply fade-in animation */
     visibility: visible;
-  }
+}
+
+.navbar li:hover .insightsNav .insightNav_content__wrapper {
+    animation-delay: 1s;
+    animation: fadeIn 2s;
+}
+
+/* Non-hover state for insightsNav */
+.navbar li .insightsNav {
+    animation: fadeOut 0.8s forwards; /* Apply fade-out animation */
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for the fade-out effect */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
   
   .subnav li { display: block; }
   .subnav li a {
       padding: 8px;
       display: block;
   }
+
   .subnav li:hover {
-      background-color: #111;
+    background-color: #111;
     background: -webkit-linear-gradient(#111,#333,#222,#000);
     background: -o-linear-gradient(#111,#333,#222,#000);
     background: -moz-linear-gradient(#111,#333,#222,#000);
@@ -165,42 +207,35 @@ header {
     }
   }
 
-.owl-blog {
-    .owl-prev {
-        height: 40px;
-        width: 40px;
-    }
-    
-    .owl-prev::before {
-        content: url(../assets/icons/leftCarousel.svg);
-        transform: scale(0.6);
-      }
-    
-    .owl-prev span {
-        display: none;
-    }
-    
-    
-    .owl-next {
-        height: 40px;
-        width: 40px;
-        margin-left: 26px;
-    
-        span {
-            display: none;
-        }
-    }
-    
-    .owl-next::before {
-        content: url(../assets/icons/rightCarousel.svg);
-        transform: scale(0.6);
-      }
-    
-    .owl-nav {
-        display: flex;
-        justify-content: end;
-        margin-top: 1.5rem;
-    }
+  .owl-prev, .owl-next {
+    height: 35px;
+    width: 35px;
+    margin-left: 1.5rem;
+  }
+  .owl-prev::before, .owl-next::before {
+    transform: scale(0.6);
+  }
+  .owl-prev span, .owl-next span {
+      display: none;
+  }
+  .owl-nav {
+      display: flex;
+      justify-content: end;
+      margin-top: 1.5rem;
+  }
+  /* Light mode icons */
+  .owl-prev::before {
+      content: url('../assets/icons/leftCarousel.svg');
+  }
+  .owl-next::before {
+      content: url('../assets/icons/rightCarousel.svg');
+  }
+  /* Dark mode icons */
+  .dark .owl-prev::before {
+      content: url('../assets/icons/leftCarousel-dark.svg');
+  }
+  .dark .owl-next::before {
+      content: url('../assets/icons/rightCarousel-dark.svg');
   }
 
   .objectiveCard_number {
@@ -217,7 +252,6 @@ header {
     border-radius: 15px;
   }
 
-  .servicesListing_card::after,
   .whatWeDo_whoWeWorkWith__card::after {
     content: ""; /* Create a pseudo-element to act as the overlay */
     position: absolute; /* Position the overlay relative to its parent div */
@@ -230,8 +264,26 @@ header {
     border-radius: 15px;
 }
 
+.servicesListing_card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.servicesListing_card:hover::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .proejcts_thumbnail__wrapper,
-.spotlightContent_image {
+.spotlightContent_image,
+.specializationContent_wrapper {
     img {
         border-radius: 15px;
     }
@@ -461,7 +513,7 @@ header {
 }
 
 .contactForm_reason {
-  margin-top: 30px;
+  margin-bottom: 20px;
   width: 100%;
   background-color: transparent;
   padding: 10px 10px;
@@ -624,7 +676,7 @@ header {
   color: #fff;
   padding: 10px 0;
   text-align: center;
-  z-index: 1000; /* Ensure the header is above other content */
+  z-index: 9999; /* Ensure the header is above other content */
 }
 
 main {
@@ -759,4 +811,133 @@ select {
 .mx-10 {
   margin-left: 5vh;
   margin-right: 5vh;
+}
+
+.workWithFeynic_wrapper {
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.owl-projects {
+  .owl-nav,
+  .owl-dots {
+    display: none;
+  }
+ }
+
+ .playlist-item {
+  cursor: pointer;
+  margin: 5px 0;
+  padding: 10px;
+}
+.playlist-item:hover {
+  background-color: #f1f5f9;
+}
+
+.scrollable-container {
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+/* Scrollbar customization for WebKit browsers */
+.scrollable-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f0f0f0; 
+  border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+#hero {
+  background-image: url('../assets/svgBackgrounds/Feynic-Icon-Background-Vector.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -100px;
+}
+
+#serviceContent {
+  background-image: url('../assets/svgBackgrounds/Feynic-Icon-Background-Vector.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -100px;
+}
+
+#strategicInititative {
+  background-image: url('../assets/svgBackgrounds/Feynic-Icon-Background-Vector.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#blogArchiveSingle {
+  background-image: url('../assets/svgBackgrounds/blog_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 659px center; /* Adjust the value as needed */
+}
+
+#aboutHero {
+  background-image: url('../assets/svgBackgrounds/blog_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#bottomFooter {
+  background-image: url('../assets/svgBackgrounds/Feynic-Footer-Background-Vector.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blue_overlay {
+  opacity: 0;
+  background-color: #0086D6;
+  border-radius: 1rem;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+
+.hero_partners__thumbnails:hover {
+  .blue_overlay {
+    opacity: 0.5;
+  }
+}
+
+.accrediations_wrapper {
+  display:none;
+}
+
+.serviceListin_cardSvg__wrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+}
+
+.servicesListing_card:hover .serviceListin_cardSvg__wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.accrediations_close__button {
+  svg {
+    transform: rotate(180deg);
+    margin-top: 4px;
+  }
+}
+
+.display-none {
+  @apply hidden;
 }

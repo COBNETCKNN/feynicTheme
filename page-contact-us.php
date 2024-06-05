@@ -48,7 +48,7 @@ $contactHeroDescription = get_field('contact_hero_description');
     </div>
 </section>
 
-<section id="formInfo" class="py-48 bg-white">
+<section id="formInfo" class="py-24 bg-white">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="grid grid-cols-2 gap-24">

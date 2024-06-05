@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="blogArchiveSingle" class="py-14 bg-white">
+<section id="blogArchiveSingle" class="pt-14 bg-white">
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs_wrapper relative z-10">
@@ -19,15 +19,9 @@
         </nav>
         </div>
         <div class="blogArchive_heading__wrapper py-24">
-            <h1 class="text-black font-averta text-6xl font-bold leading-tight">Insights & <br>Event News</h1>
+            <h1 class="text-black font-averta text-6xl font-bold leading-tight">Insights & <br>Events</h1>
         </div>
-    </div>
-</section>
-
-
-<!-- Featured post -->
-<section id="blogArchiveFeatured">
-    <div class="container mx-auto">
+        <!-- Featured post -->
         <div class="mx-10">
             <div class="singleFeatured_wrapper bg-black py-14 px-14 rounded-2xl">
                 <div class="grid grid-cols-2 gap-4">

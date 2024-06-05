@@ -6,7 +6,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 
 
 <!-- Hero Section -->
-<section id="singlePartnerHero" class="h-[550px] w-full relative">
+<section id="singlePartnerHero" class="h-[500px] w-full relative">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singlePartner_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -29,7 +29,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                 </nav>
             </div>
             <!-- Content -->
-            <div class="relative z-10">
+            <div class="relative z-10 pt-7">
                 <h4 class="font-averta text-white font-light text-1xl">Feynic For</h4>
                 <h1 class="font-averta text-white font-bold text-6xl leading-none mb-4"><?php echo the_title(); ?></h1>
                 <h4 class="font-averta text-white font-light text-lg w-[38%]"><?php echo $singlePartnerHeroText; ?></h4>
@@ -42,7 +42,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 </section>
 
 <!-- Hero Content Section -->
-<section id="singlePartnerHeroContent" class="py-36 bg-white">
+<section id="singlePartnerHeroContent" class="py-24 bg-white">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php if( have_rows('wwww_hero_subtext') ): ?>
@@ -63,7 +63,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 </section>
 
 <!-- How We Help -->
-<section id="howWeHelp" class="py-24 bg-white">
+<section id="howWeHelp" class="py-14 bg-white">
     <div class="container mx-auto">
         <div class="mx-10">
             <h2 class="font-averta text-black font-bold text-2.5xl text-center mb-10">How We Help <span class="blue_font"><?php echo the_title(); ?></span></h2>
@@ -82,8 +82,8 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                                 <span class="text-black text-1xl font-bold bg-white py-0.5 px-4"><?php echo $i; ?></span>
                             </div>
                             <div class="objectiveCard_content">
-                                <h3 class="text-white text-xl font-averta font-bold mb-2 w-[50%]"><?php echo $howWeHelpTitle; ?></h3>
-                                <div class="text-white text-normal font-averta">
+                                <h3 class="text-white text-xl font-averta font-bold mb-2"><?php echo $howWeHelpTitle; ?></h3>
+                                <div class="text-white text-normal font-averta text-sm">
                                     <?php echo $howWeHelpDescription; ?>
                                     <?php $i++; ?>
                                 </div>
@@ -114,7 +114,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                         ?>
 
                         <h2 class="font-averta text-white text-3xl font-normal mb-6"><?php echo $guidanceForGrowthHeading; ?></h2>
-                        <div class="font-averta text-white text-lg font-light mb-8">
+                        <div class="font-averta text-white text-sm font-light mb-8">
                             <?php echo $guidanceForGrowthDescription; ?>
                         </div>
                         <a  href="<?php echo get_post_type_archive_link('testimonial');?>">
@@ -144,111 +144,114 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 <section id="strategicInititative" class="py-14 bg-white">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Why <?php echo the_title(); ?> work with us</h2>
-            <div class="grid grid-cols-3 gap-4">
-            <?php if( have_rows('wwww_strategic_initiatives_cards') ): ?>
-                <?php while( have_rows('wwww_strategic_initiatives_cards') ): the_row(); 
-                
-                $strategicInititativeHeading = get_sub_field('wwww_strategic_initiatives_cards_heading');
-                $strategicInititativeDescription = get_sub_field('wwww_strategic_initiatives_cards_description');
-                ?>
-
-                <div class="bg-blue rounded-xl text-center p-5 min-h-[230px]">
-                    <h4 class="text-white font-averta text-xl font-bold mb-6"><?php echo $strategicInititativeHeading; ?></h4>
-                    <p class="text-white text-normal font-averta"><?php echo $strategicInititativeDescription; ?></p>
-                </div>
-
-                <?php endwhile; ?>
-            <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Expertise Domains -->
-<section id="expertiseDomains" class="py-24 bg-white">
-    <div class="container mx-auto">
-        <div class="mx-10">
-            <?php if( have_rows('wwww_expertise_domains') ): ?>
-            <?php while( have_rows('wwww_expertise_domains') ): the_row(); ?>
-            <div class="grid grid-cols-2 gap-4">
-                <?php if( have_rows('wwww_expertise_domains_core_values') ): ?>
-                    <?php while( have_rows('wwww_expertise_domains_core_values') ): the_row(); 
+            <div class="pb-14">
+                <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Why <?php echo the_title(); ?> work with us</h2>
+                <div class="grid grid-cols-3 gap-4">
+                <?php if( have_rows('wwww_strategic_initiatives_cards') ): ?>
+                    <?php while( have_rows('wwww_strategic_initiatives_cards') ): the_row(); 
                     
-                    $coreValuesTitle = get_sub_field('wwww_expertise_domains_core_values_title');
+                    $strategicInititativeHeading = get_sub_field('wwww_strategic_initiatives_cards_heading');
+                    $strategicInititativeDescription = get_sub_field('wwww_strategic_initiatives_cards_description');
                     ?>
-                    <!-- Core Values -->
-                    <div class="">
-                        <h2 class="text-black font-averta font-bold text-xl"><?php echo $coreValuesTitle; ?></h2>
-                        <!-- Card Repeater -->
-                        <?php if( have_rows('wwww_expertise_domains_core_values_core_value_cards') ): ?>
-                            <?php while( have_rows('wwww_expertise_domains_core_values_core_value_cards') ): the_row(); 
-                            
-                            $coreValueCardHeading = get_sub_field('wwww_expertise_domains_core_values_core_value_cards_heading');
-                            $coreValueCardDescription = get_sub_field('wwww_expertise_domains_core_values_core_value_cards_description');
-                            ?>
 
-                            <div class="expertiseCard_wrapper bg-brown my-6 px-10 py-7 rounded-xl">
-                                <h4 class="text-black font-averta text-2xlg font-bold"><?php echo $coreValueCardHeading; ?></h4>
-                                <p class="font-averta text-black text-sm font-medium leading-snug"><?php echo $coreValueCardDescription; ?></p>
-                            </div>
-
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                    <div class="bg-blue rounded-xl text-center p-5 min-h-[230px]">
+                        <h4 class="text-white font-averta text-xl font-bold mb-6"><?php echo $strategicInititativeHeading; ?></h4>
+                        <p class="text-white text-normal font-averta text-sm"><?php echo $strategicInititativeDescription; ?></p>
                     </div>
+
                     <?php endwhile; ?>
                 <?php endif; ?>
-                    <!-- Specialization content -->
-                    <div class="my-auto ml-20">
-                        <div class="specializationContent_wrapper font-averta text-black text-lg font-medium mb-10">
-                            <?php 
-                                $specializationContent = get_sub_field('wwww_expertise_domains_specializations_text');
-                                echo $specializationContent;
+                </div>
+            </div>
+            <!-- Expertise Domains -->
+            <div class="py-24">
+                <?php if( have_rows('wwww_expertise_domains') ): ?>
+                    <?php while( have_rows('wwww_expertise_domains') ): the_row(); ?>
+                        <?php if( have_rows('wwww_expertise_domains_core_values') ): ?>
+                            <?php while( have_rows('wwww_expertise_domains_core_values') ): the_row(); 
+                            
+                            $coreValuesTitle = get_sub_field('wwww_expertise_domains_core_values_title');
                             ?>
+                            <h2 class="text-black font-averta font-bold text-xl"><?php echo $coreValuesTitle; ?></h2>
+                            <div class="grid grid-cols-2 gap-4">
+
+                                    <!-- Core Values -->
+                                    <div class="">
+
+                                        <!-- Card Repeater -->
+                                        <?php if( have_rows('wwww_expertise_domains_core_values_core_value_cards') ): ?>
+                                            <?php while( have_rows('wwww_expertise_domains_core_values_core_value_cards') ): the_row(); 
+                                            
+                                            $coreValueCardHeading = get_sub_field('wwww_expertise_domains_core_values_core_value_cards_heading');
+                                            $coreValueCardDescription = get_sub_field('wwww_expertise_domains_core_values_core_value_cards_description');
+                                            ?>
+
+                                            <div class="expertiseCard_wrapper bg-brown my-6 px-10 py-7 rounded-xl">
+                                                <h4 class="text-black font-averta text-2xlg font-bold"><?php echo $coreValueCardHeading; ?></h4>
+                                                <p class="font-averta text-black text-sm font-medium leading-snug"><?php echo $coreValueCardDescription; ?></p>
+                                            </div>
+
+                                            <?php endwhile; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                                    <!-- Specialization content -->
+                                    <div class="my-auto ml-20 my-auto">
+                                        <div class="specializationContent_wrapper font-averta text-black text-lg font-medium mb-7">
+                                            <?php 
+                                                $specializationImage = get_sub_field('wwww_expertise_domains_specializations_image');
+                                                $specializationImageSize = 'approach-thumbnail';
+
+                                                if( $specializationImage ) {
+                                                    echo wp_get_attachment_image( $specializationImage, $specializationImageSize );
+                                                }
+                                            ?>
+                                        </div>
+                                        <a href="<?php echo site_url('/contact-us')?>">
+                                            <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-sm"><span>Get In Touch</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                                        </a>
+                                    </div>
+                                </div>
+                        <!-- Spotlight Content -->
+                        <div class="pt-36 pb-0">
+                            <div class="grid grid-cols-2 gap-4">
+                                <?php if( have_rows('wwww_expertise_domains_core_values_spotlight_section') ): ?>
+                                    <?php while( have_rows('wwww_expertise_domains_core_values_spotlight_section') ): the_row(); ?>
+
+                                    <!-- Content -->
+                                    <div class="my-auto">
+                                    <?php if( have_rows('wwww_expertise_domains_core_values_spotlight_section_content') ): ?>
+                                        <?php while( have_rows('wwww_expertise_domains_core_values_spotlight_section_content') ): the_row(); 
+                                        
+                                        $spotlightContentHeading = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_heading');
+                                        $spotlighContentDescription = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_subtext');
+                                        ?>
+
+                                        <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
+                                        <p class="font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></p>
+
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
+                                    </div>
+                                    <!-- Image -->
+                                    <div class="spotlightContent_image flex justify-end">
+                                        <?php 
+                                        $spotlightImage = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_image');
+                                        $spotlightImageSize = 'approach-thumbnail';
+                                            if( $spotlightImage ) {
+                                                echo wp_get_attachment_image( $spotlightImage, $spotlightImageSize );
+                                            }
+                                        ?>
+                                    </div>
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <a href="<?php echo site_url('/contact-us')?>">
-                            <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-sm"><span>Get In Touch</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
-                        </a>
-                    </div>
-                </div>
-                <!-- Spotlight Content -->
-                <div class="py-36">
-                    <div class="grid grid-cols-2 gap-4">
-                        <?php if( have_rows('wwww_expertise_domains_core_values_spotlight_section') ): ?>
-                            <?php while( have_rows('wwww_expertise_domains_core_values_spotlight_section') ): the_row(); ?>
-
-                            <!-- Content -->
-                            <div class="my-auto">
-                            <?php if( have_rows('wwww_expertise_domains_core_values_spotlight_section_content') ): ?>
-                                <?php while( have_rows('wwww_expertise_domains_core_values_spotlight_section_content') ): the_row(); 
-                                
-                                $spotlightContentHeading = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_heading');
-                                $spotlighContentDescription = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_subtext');
-                                ?>
-
-                                <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
-                                <p class="font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></p>
-
-                                <?php endwhile; ?>
-                            <?php endif; ?>
-                            </div>
-                            <!-- Image -->
-                            <div class="spotlightContent_image flex justify-end">
-                                <?php 
-                                $spotlightImage = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_image');
-                                $spotlightImageSize = 'approach-thumbnail';
-                                    if( $spotlightImage ) {
-                                        echo wp_get_attachment_image( $spotlightImage, $spotlightImageSize );
-                                    }
-                                ?>
-                            </div>
-
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        <?php endif; ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

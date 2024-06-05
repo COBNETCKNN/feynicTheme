@@ -4,7 +4,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 ?>
 
 <!-- Hero Section -->
-<section id="singleServiceHero" class="h-[550px] w-full relative">
+<section id="singleServiceHero" class="h-[500px] w-full relative">
     <div class="w-full h-full singleServiceHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singleService_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -27,7 +27,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                 </nav>
             </div>
             <!-- Content -->
-            <div class="relative z-10">
+            <div class="relative z-10 pt-14">
                 <h1 class="font-averta text-white font-bold text-6xl w-[40%] leading-tight mb-7"><?php echo the_title(); ?></h1>
                 <a href="<?php echo site_url('/contact-us')?>">
                     <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-medium text-black text-lg"><span>Speak To An Expert</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
@@ -38,7 +38,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Hero Content Section -->
-<section id="singleServiceHeroContent" class="py-36 bg-white">
+<section id="singleServiceHeroContent" class="py-24 bg-white">
     <div class="container mx-auto">
         <?php if( have_rows('wwd_hero_content') ): ?>
             <?php while( have_rows('wwd_hero_content') ): the_row(); 
@@ -57,7 +57,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- What That Looks Like Section -->
-<section id="singleServiceWTLL" class="py-14 bg-white">
+<section id="singleServiceWTLL" class="pt-14 bg-white">
     <div class="container mx-auto">
         <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">What that looks like</h2>
         <div class="grid grid-cols-3 gap-4">
@@ -82,103 +82,91 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
     </div>
 </section>
 
-<!-- Approach Section -->
-<section id="singleServiceApproach" class="py-36 bg-white">
+<!-- Single Service Content -->
+<section id="serviceContent" class="py-14">
     <div class="container mx-auto">
-        <div class="grid grid-cols-2 gap-4">
-            <!-- Content -->
-            <div class="my-auto">
-            <?php if( have_rows('wwd_approach') ): ?>
-                <?php while( have_rows('wwd_approach') ): the_row(); ?>
-                    <?php if( have_rows('wwd_approach_content') ): ?>
-                        <?php while( have_rows('wwd_approach_content') ): the_row(); 
+        <!-- Approach Section -->
+        <div class="pt-36 pb-14">
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Content -->
+                <div class="my-auto">
+                <?php if( have_rows('wwd_approach') ): ?>
+                    <?php while( have_rows('wwd_approach') ): the_row(); ?>
+                        <?php if( have_rows('wwd_approach_content') ): ?>
+                            <?php while( have_rows('wwd_approach_content') ): the_row(); 
 
-                        $approachHeading = get_sub_field('wwd_approach_content_heading');
-                        $approachSubtext = get_sub_field('wwd_approach_content_subtext');
+                            $approachHeading = get_sub_field('wwd_approach_content_heading');
+                            $approachSubtext = get_sub_field('wwd_approach_content_subtext');
 
-                        ?>
-
-                        <div class="approachContent_wrapper">
-                            <span class="text-blue font-averta font-bold text-lg">Approach</span>
-                            <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $approachHeading; ?></h2>
-                            <p class="font-averta text-sm font-medium leading-snug"><?php echo $approachSubtext; ?></p>
-                        </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-
-
-                        </div>
-                        <!-- Image -->
-                        <div class="approachImage_wrapper flex justify-end">
-                            <?php 
-                                $approachImage = get_sub_field('wwd_approach_thumbnail');
-                                $approachImageSize = 'approach-thumbnail'; // (thumbnail, medium, large, full or custom size)
-                                if( $approachImage ) {
-                                    echo wp_get_attachment_image( $approachImage, $approachImageSize );
-                                }
                             ?>
-                        </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
+
+                            <div class="approachContent_wrapper">
+                                <span class="text-blue font-averta font-bold text-lg">Approach</span>
+                                <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $approachHeading; ?></h2>
+                                <p class="font-averta text-sm font-medium leading-snug"><?php echo $approachSubtext; ?></p>
+                            </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+
+
+                            </div>
+                            <!-- Image -->
+                            <div class="approachImage_wrapper flex justify-end">
+                                <?php 
+                                    $approachImage = get_sub_field('wwd_approach_thumbnail');
+                                    $approachImageSize = 'approach-thumbnail'; // (thumbnail, medium, large, full or custom size)
+                                    if( $approachImage ) {
+                                        echo wp_get_attachment_image( $approachImage, $approachImageSize );
+                                    }
+                                ?>
+                            </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+        <!-- Use Cases Section -->
+        <div class="py-24">
+            <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Some Use Cases</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <?php if( have_rows('wwd_use_cases') ): ?>
+                    <?php while( have_rows('wwd_use_cases') ): the_row(); 
+                    
+                    $useCaseHeading = get_sub_field('wwd_use_case_heading');
+                    $useCaseSubtext = get_sub_field('wwd_use_case_subtext');
+                    ?>
 
-<!-- Use Cases Section -->
-<section id="useCases" class="py-36 bg-white">
-    <div class="container mx-auto">
-        <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Some Use Cases</h2>
-        <div class="grid grid-cols-3 gap-4">
-            <?php if( have_rows('wwd_use_cases') ): ?>
-                <?php while( have_rows('wwd_use_cases') ): the_row(); 
-                
-                $useCaseHeading = get_sub_field('wwd_use_case_heading');
-                $useCaseSubtext = get_sub_field('wwd_use_case_subtext');
-                ?>
+                    <div class="useCase_card bg-black p-5 rounded-xl min-h-[210px]">
+                        <h4 class="text-white font-averta font-bold text-xl text-center mb-3"><?php echo $useCaseHeading; ?></h4>
+                        <p class="font-averta text-white text-center text-sm font-medium leading-snug"><?php echo $useCaseSubtext; ?></p>
+                    </div>
 
-                <div class="useCase_card bg-black p-5 rounded-xl min-h-[210px]">
-                    <h4 class="text-white font-averta font-bold text-xl text-center mb-3"><?php echo $useCaseHeading; ?></h4>
-                    <p class="font-averta text-white text-center text-sm font-medium leading-snug"><?php echo $useCaseSubtext; ?></p>
-                </div>
-
-                <?php endwhile; ?>
-            <?php endif; ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-</section>
+        <!-- Why Feynic Section -->
+        <div class="py-24">
+            <div class="grid grid-cols-2 gap-24">
+                <?php if( have_rows('why_feynic_group') ): ?>
+                    <?php while( have_rows('why_feynic_group') ): the_row(); 
 
-<!-- Why Feynic Section -->
-<section id="whyFeynic" class="py-36 bg-white">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-2 gap-24">
-            <?php if( have_rows('why_feynic_group') ): ?>
-                <?php while( have_rows('why_feynic_group') ): the_row(); 
-
-                $whyFeynicText = get_sub_field('why_feynic_text');
-                ?>
-                    <!-- Text Area -->
-                    <div class="text-black font-averta text-lg font-normal my-auto">
-                        <?php echo $whyFeynicText; ?>
-                    </div>
-                    <!-- Expertise Repeater -->
-                    <div class="">
-                    <h2 class="text-black font-averta font-bold text-xl">Why Choose <span class="blue_font">Feynic</span>?</h4>
-                    <?php if( have_rows('why_feynic_expertise_cards') ): ?>
-                        <?php while( have_rows('why_feynic_expertise_cards') ): the_row(); 
-                        
-                        $expertiseCardTitle = get_sub_field('why_feynic_expertise_cards_title');
-                        $expertiseCardDescription = get_sub_field('why_feynic_expertise_cards_description');
-                        ?>
-
-                        <div class="expertiseCard_wrapper bg-brown my-6 px-10 py-7 rounded-xl">
-                            <h4 class="text-black font-averta text-2xlg font-bold"><?php echo $expertiseCardTitle; ?></h4>
-                            <p class="font-averta text-black text-sm font-medium leading-snug"><?php echo $expertiseCardDescription; ?></p>
+                    $whyFeynicText = get_sub_field('why_feynic_text');
+                    $whyFeynicVimeoID = get_sub_field('vimeo_video_id');
+                    ?>
+                        <!-- Text Area -->
+                        <div class="text-black font-averta text-lg font-normal my-auto">
+                            <h2 class="text-black font-averta font-bold text-xl mb-7">Why Choose <span class="blue_font">Feynic</span>?</h4>
+                            <?php echo $whyFeynicText; ?>
                         </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
+                        <!-- Vimeo Video -->
+                        <div class="testmionialVimeo_wrapper h-[400px] relative my-auto">
+                            <div class='embed-container'>
+                                <iframe src='https://player.vimeo.com/video/<?php echo $whyFeynicVimeoID ; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>
@@ -197,6 +185,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
     </div>
 </section>
 
+<!-- Related Projects -->
 <section id="relatedProjects" class="py-14 bg-white">
     <div class="container mx-auto">
         <!-- Spotlight Content -->
@@ -309,7 +298,6 @@ if($relatedTestimonials) {?>
                         </div>
                     </div>
                 <?php endforeach; 
-                
                 wp_reset_postdata();?>
         </div>
     </div>

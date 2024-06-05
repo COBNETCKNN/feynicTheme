@@ -12,13 +12,34 @@ jQuery(document).ready(function(jQuery){
       }
     }); 
 
-    // Owl carousel for Partners
-    var owl = jQuery('.owl-partners');
+    // Footer accrediations
+    jQuery(function () {
+        jQuery(".accrediations_wrapper").slice(0, 2).show(); // Show the first 2 items initially
+        jQuery("body").on('click touchstart', '.accrediations_loadMore__button', function (e) {
+            e.preventDefault();
+            jQuery(".accrediations_wrapper:hidden").slice(0, 30).slideDown();
+            if (jQuery(".accrediations_wrapper:hidden").length == 0) {
+                jQuery(".accrediations_loadMore__button").hide();
+                jQuery(".accrediations_close").show(); // Show the close button when all items are visible
+            }
+        });
+
+        jQuery("body").on('click touchstart', '.accrediations_close__button', function (e) {
+            e.preventDefault();
+            jQuery(".accrediations_wrapper").not(':lt(2)').slideUp(function() {
+                jQuery(".accrediations_loadMore__button").show(); // Show the load more button again
+                jQuery(".accrediations_close").hide(); // Hide the close button again
+            });
+        });
+    });
+
+    // Owl carousel for Projects
+    var owl = jQuery('.owl-projects');
     owl.owlCarousel({
         nav:true,
-        loop: true,
-        autoplay:true,
-        autoplayTimeout:2000,
+        autoplay: true,
+        rewind: true,
+        autoplayTimeout:3000,
         responsive:{
             0:{
                 items:2,
@@ -33,16 +54,16 @@ jQuery(document).ready(function(jQuery){
                 margin:40,
             },            
             960:{
-                items:5,
-                margin:50,
+                items: 3,
+                margin: 70,
             },
             1200:{
-                items: 5,
-                margin:50,
+                items: 3,
+                margin: 70,
             },
             1440: {
-                items: 5,
-                margin:50,
+                items: 3,
+                margin: 70,
             }
         }
     });
@@ -115,3 +136,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.querySelectorAll('.playlist-item').forEach(item => {
+    item.addEventListener('click', function() {
+        var videoId = this.getAttribute('data-video-id');
+        var player = document.getElementById('vimeo-player');
+        player.src = 'https://player.vimeo.com/video/' + videoId;
+    });
+});
+
+AOS.init();
+

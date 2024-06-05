@@ -2,6 +2,7 @@ module.exports = {
   content: require('fast-glob').sync([
       './**/*.php'
   ]),
+  darkMode: 'class',
   theme: {
     container: {
     },
@@ -12,6 +13,7 @@ module.exports = {
       colors: {
         blue: '#0086D6',
         brown: '#DEDEDE',
+        darkbg: '1E1E1E',
       },
       fontSize: {
         'xs': '0.875rem',

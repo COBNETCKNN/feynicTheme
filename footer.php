@@ -12,7 +12,7 @@
         </form>
     </div>
     </section>
-    <section id="bottomFooter" class="bg-blue py-10">
+    <section id="bottomFooter" class="bg-blue py-10 relative">
         <div class="container mx-auto">
             <div class="grid grid-cols-5 gap-4">
                 <!-- Quick Links -->
@@ -85,7 +85,7 @@
 
                 <!-- Accrediations -->
                 <div class="footer_accrediations">
-                    <h3 class="text-white font-averta font-bold text-1xlg text-start pb-5">Accrediations</h3>
+                    <h3 class="text-white font-averta font-bold text-1xlg text-start pb-5">Our Accrediations</h3>
                     <?php if( have_rows('footer_accreditations') ): ?>
                         <?php while( have_rows('footer_accreditations') ): the_row(); 
 
@@ -93,12 +93,29 @@
                             $accrediationsSize = 'footer-accrediations'; // (thumbnail, medium, large, full or custom size)
                             if( $accrediationImages ): ?>
                                 <?php foreach( $accrediationImages as $accrediationImage ): ?>
-
+                                    <div class="accrediations_wrapper pb-3" style="display: none;">
                                         <?php echo wp_get_attachment_image( $accrediationImage, $accrediationsSize ); ?>
+                                    </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
+                    <div class="accrediations_loadMore ml-16 mt-5">
+                        <a href="" class="accrediations_loadMore__button bg-white py-0.5 px-2 text-xs font-averta text-black font-medium rounded-lg flex items-center w-fit">
+                            <span class="mr-1">View more </span>
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5384 4.10493C1.81177 3.83156 2.25498 3.83156 2.52835 4.10493L4.83337 6.40995L7.1384 4.10493C7.41177 3.83156 7.85498 3.83156 8.12835 4.10493C8.40172 4.37829 8.40172 4.82151 8.12835 5.09488L5.32835 7.89488C5.05498 8.16824 4.61177 8.16824 4.3384 7.89488L1.5384 5.09488C1.26503 4.82151 1.26503 4.37829 1.5384 4.10493Z" fill="#0086D6"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="accrediations_close ml-16 mt-5" style="display: none;">
+                        <a href="" class="accrediations_close__button bg-white py-0.5 px-2 text-xs font-averta text-black font-medium rounded-lg flex items-center w-fit">
+                            <span class="mr-1">View less</span>
+                            <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5384 4.10493C1.81177 3.83156 2.25498 3.83156 2.52835 4.10493L4.83337 6.40995L7.1384 4.10493C7.41177 3.83156 7.85498 3.83156 8.12835 4.10493C8.40172 4.37829 8.40172 4.82151 8.12835 5.09488L5.32835 7.89488C5.05498 8.16824 4.61177 8.16824 4.3384 7.89488L1.5384 5.09488C1.26503 4.82151 1.26503 4.37829 1.5384 4.10493Z" fill="#0086D6"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <!-- Social Media -->
                 <div class="">
@@ -154,9 +171,11 @@
             </div>
             <div class="flex justify-between mt-14 pt-3 border-t border-white text-white font-averta font-light">
                 <span>Copyright Feynic Technology <?php echo date("Y"); ?></span>
-                <a class="footerCredential_link" href="https://www.sensostudio.co/">
-                <span>Created By Senso Studio</span>
+                <a href="https://www.sensostudio.co/" target="_blank">
+                    <img class="w-auto h-[32px]" src="<?php echo get_template_directory_uri() ?>/assets/icons/Senso-Footer-Tag-Light.svg">
                 </a>
+
+                </div>
             </div>
         </div>
     </section>

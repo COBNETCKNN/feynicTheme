@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="aboutHero" class="py-14 bg-white">
+<section id="aboutHero" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs_wrapper relative z-10">
@@ -68,13 +68,8 @@
             </div>
             <?php endwhile; ?>
         <?php endif; ?>
-    </div>
-</section>
-
-<!-- Featured Video -->
-<section class="vimeoVideo py-36 bg-blue">
-    <div class="container mx-auto">
-        <div class="mx-10">
+        <!-- Featured Video -->
+        <div class="mx-10 py-14">
             <?php 
             $aboutVimeoVideo = get_field('featured_vimeo_video');
             ?>
@@ -85,13 +80,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Suppost Services -->
-<section id="supportServices" class="py-14 bg-white">
-    <div class="container mx-auto">
-        <div class="mx-10">
+        <!-- Suppost Services -->
+        <div class="mx-10 py-14">
             <?php if( have_rows('about_innovation_support_services') ): ?>
                 <?php while( have_rows('about_innovation_support_services') ): the_row(); 
                 
