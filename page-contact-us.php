@@ -5,7 +5,7 @@ $contactHeroDescription = get_field('contact_hero_description');
 ?>
 
 <!-- Hero Section -->
-<section id="singlePartnerHero" class="h-[450px] w-full relative">
+<section id="singlePartnerHero" class="h-[450px] w-full relative bg-white dark:bg-zinc-800">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($contactHero_url); ?>');">
         <div class="container mx-auto">
             <div class="mx-10">
@@ -48,7 +48,7 @@ $contactHeroDescription = get_field('contact_hero_description');
     </div>
 </section>
 
-<section id="formInfo" class="py-24 bg-white">
+<section id="formInfo" class="py-24 bg-white bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="grid grid-cols-2 gap-24">

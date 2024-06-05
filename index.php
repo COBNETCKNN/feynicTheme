@@ -1,16 +1,16 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="blogArchiveSingle" class="pt-14 bg-white">
+<section id="blogArchiveSingle" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs_wrapper relative z-10">
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-light mb-10">
             <ol>
                 <li>
-                <a href="<?php echo site_url(); ?>">Home</a>
+                <a class="text-black dark:text-white" href="<?php echo site_url(); ?>">Home</a>
                 </li>
-                <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
+                <span aria-hidden="true" class="breadcrumb-separator text-black dark:text-white">&gt;</span>
                 <li>
                 <a class="text-blue font-bold" href="<?php echo site_url('/blog')?>">Insights</a>
                 </li>
@@ -19,7 +19,7 @@
         </nav>
         </div>
         <div class="blogArchive_heading__wrapper py-24">
-            <h1 class="text-black font-averta text-6xl font-bold leading-tight">Insights & <br>Events</h1>
+            <h1 class="text-black dark:text-white font-averta text-6xl font-bold leading-tight">Insights & <br>Events</h1>
         </div>
         <!-- Featured post -->
         <div class="mx-10">
@@ -91,7 +91,7 @@
 </section>
 
 <!-- Categories Ajax filter and Search bar -->
-<section id="filterSearchBar" class="pt-14 bg-white">
+<section id="filterSearchBar" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="flex justify-between">
@@ -120,9 +120,9 @@
                 <!-- Search bar -->
                 <div class="">
                 <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?>">
-                    <div class="flex">
+                    <div class="flex searchbar_wrapper">
                         <label class="screen-reader-text" for="s">Search for:</label>
-                        <input type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search..."/>
+                        <input class="serachbar_input" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Search..."/>
                         <button type="submit" id="searchsubmit" class="searchsubmit relative"></button>
                     </div>
                 </form>
@@ -133,7 +133,7 @@
 </section>
 
 <!-- Posts query --->
-<section id="postsQuery" class="py-14 bg-white">
+<section id="postsQuery" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div id="posts-container">

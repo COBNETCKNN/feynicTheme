@@ -4,7 +4,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 ?>
 
 <!-- Hero Section -->
-<section id="singleProject" class="h-[500px] w-full relative">
+<section id="singleProject" class="h-[500px] w-full relative bg-white dark:bg-zinc-800">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singleProject_url); ?>');">
         <div class="container mx-auto h-full w-full">
             <!-- Breadcrumbs -->
@@ -38,12 +38,12 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Company Credentials -->
-<section id="companyCredentials" class="py-24 bg-white">
+<section id="companyCredentials" class="py-24 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php if( have_rows('single_insight_company_credentials') ): ?>
             <?php while( have_rows('single_insight_company_credentials') ): the_row(); ?>
-            <div class="grid grid-cols-2 gap-4 bg-brown py-24 px-16 rounded-xl">
+            <div class="grid grid-cols-2 gap-4 bg-brown dark:bg-black py-24 px-16 rounded-xl">
                 <!-- Content -->
                 <div class="my-auto">
                 <?php if( have_rows('single_insight_company_credentials_content') ): ?>
@@ -53,8 +53,8 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                     $companyCredentialsDescription = get_sub_field('single_insight_company_credentials_content_company_description');
                     ?>
 
-                    <h2 class="font-averta text-black font-bold text-5xl"><?php echo $companyCredentialsHeading; ?></h2>
-                    <p class="text-black font-averta font-medium text-base leading-tight"><?php echo $companyCredentialsDescription; ?></p>
+                    <h2 class="font-averta text-black dark:text-white font-bold text-5xl"><?php echo $companyCredentialsHeading; ?></h2>
+                    <p class="text-black dark:text-white font-averta font-medium text-base leading-tight"><?php echo $companyCredentialsDescription; ?></p>
                     <div class="flex justify-start my-10">
                         <?php if( have_rows('single_insight_company_credentials_content_tags') ): ?>
                             <?php while( have_rows('single_insight_company_credentials_content_tags') ): the_row(); 
@@ -62,7 +62,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                             $companyCredentialsTag = get_sub_field('single_insight_company_credentials_content_repeater_tag');
                             ?>
 
-                                <span class="font-averta py-1 px-3 bg-black rounded text-white mr-3"><?php echo $companyCredentialsTag; ?></span>
+                                <span class="font-averta py-1 px-3 bg-black dark:bg-white rounded text-white dark:text-black mr-3"><?php echo $companyCredentialsTag; ?></span>
 
                             <?php endwhile; ?>
                         <?php endif; ?>
@@ -81,7 +81,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 
                         <div class="share-social block">
                         <div class="line hidden md:block"></div>
-                        <div class="font-averta font-bold text-lg text-black">Share:</div>
+                        <div class="font-averta font-bold text-lg text-black dark:text-white">Share:</div>
                         <div class="share-social_wrapper flex justify-start mt-2">
                             <!-- Linkedin sharing icon -->
                             <a href="<?php echo $linkedInUrl; ?>" target="_blank" class="sharing_socialMedia sharing_sociaMedia__linkedin mr-3"></a>
@@ -110,7 +110,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
     </div>
 </section>
 
-<section id="singleInisghtContent" class="py-14 bg-white">
+<section id="singleInisghtContent" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php
@@ -132,7 +132,7 @@ $singleProject_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Testimonial -->
-<section id="singleProjectTestimonial" class="py-14 bg-white">
+<section id="singleProjectTestimonial" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="singleProjectTestimonial_wrapper bg-blue py-32 px-24 rounded-3xl">

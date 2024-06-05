@@ -1,15 +1,15 @@
 <?php get_header() ?>
 
 <!-- What We Do Hero Section -->
-<section id="whatWeDoHero" class="py-14 bg-white">
+<section id="whatWeDoHero" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Breadcrumb -->
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-semibold mb-10">
         <ol>
             <li>
-            <a href="<?php echo site_url(); ?>">Home</a>
+            <a class="text-black dark:text-white" href="<?php echo site_url(); ?>">Home</a>
             </li>
-            <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
+            <span aria-hidden="true" class="breadcrumb-separator text-black dark:text-white">&gt;</span>
             <li>
             <a href="#" class="text-blue"><?php echo the_title(); ?></a>
             </li>
@@ -29,21 +29,21 @@
 </section>
 
 <!-- Page Description -->
-<section id="Description" class="py-10 bg-white">
+<section id="Description" class="py-10 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="whatWeDo_heroSubtext__wrapper">
                 <?php 
                 $heroSubtext = get_field('whatwedo_hero_subtext');
                 ?>
-                <h2 class="font-averta text-black font-normal text-2.5xl text-center"><?php echo $heroSubtext; ?></h2>
+                <h2 class="font-averta text-black dark:text-white font-normal text-2.5xl text-center"><?php echo $heroSubtext; ?></h2>
             </div>
         </div>
     </div>
 </section>
 
 <!-- What We Do Section -->
-<section id="whatWeDo" class="py-20 bg-white">
+<section id="whatWeDo" class="py-20 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="servicesListing py-10 flex justify-between items-center">
@@ -83,7 +83,7 @@
     </div>
 </section>
 
-<section id="whoWeWorkWith" class="py-24 bg-white">
+<section id="whoWeWorkWith" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="grid grid-cols-2 gap-4">
@@ -97,8 +97,8 @@
 
                     ?>
 
-                    <h2 class="text-black font-averta text-xl font-bold mb-7"><?php echo $whoWeWorkWithHeading; ?></h2>
-                    <p class="font-averta text-lg font-medium leading-snug w-[80%]"><?php echo $whoWeWorkWithSubtext; ?></p>
+                    <h2 class="text-black dark:text-white font-averta text-xl font-bold mb-7"><?php echo $whoWeWorkWithHeading; ?></h2>
+                    <p class="text-black dark:text-white font-averta text-lg font-medium leading-snug w-[80%]"><?php echo $whoWeWorkWithSubtext; ?></p>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 </div>
@@ -143,7 +143,7 @@
 </section>
 
 <!-- Vimeo Video -->
-<section id="vimeoVideo" class="py-36 bg-white">
+<section id="vimeoVideo" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php 
@@ -159,7 +159,7 @@
 </section>
 
 <!-- Case Studies -->
-<section id="caseStudies" class="py-36 bg-white">
+<section id="caseStudies" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="grid grid-cols-3 gap-32">
@@ -181,8 +181,8 @@
 
                     <div class="min-h-[450px] mx-auto relative">
                         <?php the_post_thumbnail('whoweworkwith-casestudies'); ?>
-                        <h4 class="text-black font-averta font-bold text-xl my-2 leading-snug"><?php echo the_title(); ?></h4>
-                        <div class="text-black font-averta font-medium text-sm leading-tight">
+                        <h4 class="text-black dark:text-white font-averta font-bold text-xl my-2 leading-snug"><?php echo the_title(); ?></h4>
+                        <div class="text-black dark:text-white font-averta font-medium text-sm leading-tight">
                             <?php echo wp_trim_words(get_the_content(), 22);  ?>
                         </div>
                         <a class="w-full h-full absolute top-0 left-0 z-10" href="<?php the_permalink(); ?>"></a>
@@ -232,18 +232,8 @@
                     <div class='embed-container'>
                         <iframe src='https://player.vimeo.com/video/<?php echo $vimeoVideoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
-                    <a class="bg-white py-2 px-7 rounded-xl text-black flex items-center w-fit text-lg font-semibold mt-5 absolute -bottom-20" type="button" href="<?php echo get_post_type_archive_link('testimonial')?>">
-                        <span>Customer Stories</span>
-                        <svg class="ml-2" width="20" height="12" viewBox="0 0 20 12" fill="black" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_509_229)">
-                            <path d="M19.3371 5.60733C19.3371 5.60733 19.3263 5.59633 19.3219 5.59193L14.0171 0.218005C13.8065 -0.0394679 13.4309 -0.0724773 13.1768 0.140983C12.9227 0.354444 12.8902 0.735152 13.1008 0.992625C13.1247 1.02123 13.1486 1.04544 13.1768 1.06965L17.4632 5.41808H1.09714C0.767086 5.41808 0.5 5.68876 0.5 6.02325C0.5 6.35775 0.767086 6.62842 1.09714 6.62842H17.4632L13.1703 10.9725C12.9466 11.2101 12.9466 11.5864 13.1703 11.8241C13.4026 12.0596 13.7761 12.0596 14.0085 11.8241L19.3176 6.44137C19.5499 6.2147 19.5565 5.8406 19.3328 5.60513L19.3371 5.60733Z" fill="black"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_509_229">
-                            <rect width="19" height="12" fill="black" transform="translate(0.5)"/>
-                            </clipPath>
-                            </defs>
-                        </svg>    
+                    <a class="flex items-center w-fit text-lg font-semibold mt-5 absolute -bottom-20" type="button" href="<?php echo get_post_type_archive_link('testimonial')?>">
+                        <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue dark:bg-black px-6 py-2 font-medium text-white dark:text-white text-lg"><span>Customer Stories</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>  
                     </a>
                 </div>
                 <!-- Content Area -->
@@ -278,57 +268,9 @@
 </section>
 
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white">
+<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-        <!-- Post Carousel -->
-        <?php 
-        // The Query
-        $blogArgs = array(
-            'post_type' => 'post',   // Specify the custom post type
-            'posts_per_page' => -1,      // Number of posts to display
-            'orderby' => 'date',        // Order by date
-            'order' => 'DESC',           // Sort in descending order
-        );
-
-        $blogQuery = new WP_Query($blogArgs); ?>
-
-
-        <div class="owl-blog owl-carousel owl-theme my-8">
-            <?php            
-            // The Loop
-            if ($blogQuery->have_posts()) :
-                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                
-                $categories = get_the_category();
-                ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px]">
-                    <?php the_post_thumbnail('post-carousel'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $categories as $category ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
-        </div>
+        <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>
 </section>
 

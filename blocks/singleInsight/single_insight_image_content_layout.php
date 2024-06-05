@@ -22,8 +22,8 @@
                 ?>
 
                 <span class="text-blue font-averta font-bold text-lg"><?php echo $singleInsightImageContentTitle; ?></span>
-                <h3 class="text-black font-averta font-bold text-4xl mb-3"><?php echo $singleInsightImageContentHeading; ?></h3>
-                <div class="font-averta text-sm font-medium leading-snug flex justify-center">
+                <h3 class="text-black dark:text-white font-averta font-bold text-4xl mb-3"><?php echo $singleInsightImageContentHeading; ?></h3>
+                <div class="text-black dark:text-white font-averta text-sm font-medium leading-snug flex justify-center">
                     <?php echo $singleInsihtImageContentText; ?>
                 </div>
                 <?php endwhile; ?>

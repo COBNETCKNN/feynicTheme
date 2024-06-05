@@ -8,9 +8,9 @@
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-light mb-10">
             <ol>
                 <li>
-                <a href="<?php echo site_url(); ?>">Home</a>
+                <a class="text-black dark:text-white" href="<?php echo site_url(); ?>">Home</a>
                 </li>
-                <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
+                <span class="text-black dark:text-white" aria-hidden="true" class="breadcrumb-separator">&gt;</span>
                 <li>
                 <a class="text-blue font-bold" href="<?php echo site_url('/about')?>">About Feynic</a>
                 </li>
@@ -27,9 +27,9 @@
             <!-- Hero Content -->
             <div class="mx-10">
                 <div class="aboutHero_content pb-14 pt-10">
-                    <h1 class="font-averta text-black font-bold text-5xl text-center my-6"><?php echo $aboutHeroHeading; ?></h1>
+                    <h1 class="font-averta text-black dark:text-white font-bold text-5xl text-center my-6"><?php echo $aboutHeroHeading; ?></h1>
                     <div class="flex justify-center">
-                        <h4 class="text-black font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $aboutHeroSubtext; ?></h4>
+                        <h4 class="text-black dark:text-white font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $aboutHeroSubtext; ?></h4>
                     </div>
                 </div>
                 <!-- Spotlight Section -->
@@ -45,8 +45,8 @@
                             $aboutSpotlightSubtext = get_sub_field('about_spotlight_section_subtext');
                             ?>
 
-                                <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $aboutSpotlightHeading; ?></h2>
-                                <p class="font-averta text-sm font-medium leading-snug"><?php echo $aboutSpotlightSubtext; ?></p>
+                                <h2 class="text-black dark:text-white font-averta font-bold text-2xl my-4"><?php echo $aboutSpotlightHeading; ?></h2>
+                                <p class="text-black dark:text-white font-averta text-sm font-medium leading-snug"><?php echo $aboutSpotlightSubtext; ?></p>
 
                             <?php endwhile; ?>
                         <?php endif; ?>
@@ -89,9 +89,9 @@
                 $supportServicesSubtext = get_sub_field('Innovation Support Services_subtext');
                 ?>
 
-                <h2 class="font-averta text-black font-bold text-3xl text-center my-6"><?php echo $supportServicesHeading; ?></h2>
+                <h2 class="font-averta text-black dark:text-white font-bold text-3xl text-center my-6"><?php echo $supportServicesHeading; ?></h2>
                 <div class="flex justify-center">
-                    <h4 class="text-black font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $supportServicesSubtext; ?></h4>
+                    <h4 class="text-black dark:text-white font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $supportServicesSubtext; ?></h4>
                 </div>
 
                 <?php endwhile; ?>
@@ -101,10 +101,10 @@
 </section>
 
 <!-- Team -->
-<section id="Team" class="py-14 bg-white">
+<section id="Team" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="text-black font-averta text-start font-bold text-1xl mb-10">The Team</h2>
+            <h2 class="text-black dark:text-white font-averta text-start font-bold text-1xl mb-10">The Team</h2>
             <?php if( have_rows('about_team') ): ?>
                 <?php while( have_rows('about_team') ): the_row();  ?>
                 <div class="grid grid-cols-5 gap-4">
@@ -129,9 +129,9 @@
                         $theTeamBiography = get_sub_field('about_team_about_biography');
                         ?>
 
-                        <h4 class="font-averta text-black text-2.5xl font-bold"><?php echo $theTeamName; ?></h4>
+                        <h4 class="font-averta text-black dark:text-white text-2.5xl font-bold"><?php echo $theTeamName; ?></h4>
                         <h5 class="font-averta text-blue text-xl font-bold"><?php echo $theTeamPosition; ?></h5>
-                        <div class="biography_wrapper my-5 font-averta text-black text-base">
+                        <div class="biography_wrapper my-5 font-averta text-black dark:text-white text-base">
                             <?php echo $theTeamBiography; ?>
                         </div>
                         <!-- Contact -->
@@ -181,10 +181,10 @@
 </section>
 
 <!-- Accrediations -->
-<section id="Accreditations" class="py-36 bg-white">
+<section id="Accreditations" class="py-36 dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Our Accreditations</h2>
+            <h2 class="text-black dark:text-white font-averta text-center font-bold text-1xl mb-10">Our Accreditations</h2>
             <?php 
             $aboutAccreditationImage = get_field('about_accreditations');
             $aboutAccreditationImagesize = 'about-accreditation'; // (thumbnail, medium, large, full or custom size)
@@ -200,57 +200,9 @@
 </section>
 
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white">
+<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h3 class="text-start text-black font-averta text-2xl font-bold">Latest news & insights</h3>
-        <!-- Post Carousel -->
-        <?php 
-        // The Query
-        $blogArgs = array(
-            'post_type' => 'post',   // Specify the custom post type
-            'posts_per_page' => -1,      // Number of posts to display
-            'orderby' => 'date',        // Order by date
-            'order' => 'DESC',           // Sort in descending order
-        );
-
-        $blogQuery = new WP_Query($blogArgs); ?>
-
-
-        <div class="owl-blog owl-carousel owl-theme my-8">
-            <?php            
-            // The Loop
-            if ($blogQuery->have_posts()) :
-                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                
-                $categories = get_the_category();
-                ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px]">
-                    <?php the_post_thumbnail('post-carousel'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $categories as $category ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
-        </div>
+        <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>
 </section>
 

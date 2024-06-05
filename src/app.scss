@@ -834,6 +834,10 @@ select {
   background-color: #f1f5f9;
 }
 
+.dark .playlist-item:hover {
+  background-color: #3f3f46;
+}
+
 .scrollable-container {
   width: 100%;
   height: 400px;
@@ -899,6 +903,13 @@ select {
   background-repeat: no-repeat;
 }
 
+.singleProjectTestimonial_wrapper {
+  background-image: url('../assets/svgBackgrounds/Feynic-Footer-Background-Vector.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .blue_overlay {
   opacity: 0;
   background-color: #0086D6;
@@ -941,3 +952,18 @@ select {
 .display-none {
   @apply hidden;
 }
+
+.dark .searchsubmit {
+  background-color: #27272a;
+}
+
+.dark .serachbar_input {
+  background-color: #27272a;
+}
+
+.sun_wrapper,
+.moon_wrapper {
+  border-radius: 50%;
+}
+
+

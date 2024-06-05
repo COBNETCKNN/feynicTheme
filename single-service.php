@@ -4,7 +4,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 ?>
 
 <!-- Hero Section -->
-<section id="singleServiceHero" class="h-[500px] w-full relative">
+<section id="singleServiceHero" class="h-[500px] w-full relative bg-white dark:bg-zinc-800">
     <div class="w-full h-full singleServiceHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singleService_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -38,7 +38,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Hero Content Section -->
-<section id="singleServiceHeroContent" class="py-24 bg-white">
+<section id="singleServiceHeroContent" class="py-24 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <?php if( have_rows('wwd_hero_content') ): ?>
             <?php while( have_rows('wwd_hero_content') ): the_row(); 
@@ -47,9 +47,9 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
             $wwdHeroSubtext = get_sub_field('wwd_hero_subtext');
             ?>
 
-            <h2 class="font-averta text-black font-bold text-2.5xl text-center my-6"><?php echo $wwdHeroHeading; ?></h2>
+            <h2 class="font-averta text-black dark:text-white font-bold text-2.5xl text-center my-6"><?php echo $wwdHeroHeading; ?></h2>
             <div class="flex justify-center">
-                <p class="text-black font-averta text-center font-medium text-1xl w-[80%] leading-tight"><?php echo $wwdHeroSubtext; ?></p>
+                <p class="text-black dark:text-white font-averta text-center font-medium text-1xl w-[80%] leading-tight"><?php echo $wwdHeroSubtext; ?></p>
             </div>
             <?php endwhile; ?>
         <?php endif; ?>
@@ -57,9 +57,9 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- What That Looks Like Section -->
-<section id="singleServiceWTLL" class="pt-14 bg-white">
+<section id="singleServiceWTLL" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">What that looks like</h2>
+        <h2 class="text-black dark:text-white font-averta text-center font-bold text-1xl mb-10">What that looks like</h2>
         <div class="grid grid-cols-3 gap-4">
         <?php $i = 1; ?>
         <?php if( have_rows('wwd_what_that_looks_like') ): ?>
@@ -83,7 +83,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Single Service Content -->
-<section id="serviceContent" class="py-14">
+<section id="serviceContent" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Approach Section -->
         <div class="pt-36 pb-14">
@@ -102,8 +102,8 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 
                             <div class="approachContent_wrapper">
                                 <span class="text-blue font-averta font-bold text-lg">Approach</span>
-                                <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $approachHeading; ?></h2>
-                                <p class="font-averta text-sm font-medium leading-snug"><?php echo $approachSubtext; ?></p>
+                                <h2 class="text-black dark:text-white font-averta font-bold text-2xl my-4"><?php echo $approachHeading; ?></h2>
+                                <div class="text-black dark:text-white font-averta text-sm font-medium leading-snug"><?php echo $approachSubtext; ?></div>
                             </div>
                             <?php endwhile; ?>
                         <?php endif; ?>
@@ -126,7 +126,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
         </div>
         <!-- Use Cases Section -->
         <div class="py-24">
-            <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Some Use Cases</h2>
+            <h2 class="text-black dark:text-white font-averta text-center font-bold text-1xl mb-10">Some Use Cases</h2>
             <div class="grid grid-cols-3 gap-4">
                 <?php if( have_rows('wwd_use_cases') ): ?>
                     <?php while( have_rows('wwd_use_cases') ): the_row(); 
@@ -154,8 +154,8 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                     $whyFeynicVimeoID = get_sub_field('vimeo_video_id');
                     ?>
                         <!-- Text Area -->
-                        <div class="text-black font-averta text-lg font-normal my-auto">
-                            <h2 class="text-black font-averta font-bold text-xl mb-7">Why Choose <span class="blue_font">Feynic</span>?</h4>
+                        <div class="text-black dark:text-white font-averta text-lg font-normal my-auto">
+                            <h2 class="text-black dark:text-white font-averta font-bold text-xl mb-7">Why Choose <span class="blue_font">Feynic</span>?</h4>
                             <?php echo $whyFeynicText; ?>
                         </div>
                         <!-- Vimeo Video -->
@@ -186,7 +186,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 </section>
 
 <!-- Related Projects -->
-<section id="relatedProjects" class="py-14 bg-white">
+<section id="relatedProjects" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Spotlight Content -->
         <div class="py-36">
@@ -203,8 +203,8 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
                         $spotlighContentDescription = get_sub_field('wwd_spotlight_section_subtext');
                         ?>
 
-                        <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
-                        <p class="font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></p>
+                        <h2 class="text-black dark:text-white font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
+                        <div class="text-black dark:text-white font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></div>
 
                         <?php endwhile; ?>
                     <?php endif; ?>
@@ -238,10 +238,10 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 
                     <div class="relatedProjectPost_wrapper p-14">
                         <img src="<?php echo get_the_post_thumbnail_url($relatedProejct->ID, 'related-project'); ?>" alt="">
-                        <h2 class="text-black font-averta font-bold text-2xl mt-4"><?php echo $relatedProejct->post_title; ?></h2>
-                        <p class="font-averta text-sm font-medium leading-snug my-4"><?php echo wp_trim_words($relatedProjectExcerptText); ?></p>  
+                        <h2 class="text-black dark:text-white font-averta font-bold text-2xl mt-4"><?php echo $relatedProejct->post_title; ?></h2>
+                        <p class="text-black dark:text-white font-averta text-sm font-medium leading-snug my-4"><?php echo wp_trim_words($relatedProjectExcerptText); ?></p>  
                         <a href="<?php echo get_page_link($relatedProejct->ID) ?>">
-                            <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-lg"><span>Read Case Study</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                            <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white dark:text-black text-lg"><span>Read Case Study</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -271,7 +271,7 @@ if($relatedTestimonials) {?>
                                 <iframe src='https://player.vimeo.com/video/<?php echo $relatedTestmionialVimeoID; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                             </div>
                             <a class="absolute -bottom-20" href="<?php echo get_page_link($post->ID) ?>">
-                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-medium text-black text-lg"><span>Read Customer Story</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-white dark:bg-black px-6 py-2 font-medium text-black dark:text-white text-lg"><span>Read Customer Story</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
                         </div>
                         <!-- Content Area -->
@@ -304,61 +304,11 @@ if($relatedTestimonials) {?>
 </section>
 <?php }?>
 
-
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white">
+<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-        <!-- Post Carousel -->
-        <?php 
-        // The Query
-        $blogArgs = array(
-            'post_type' => 'post',   // Specify the custom post type
-            'posts_per_page' => -1,      // Number of posts to display
-            'orderby' => 'date',        // Order by date
-            'order' => 'DESC',           // Sort in descending order
-        );
-
-        $blogQuery = new WP_Query($blogArgs); ?>
-
-
-        <div class="owl-blog owl-carousel owl-theme my-8">
-            <?php            
-            // The Loop
-            if ($blogQuery->have_posts()) :
-                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                
-                $categories = get_the_category();
-                ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px]">
-                    <?php the_post_thumbnail('post-carousel'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $categories as $category ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php 
-                        $excerptTextPost = get_field('single_blog_excerpt_text');
-                        echo wp_trim_words($excerptTextPost, 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
-        </div>
+        <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>
 </section>
+
 <?php get_footer(); ?>

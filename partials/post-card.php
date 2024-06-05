@@ -12,8 +12,8 @@ $blogCategories = get_the_category();
         }
         ?>
     </div>
-    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-    <div class="text-black font-averta font-medium text-sm leading-tight">
+    <h4 class="text-black dark:text-white font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
+    <div class="text-black dark:text-white font-averta font-medium text-sm leading-tight">
         <?php 
         $excerptTextPost = get_field('single_blog_excerpt_text');
         echo wp_trim_words($excerptTextPost, 22);  ?>

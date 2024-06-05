@@ -1,20 +1,20 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="singlePostHero" class="py-14 bg-white">
+<section id="singlePostHero" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs_wrapper relative z-10">
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-light mb-10">
             <ol>
                 <li>
-                <a href="<?php echo site_url(); ?>">Home</a>
+                <a class="text-black dark:text-white" href="<?php echo site_url(); ?>">Home</a>
                 </li>
-                <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
+                <span aria-hidden="true" class="breadcrumb-separator text-black dark:text-white">&gt;</span>
                 <li>
-                <a href="<?php echo site_url('/blog')?>">Insights</a>
+                <a class="text-black dark:text-white" href="<?php echo site_url('/blog')?>">Insights</a>
                 </li>
-                <span aria-hidden="true" class="breadcrumb-separator">&gt;</span>
+                <span aria-hidden="true" class="breadcrumb-separator text-black dark:text-white">&gt;</span>
                 <li>
                 <a href="<?php echo the_permalink(); ?>" class="text-blue font-semibold"><?php echo the_title(); ?></a>
                 </li>
@@ -77,7 +77,7 @@
 </section>
 
 <!-- Content Blocks -->
-<section id="singlePostContentBlocks" class="py-14 bg-white">
+<section id="singlePostContentBlocks" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
     <?php
         if( have_rows('content_blocks') ):
@@ -97,57 +97,9 @@
 </section>
 
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white">
+<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-        <!-- Post Carousel -->
-        <?php 
-        // The Query
-        $blogArgs = array(
-            'post_type' => 'post',   // Specify the custom post type
-            'posts_per_page' => -1,      // Number of posts to display
-            'orderby' => 'date',        // Order by date
-            'order' => 'DESC',           // Sort in descending order
-        );
-
-        $blogQuery = new WP_Query($blogArgs); ?>
-
-
-        <div class="owl-blog owl-carousel owl-theme my-8">
-            <?php            
-            // The Loop
-            if ($blogQuery->have_posts()) :
-                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                
-                $categories = get_the_category();
-                ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px]">
-                    <?php the_post_thumbnail('post-carousel'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $categories as $category ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
-        </div>
+        <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>
 </section>
 

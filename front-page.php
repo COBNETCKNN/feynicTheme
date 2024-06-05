@@ -266,8 +266,8 @@
                 </div>
                 <!-- Vimeo Playlist -->
                 <div class="col-span-2 my-auto">
-                    <div id="playlist" class="bg-white rounded-2xl">
-                        <h4 class="font-averta font-bold text-xl text-black py-3 px-5">Suggested Content</h4>
+                    <div id="playlist" class="bg-white dark:bg-zinc-800 rounded-2xl">
+                        <h4 class="font-averta font-bold text-xl text-black dark:text-white py-3 px-5">Suggested Content</h4>
                         <div class="scrollable-container">
                             <div class="">
                                 <?php if( have_rows('homepage_testimonial_playlist') ): ?>
@@ -287,7 +287,7 @@
                                                 echo wp_get_attachment_image( $testiomnialPlaylistImage, $testiomnialPlaylistImageSize );
                                             }
                                             ?>
-                                            <h5 class="text-lg font-averta text-black font-bold ml-5"><?php echo $testimonialPlaylistTitle; ?></h5>
+                                            <h5 class="text-lg font-averta text-black dark:text-white font-bold ml-5"><?php echo $testimonialPlaylistTitle; ?></h5>
                                         </div>
 
                                     <?php endwhile; ?>

@@ -97,3 +97,8 @@ function exclude_pages_from_search($query) {
     return $query;
 }
 add_filter('pre_get_posts', 'exclude_pages_from_search');
+
+// Getting the path to dark mode logo
+function get_dark_mode_logo() {
+    return get_template_directory_uri() . '/assets/images/feynicTheme_logo__white.png';
+}

@@ -21,8 +21,11 @@
                     <?php 
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                        $dark_mode_logo = get_dark_mode_logo();
+
                         if ( has_custom_logo() ) {
-                            echo '<img class="logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                            echo '<img class="logo light-mode-logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                            echo '<img class="logo dark-mode-logo" src="' . esc_url( $dark_mode_logo ) . '" alt="' . get_bloginfo( 'name' ) . '" style="display:none;">';
                         } else {
                             echo '<h1>' . get_bloginfo('name') . '</h1>';
                         }
@@ -196,59 +199,78 @@
             </div>
             <!-- Get in touch button -->
             <div class="flex items-center">
-                <div class="hidden dark:flex mr-5">
-                    <img class="sun cursor-pointer h-[35px] w-[35px]" src="<?php echo get_template_directory_uri() ?>/assets/icons/sun-2-svgrepo-com.svg" alt="light_mod">
+                <div class="darkMode_icons__wrapper bg-zinc-800 dark:bg-blue h-[40px] w-[70px] relative rounded-2xl">
+                    <div class="sun_wrapper hidden dark:flex absolute right-1 top-1 bg-black p-1">
+                        <img class="sun cursor-pointer h-[25px] w-[25px]" src="<?php echo get_template_directory_uri() ?>/assets/icons/navDark.svg" alt="light_mod">
                     </div>
-                    <div class="flex dark:hidden">
-                    <img class="moon cursor-pointer h-[35px] w-[35px]" src="<?php echo get_template_directory_uri() ?>/assets/icons/moon-svgrepo-com.svg" alt="dark_mod">
+                    <div class="moon_wrapper flex dark:hidden absolute left-1 top-1 bg-blue p-1">
+                        <img class="moon cursor-pointer h-[25px] w-[25px] bg-blue" src="<?php echo get_template_directory_uri() ?>/assets/icons/navLight.svg" alt="dark_mod">
+                    </div>
                 </div>
-                </a><a href="<?php echo site_url('/contact-us')?>">
+                <a class="ml-5" href="<?php echo site_url('/contact-us')?>">
                     <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white text-sm"><span>Get In Touch</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                 </a>
             </div>
         </div>
     </div>
     <script>
-        // Dark mode
-        // Don't forget to put this in separate file and load it in the header
-        const sunIcon = document.querySelector(".sun");
-        const moonIcon = document.querySelector(".moon");
+      document.addEventListener('DOMContentLoaded', () => {
+            const sunIcon = document.querySelector(".sun");
+            const moonIcon = document.querySelector(".moon");
+            const lightLogo = document.querySelector('.light-mode-logo');
+            const darkLogo = document.querySelector('.dark-mode-logo');
 
-        const userTheme = localStorage.getItem("theme");
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const userTheme = localStorage.getItem("theme");
+            const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        const iconToggle = () => {
-            moonIcon.classList.toggle("display-none");
-            sunIcon.classList.toggle("display-none");
-        };
-        const themeCheck = () => {
-            if (userTheme === "dark" || (!userTheme && systemTheme)) {
+            const iconToggle = () => {
+                moonIcon.classList.toggle("display-none");
+                sunIcon.classList.toggle("display-none");
+            };
+
+            const logoToggle = (isDarkMode) => {
+                if (isDarkMode) {
+                    lightLogo.style.display = 'none';
+                    darkLogo.style.display = 'block';
+                } else {
+                    lightLogo.style.display = 'block';
+                    darkLogo.style.display = 'none';
+                }
+            };
+
+            const themeCheck = () => {
+                if (userTheme === "dark" || (!userTheme && systemTheme)) {
+                    document.documentElement.classList.add("dark");
+                    moonIcon.classList.add("display-none");
+                    logoToggle(true);
+                    return;
+                }
+                sunIcon.classList.add("display-none");
+                logoToggle(false);
+            };
+
+            const themeSwitch = () => {
+                if (document.documentElement.classList.contains("dark")) {
+                    document.documentElement.classList.remove("dark");
+                    localStorage.setItem("theme", "light");
+                    iconToggle();
+                    logoToggle(false);
+                    return;
+                }
                 document.documentElement.classList.add("dark");
-                moonIcon.classList.add("display-none");
-                return;
-            }
-            sunIcon.classList.add("display-none");
-        };
-
-        const themeSwitch = () => {
-            if (document.documentElement.classList.contains("dark")) {
-                document.documentElement.classList.remove("dark");
-                localStorage.setItem("theme", "light");
+                localStorage.setItem("theme", "dark");
                 iconToggle();
-                return;
-            }
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-            iconToggle();
-        };
+                logoToggle(true);
+            };
 
-        sunIcon.addEventListener("click", () => {
-            themeSwitch();
-        });
-        moonIcon.addEventListener("click", () => {
-            themeSwitch();
-        });
+            sunIcon.addEventListener("click", () => {
+                themeSwitch();
+            });
+            moonIcon.addEventListener("click", () => {
+                themeSwitch();
+            });
 
-        themeCheck();
+            themeCheck();
+        });
     </script>
 </header>

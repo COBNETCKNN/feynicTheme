@@ -6,7 +6,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 
 
 <!-- Hero Section -->
-<section id="singlePartnerHero" class="h-[500px] w-full relative">
+<section id="singlePartnerHero" class="h-[500px] w-full relative bg-white dark:bg-zinc-800">
     <div class="w-full h-full singlePartnerHero_wrapper py-14" style="background-image: url('<?php echo esc_url($singlePartner_url); ?>');">
         <div class="container mx-auto">
             <!-- Breadcrumbs -->
@@ -42,7 +42,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 </section>
 
 <!-- Hero Content Section -->
-<section id="singlePartnerHeroContent" class="py-24 bg-white">
+<section id="singlePartnerHeroContent" class="py-24 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <?php if( have_rows('wwww_hero_subtext') ): ?>
@@ -52,9 +52,9 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                 $wwwwHeroSubtext = get_sub_field('wwww_hero_subtext_subtext');
                 ?>
 
-                <h2 class="font-averta text-black font-bold text-2.5xl text-center my-6"><?php echo $wwwwHeroHeading; ?></h2>
+                <h2 class="font-averta text-black dark:text-white font-bold text-2.5xl text-center my-6"><?php echo $wwwwHeroHeading; ?></h2>
                 <div class="flex justify-center">
-                    <p class="text-black font-averta text-center font-medium text-1xl w-[80%] leading-tight"><?php echo $wwwwHeroSubtext; ?></p>
+                    <p class="text-black dark:text-white font-averta text-center font-medium text-1xl w-[80%] leading-tight"><?php echo $wwwwHeroSubtext; ?></p>
                 </div>
                 <?php endwhile; ?>
             <?php endif; ?>
@@ -63,10 +63,10 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 </section>
 
 <!-- How We Help -->
-<section id="howWeHelp" class="py-14 bg-white">
+<section id="howWeHelp" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="font-averta text-black font-bold text-2.5xl text-center mb-10">How We Help <span class="blue_font"><?php echo the_title(); ?></span></h2>
+            <h2 class="font-averta text-black dark:text-white font-bold text-2.5xl text-center mb-10">How We Help <span class="blue_font"><?php echo the_title(); ?></span></h2>
             <div class="grid grid-cols-3 gap-4">
                 <?php $i = 1; ?>
                 <?php if( have_rows('wwww_how_we_help') ): ?>
@@ -141,11 +141,11 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
 </section>
 
 <!-- Strategic Initiative -->
-<section id="strategicInititative" class="py-14 bg-white">
+<section id="strategicInititative" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="pb-14">
-                <h2 class="text-black font-averta text-center font-bold text-1xl mb-10">Why <?php echo the_title(); ?> work with us</h2>
+                <h2 class="text-black dark:text-white font-averta text-center font-bold text-1xl mb-10">Why <?php echo the_title(); ?> work with us</h2>
                 <div class="grid grid-cols-3 gap-4">
                 <?php if( have_rows('wwww_strategic_initiatives_cards') ): ?>
                     <?php while( have_rows('wwww_strategic_initiatives_cards') ): the_row(); 
@@ -172,7 +172,7 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                             
                             $coreValuesTitle = get_sub_field('wwww_expertise_domains_core_values_title');
                             ?>
-                            <h2 class="text-black font-averta font-bold text-xl"><?php echo $coreValuesTitle; ?></h2>
+                            <h2 class="text-black dark:text-white font-averta font-bold text-xl"><?php echo $coreValuesTitle; ?></h2>
                             <div class="grid grid-cols-2 gap-4">
 
                                     <!-- Core Values -->
@@ -186,9 +186,9 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                                             $coreValueCardDescription = get_sub_field('wwww_expertise_domains_core_values_core_value_cards_description');
                                             ?>
 
-                                            <div class="expertiseCard_wrapper bg-brown my-6 px-10 py-7 rounded-xl">
-                                                <h4 class="text-black font-averta text-2xlg font-bold"><?php echo $coreValueCardHeading; ?></h4>
-                                                <p class="font-averta text-black text-sm font-medium leading-snug"><?php echo $coreValueCardDescription; ?></p>
+                                            <div class="expertiseCard_wrapper bg-brown dark:bg-blue my-6 px-10 py-7 rounded-xl">
+                                                <h4 class="text-black dark:text-white font-averta text-2xlg font-bold"><?php echo $coreValueCardHeading; ?></h4>
+                                                <p class="font-averta text-black dark:text-white text-sm font-medium leading-snug"><?php echo $coreValueCardDescription; ?></p>
                                             </div>
 
                                             <?php endwhile; ?>
@@ -228,8 +228,8 @@ $singlePartnerHeroText = get_field('wwww_hero_description');
                                         $spotlighContentDescription = get_sub_field('wwww_expertise_domains_core_values_spotlight_section_subtext');
                                         ?>
 
-                                        <h2 class="text-black font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
-                                        <p class="font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></p>
+                                        <h2 class="text-black dark:text-white font-averta font-bold text-2xl my-4"><?php echo $spotlightContentHeading; ?></h2>
+                                        <p class="text-black dark:text-white font-averta text-sm font-medium leading-snug"><?php echo $spotlighContentDescription; ?></p>
 
                                         <?php endwhile; ?>
                                     <?php endif; ?>
@@ -310,59 +310,10 @@ if($relatedTestimonials) {?>
 <?php }?>
 
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white">
+<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <h3 class="text-start text-black font-averta text-2xl font-bold">Insights & Events</h3>
-        <!-- Post Carousel -->
-        <?php 
-        // The Query
-        $blogArgs = array(
-            'post_type' => 'post',   // Specify the custom post type
-            'posts_per_page' => -1,      // Number of posts to display
-            'orderby' => 'date',        // Order by date
-            'order' => 'DESC',           // Sort in descending order
-        );
-
-        $blogQuery = new WP_Query($blogArgs); ?>
-
-
-        <div class="owl-blog owl-carousel owl-theme my-8">
-            <?php            
-            // The Loop
-            if ($blogQuery->have_posts()) :
-                while ($blogQuery->have_posts()) : $blogQuery->the_post(); 
-                
-                $categories = get_the_category();
-                ?>
-
-                <div class="item blogCarousel_wrapper min-h-[450px]">
-                    <?php the_post_thumbnail('post-carousel'); ?>
-                    <div class="mt-3 mb-4">
-                        <?php
-                        foreach ( $categories as $category ) {
-                            // Display the category name
-                            echo '<span class="bg-blue py-1 px-3 rounded-lg text-white inline items-center text-medium font-normal">' . esc_html( $category->name ) . '</span>';
-                        }
-                        ?>
-                    </div>
-                    <h4 class="text-black font-averta font-bold text-lg mb-2"><?php echo the_title(); ?></h4>
-                    <div class="text-black font-averta font-medium text-sm leading-tight">
-                        <?php echo wp_trim_words(get_the_content(), 22);  ?>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="w-full h-full absolute top-0"></a>
-                </div>
-
-            <?php
-                endwhile;
-            else :
-                // No posts found
-                echo 'No testimonials found';
-            endif; 
-            wp_reset_postdata();
-            ?>
-        </div>
+        <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>
 </section>
-
 
 <?php get_footer(); ?>
