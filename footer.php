@@ -1,7 +1,7 @@
 <footer>
     <section id="topFooter" class="bg-black py-10">
-    <h2 class="text-3xl font-averta font-bold text-white text-center mb-5">Join Our Mailing List</h2>
-    <div class="flex justify-center">
+    <h2 class="text-1xl lg:text-3xl font-averta font-bold text-white text-center mb-8 lg:mb-5">Join Our Mailing List</h2>
+    <div class="flex justify-center mx-10 lg:mx-0 ">
         <form action="#" class="popup-form">
             <input type="email" class="popup-form-input block w-[600px] text-neutral-800 bg-black font-averta border-b-2 border-neutral-800 mb-5" placeholder="Email" required>
             <div class="w-full flex justify-center">
@@ -12,11 +12,11 @@
         </form>
     </div>
     </section>
-    <section id="bottomFooter" class="bg-blue py-10 relative">
+    <section id="bottomFooter" class="bg-blue py-10 px-14 lg:px-0 relative">
         <div class="container mx-auto">
-            <div class="grid grid-cols-5 gap-4">
+            <div class="grid lg:grid-cols-5 gap-4">
                 <!-- Quick Links -->
-                <div class="">
+                <div class="order-2 lg:order-1">
                     <h3 class="text-white font-averta font-bold text-1xlg text-start pb-3">Quick Links</h3>
                     <ul class="text-start">
                         <li class="py-1">
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
                 <!-- What We Do -->
-                <div class="">
+                <div class="hidden lg:block">
                 <h3 class="text-white font-averta font-bold text-1xlg text-start pb-3">What We Do</h3>
                     <ul class="text-start">
                         <li class="py-1">
@@ -55,7 +55,7 @@
                     </ul>
                 </div>
                 <!-- Who We Help -->
-                <div class="">
+                <div class="hidden lg:block">
                 <h3 class="text-white font-averta font-bold text-1xlg text-start pb-3">Who We Help</h3>
                     <ul class="text-start">
                         <li class="py-1">
@@ -84,7 +84,7 @@
                 ?>
 
                 <!-- Accrediations -->
-                <div class="footer_accrediations">
+                <div class="footer_accrediations hidden lg:block">
                     <h3 class="text-white font-averta font-bold text-1xlg text-start pb-5">Our Accrediations</h3>
                     <?php if( have_rows('footer_accreditations') ): ?>
                         <?php while( have_rows('footer_accreditations') ): the_row(); 
@@ -169,7 +169,7 @@
                     wp_reset_postdata();
                 ?>
             </div>
-            <div class="flex justify-between mt-14 pt-3 border-t border-white text-white font-averta font-light">
+            <div class="flex justify-between mt-14 pt-3 border-t border-white text-white font-averta font-light text-xs">
                 <span>Copyright Feynic Technology <?php echo date("Y"); ?></span>
                 <a href="https://www.sensostudio.co/" target="_blank">
                     <img class="w-auto h-[32px]" src="<?php echo get_template_directory_uri() ?>/assets/icons/Senso-Footer-Tag-Light.svg">

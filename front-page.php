@@ -3,10 +3,10 @@
 <!-- Hero Section -->
 <section id="hero" class="bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10 h-[93vh] flex items-center">
-            <div class="grid grid-cols-5 gap-4">
+        <div class="mx-10 lg:h-[93vh] flex items-center">
+            <div class="lg:grid lg:grid-cols-5 gap-4">
                 <!-- Content Area -->
-                <div class="col-span-2">
+                <div class="lg:col-span-2 mt-24 lg:mt-0">
                 <?php if( have_rows('homepage_hero_section') ): ?>
                     <?php while( have_rows('homepage_hero_section') ): the_row(); 
 
@@ -16,22 +16,22 @@
 
                         ?>
 
-                        <h1 class="text-black dark:text-white font-averta text-5lg font-bold w-[50%] leading-tight mb-7"><?php echo $heroHeading; ?></h1>
-                        <p class="font-averta text-sm font-medium leading-snug w-[72%] mb-7 text-black dark:text-white"><?php echo $heroSubText; ?></p>
-                        <div class="heroButtons flex justify-between w-[70%]">
+                        <h1 class="text-black dark:text-white font-averta text-2xl xs:text-4xl sm:text-5lg font-bold lg:w-[50%] leading-tight mb-7"><?php echo $heroHeading; ?></h1>
+                        <p class="font-averta text-sm font-medium leading-snug lg:w-[72%] mb-7 text-black dark:text-white"><?php echo $heroSubText; ?></p>
+                        <div class="heroButtons flex justify-start lg:justify-between lg:w-[70%]">
                             <a href="<?php echo site_url('/what-we-do')?>">
-                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white dark:text-black text-lg"><span>What We Do</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-3 sm:px-6 py-2 font-medium text-white dark:text-black text-xs xs:text-lg"><span>What We Do</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
-                            <a href="#Projects">
-                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-black dark:bg-white px-6 py-2 font-medium text-white dark:text-black text-lg"><span>Our Work</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
+                            <a href="#Projects" class="ml-5 lg:ml-0">
+                                <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-black dark:bg-white px-3 sm:px-6 py-2 font-medium text-white dark:text-black text-xs xs:text-lg"><span>Our Work</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
                             </a>
                         </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
                 </div>
                 <!-- Who We Work With -->
-                <div class="col-span-3 my-auto">
-                    <div class="grid grid-cols-3 gap-4">
+                <div class="lg:col-span-3 my-auto">
+                    <div class="lg:grid lg:grid-cols-3 gap-4">
                         <?php
                         // The Query
                         $partnerArgs = array(
@@ -75,7 +75,7 @@
 <section id="workWithFeynic" class="py-20 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid lg:grid-cols-2 gap-4">
             <?php if( have_rows('hompage_work_with_feynic') ): ?>
                     <?php while( have_rows('hompage_work_with_feynic') ): the_row(); ?>
                         <!-- Content Area -->
@@ -87,7 +87,7 @@
                             $workWithUsSubtext = get_sub_field('work_with_feynic_subtext');
                             ?>
 
-                            <h2 class="font-averta text-5xl text-black dark:text-white font-bold mb-5"><?php echo $workWithUsHeading; ?></h2>
+                            <h2 class="font-averta text-2xl sm:text-5xl text-black dark:text-white font-bold mb-5"><?php echo $workWithUsHeading; ?></h2>
                             <div class="font-averta text-sm font-light leading-tight w-[80%] mb-7 text-black dark:text-white"><?php echo $workWithUsSubtext; ?></div>
                             <a href="<?php echo site_url('/contact-us')?>">
                                 <button class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-blue px-6 py-2 font-medium text-white dark:text-black text-lg"><span>Work With Feynic</span><div class="ml-1 transition group-hover:translate-x-1"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></div></button>
@@ -112,10 +112,10 @@
                                 <!-- Objectives Card -->
                                 <div class="objectivesCard bg-black py-8 px-9 my-3 rounded-2xl min-h-[205px] flex">
                                     <div class="objectiveCard_number mr-4">
-                                        <span class="text-black text-3xl font-bold bg-white py-1 px-5"><?php echo $i; ?></span>
+                                        <span class="text-black text-1xl sm:text-3xl font-bold bg-white py-1 px-5"><?php echo $i; ?></span>
                                     </div>
                                     <div class="objectiveCard_content">
-                                        <h3 class="text-white text-xl font-averta font-bold mb-2"><?php echo $objectiveTitle; ?></h3>
+                                        <h3 class="text-white text-lg sm:text-xl font-averta font-bold mb-2"><?php echo $objectiveTitle; ?></h3>
                                         <div class="text-white text-normal font-averta">
                                             <?php echo $objectiveDescription; ?>
                                             <?php $i++; ?>
@@ -135,11 +135,11 @@
 </section>
 
 <!-- What We Do Section -->
-<section id="whatWeDo" class="py-20 bg-white dark:bg-zinc-800">
+<section id="whatWeDo" class="py-10 lg:py-20 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <div class="mx-10">
             <h3 class="text-black dark:text-white font-averta text-3xl font-bold">What we do</h3>
-            <div class="servicesListing py-10 flex justify-between items-center">
+            <div class="servicesListing py-10 block lg:flex justify-between items-center">
                 <?php 
                 // The Query
                 $serviceArgs = array(
@@ -255,8 +255,8 @@
 <section id="testimonial" class="bg-blue py-14">
     <div class="container mx-auto">
         <div class="mx-10">
-            <h2 class="text-white text-center font-averta text-5xl text-black font-bold mb-3">Testimonials</h2>
-                <div class="grid grid-cols-5 gap-4">
+            <h2 class="text-white text-center font-averta text-2xl sm:text-5xl text-black font-bold mb-3">Testimonials</h2>
+                <div class="lg:grid lg:grid-cols-5 gap-4">
                 <!-- Featured testimonial -->
                 <?php 
                 $featuredVimeoVideoID = get_field('testimonial_featured_video');
@@ -302,7 +302,7 @@
 </section>
 
 <!-- Blog Section -->
-<section id="Blog" class="pt-14 bg-white dark:bg-zinc-800">
+<section id="Blog" class="mx-10 lg:mx-0 pt-5 lg:pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>

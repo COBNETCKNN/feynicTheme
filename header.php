@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="bg-white dark:bg-zinc-800 py-3">
+<header class="hidden lg:block bg-white dark:bg-zinc-800 py-3">
     <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <!-- Logo -->
@@ -273,4 +273,136 @@
             themeCheck();
         });
     </script>
+</header>
+
+<!-- Mobile Header -->
+<header class="bg-white lg:hidden">
+  <nav id="navbar" class="bg-white lg:hidden w-full p-5">
+        <div class="container mx-auto">
+            <div class="flex justify-between">
+                <!-- LOGO SECTION -->
+				<div class="site-branding">
+					<?php
+					if ( has_custom_logo() ) {
+						the_custom_logo();
+					} elseif ( $site_name ) {
+						?>
+						<h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo bloginfo('name'); ?>" rel="home">
+								<?php echo esc_html( $site_name ); ?>
+							</a>
+						</h1>
+						<p class="site-description">
+							<?php
+							if ( $tagline ) {
+								echo esc_html( $tagline );
+							}
+							?>
+						</p>
+					<?php } ?>
+				</div>
+                <!-- MENU ICON -->
+                <button class="nav-toggler" data-target="#navigation">
+                    <svg width="800px" height="800px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- DROPDOWN CONTAINER -->
+        <div class="hidden navbar_grid__dropdown w-full h-screen absolute top-0 right-0 z-10 bg-blue flex justify-between" id="navigation">
+            <!-- DROPDOWN MENU -->
+            <div class="header_dropdown bg-blue flex justify-center items-center w-full h-screen">
+                <div class="w-full">
+                    <!-- CLOSE BUTTON -->
+                    <button class="nav_close__button nav-toggler close_button text-white text-5xl p-3 absolute -top-2 right-3" data-target="#navigation">&#215;</button>
+                    <!-- NAVIGATION -->
+                    <div class="feynic_header__menuMobile text-white font-averta">
+                            <li class="whatWeDo_mobileNav text-2xlg">
+                                <a href="#" class="flex items-center justify-center relative" id="whatWeDoButton">
+                                    <span class="whatWeDoButton_span mr-2">What We Do</span>
+                                </a>
+                            </li>
+                            <div class="whatWeDo_mobileNav_items hidden" id="whatWeDo_mobileNav_items">
+                                <ul>
+                                <?php
+                                    // The Query for Services
+                                    $serviceArgs = array(
+                                        'post_type' => 'service',   // Specify the custom post type
+                                        'posts_per_page' => -1,      // Number of posts to display
+                                        'orderby' => 'date',        // Order by date
+                                        'order' => 'DESC',           // Sort in descending order
+                                    );
+
+                                    $servicesQuery = new WP_Query($serviceArgs);
+
+                                    if ($servicesQuery->have_posts()) :
+                                        while ($servicesQuery->have_posts()) : $servicesQuery->the_post();
+                                ?>
+                                    <li class="py-1 text-center">
+                                        <a class="text-white dark:text-white font-averta font-light text-lg" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </li>
+                                <?php 
+                                    endwhile;
+                                    else :
+                                        // No pages found
+                                        echo 'No pages found';
+                                    endif; 
+                                    wp_reset_postdata();
+                                ?>
+                                </ul>
+                            </div>
+                            <!-- Who We Work With -->
+                            <li class="whoWeWorkWith_mobileNav text-2xlg mt-5">
+                                <a href="#" class="flex items-center justify-center relative" id="whoWeWorkWithButton">
+                                <span class="whoWeWorkWith_span mr-2">Who We Work With</span>
+                            </a>
+                            </li>
+                            <div class="whoWeWorkWith_mobileNav_items hidden" id="whoWeWorkWith_mobileNav_items">
+                                <ul>
+                                <?php
+                                // The Query for Services
+                                $partnerArgs = array(
+                                    'post_type' => 'partners',   // Specify the custom post type
+                                    'posts_per_page' => -1,      // Number of posts to display
+                                    'orderby' => 'date',        // Order by date
+                                    'order' => 'DESC',           // Sort in descending order
+                                );
+
+                                    $partnersQuery = new WP_Query($partnerArgs);
+
+                                    if ($partnersQuery->have_posts()) :
+                                        while ($partnersQuery->have_posts()) : $partnersQuery->the_post();
+                                ?>
+
+                                    <li class="py-1 text-center">
+                                        <a class="text-white dark:text-white font-averta font-light text-lg" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </li>
+
+                                <?php 
+                                    endwhile;
+                                else :
+                                    // No pages found
+                                    echo 'No pages found';
+                                endif; 
+                                wp_reset_postdata();
+                                ?>
+                                </ul>
+                            </div>
+                            <!-- About Link -->
+                            <li class="about_mobileNav text-2xlg mt-5">
+                                <a href="<?php echo site_url('/about')?>" class="flex items-center justify-center">
+                                    <span class="mr-2">About</span>
+                                </a>
+                            </li>
+                            <!-- Contact Us -->
+                            <li class="about_mobileNav text-2xlg mt-5">
+                                <a href="<?php echo site_url('/contact-us')?>" class="flex items-center justify-center">
+                                    <span class="mr-2">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>

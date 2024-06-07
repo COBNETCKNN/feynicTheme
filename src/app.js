@@ -33,6 +33,41 @@ jQuery(document).ready(function(jQuery){
         });
     });
 
+    // Mobile Header Menu
+    jQuery(".nav-toggler").click(function(){
+        jQuery("#navigation").toggle("slide");
+        jQuery('.navbar_grid__dropdown').addClass('open');
+        jQuery('body').css('overflow', 'hidden');
+    });
+
+    jQuery(".nav_close__button").click(function(){
+        jQuery('.navbar_grid__dropdown').removeClass('open');
+        jQuery('body').css('overflow', 'auto');
+    });
+
+    // Mobile menu items
+    jQuery('#whatWeDoButton').click(function(e) {
+        e.preventDefault(); // Prevent the default action of the link
+        var whatWeDoMobileItems = jQuery('#whatWeDo_mobileNav_items');
+
+        if (whatWeDoMobileItems.is(':visible')) {
+            whatWeDoMobileItems.slideToggle();; // 800ms duration with 'swing' easing
+        } else {
+            whatWeDoMobileItems.removeClass('hidden').hide().slideToggle();; // 800ms duration with 'swing' easing
+        }
+    });
+
+    jQuery('#whoWeWorkWithButton').click(function(e) {
+        e.preventDefault(); // Prevent the default action of the link
+        var whoWeWorkWithMobileItems = jQuery('#whoWeWorkWith_mobileNav_items');
+
+        if (whoWeWorkWithMobileItems.is(':visible')) {
+            whoWeWorkWithMobileItems.slideToggle(); // 800ms duration with 'swing' easing
+        } else {
+            whoWeWorkWithMobileItems.removeClass('hidden').hide().slideToggle();; // 800ms duration with 'swing' easing
+        }
+    });
+
     // Owl carousel for Projects
     var owl = jQuery('.owl-projects');
     owl.owlCarousel({
@@ -42,15 +77,15 @@ jQuery(document).ready(function(jQuery){
         autoplayTimeout:3000,
         responsive:{
             0:{
-                items:2,
+                items:1,
                 margin:50,
             },
             400:{
-                items:2,
+                items:1,
                 margin:40,
             },
             600:{
-                items:2,
+                items:1,
                 margin:40,
             },            
             960:{
@@ -77,15 +112,15 @@ jQuery(document).ready(function(jQuery){
         autoplayTimeout:2000,
         responsive:{
             0:{
-                items:2,
+                items:1,
                 margin:50,
             },
             400:{
-                items:2,
+                items:1,
                 margin:40,
             },
             600:{
-                items:2,
+                items:1,
                 margin:40,
             },            
             960:{
