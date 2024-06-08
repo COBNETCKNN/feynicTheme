@@ -256,7 +256,7 @@ $singleService_url = get_the_post_thumbnail_url(get_the_ID(), 'singleService-her
 <?php $relatedTestimonials = get_field('wwd_relationship_field_for_testimonial'); 
 if($relatedTestimonials) {?>
 
-<section id="testimonial" class="bg-blue py-14">
+<section id="testimonial" class="hidden bg-blue py-14">
     <div class="container mx-auto">
         <div class="mx-10">
             <h2 class="text-white text-center font-averta text-5xl text-black font-bold mb-7">Testimonial</h2>

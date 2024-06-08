@@ -277,7 +277,7 @@
 
 <!-- Mobile Header -->
 <header class="bg-white lg:hidden">
-  <nav id="navbar" class="bg-white lg:hidden w-full p-5">
+  <nav id="navbar" class="bg-white lg:hidden w-full px-5 py-2">
         <div class="container mx-auto">
             <div class="flex justify-between">
                 <!-- LOGO SECTION -->
