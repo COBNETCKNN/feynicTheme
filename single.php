@@ -1,10 +1,10 @@
 <?php get_header() ?>
 
 <!-- Hero Section -->
-<section id="singlePostHero" class="py-14 bg-white dark:bg-zinc-800">
+<section id="singlePostHero" class="py-5 lg:py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
-        <div class="breadcrumbs_wrapper relative z-10">
+        <div class="hidden lg:block breadcrumbs_wrapper relative z-10">
         <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-light mb-10">
             <ol>
                 <li>
@@ -23,8 +23,8 @@
         </nav>
         </div>
         <!-- Hero Content -->
-        <div class="singlePostHero_content__wrapper bg-blue rounded-2xl p-14">
-            <div class="grid grid-cols-2 gap-4">
+        <div class="singlePostHero_content__wrapper bg-blue rounded-2xl p-5 lg:p-14">
+            <div class="lg:grid lg:grid-cols-2 gap-4">
                 <!-- Content -->
                 <div class="my-auto">
                     <?php  
@@ -32,7 +32,7 @@
                     $singlePostHeroSubText = get_field('single_post_hero_subtext');
                     ?>
                     <span class="text-sm text-white text-start font-averta font-light "><?php echo date_create_from_format('jS F Y', $post_date)->format('jS F Y'); ?></span>
-                    <h1 class="font-averta font-bold text-white text-4xl my-5 leading-tight"><?php echo the_title(); ?></h1>
+                    <h1 class="font-averta font-bold text-white text-2xl lg:text-4xl my-5 leading-tight"><?php echo the_title(); ?></h1>
                     <p class="font-averta text-sm font-medium text-white leading-snug mb-10"><?php echo $singlePostHeroSubText; ?></p>
                     <!-- Social Media Share -->
                     <div class="">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <!-- Featured Image -->
-                <div class="singlePost_image__wrapper flex justify-end my-auto">
+                <div class="singlePost_image__wrapper flex justify-end mt-5 lg:mt-0 lg:my-auto">
                     <?php 
                         if ( has_post_thumbnail() ) {
                             $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
@@ -77,7 +77,7 @@
 </section>
 
 <!-- Content Blocks -->
-<section id="singlePostContentBlocks" class="py-14 bg-white dark:bg-zinc-800">
+<section id="singlePostContentBlocks" class="py-5 lg:py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
     <?php
         if( have_rows('content_blocks') ):

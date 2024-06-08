@@ -3,7 +3,7 @@
 <!-- Hero Section -->
 <section id="hero" class="bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10 lg:h-[93vh] flex items-center">
+        <div class="mx-0 lg:mx-10 lg:h-[93vh] flex items-center">
             <div class="lg:grid lg:grid-cols-5 gap-4">
                 <!-- Content Area -->
                 <div class="lg:col-span-2 mt-24 lg:mt-0">
@@ -74,7 +74,7 @@
 <!-- Work With Feynic Section -->
 <section id="workWithFeynic" class="py-20 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10">
+        <div class="mx-0 lg:mx-10">
             <div class="grid lg:grid-cols-2 gap-4">
             <?php if( have_rows('hompage_work_with_feynic') ): ?>
                     <?php while( have_rows('hompage_work_with_feynic') ): the_row(); ?>
@@ -137,7 +137,7 @@
 <!-- What We Do Section -->
 <section id="whatWeDo" class="py-10 lg:py-20 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10">
+        <div class="mx-0 lg:mx-10">
             <h3 class="text-black dark:text-white font-averta text-3xl font-bold">What we do</h3>
             <div class="servicesListing py-10 block lg:flex justify-between items-center">
                 <?php 
@@ -189,7 +189,7 @@
 <!-- Projects Section -->
 <section id="Projects" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10">
+        <div class="mx-0 lg:mx-10">
             <h3 class="text-black dark:text-white font-averta text-3xl font-bold">Our projects</h3>
             <div class="owl-projects owl-carousel owl-theme my-8">
                 <?php 
@@ -254,7 +254,7 @@
 <!-- Testimonial Section -->
 <section id="testimonial" class="bg-blue py-14">
     <div class="container mx-auto">
-        <div class="mx-10">
+        <div class="mx-0 lg:mx-10">
             <h2 class="text-white text-center font-averta text-2xl sm:text-5xl text-black font-bold mb-3">Testimonials</h2>
                 <div class="lg:grid lg:grid-cols-5 gap-4">
                 <!-- Featured testimonial -->
@@ -302,7 +302,7 @@
 </section>
 
 <!-- Blog Section -->
-<section id="Blog" class="mx-10 lg:mx-0 pt-5 lg:pt-14 bg-white dark:bg-zinc-800">
+<section id="Blog" class="mx-0 lg:mx-10 lg:mx-0 pt-5 lg:pt-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
         <?php get_template_part('partials/blog', 'carousel'); ?>
     </div>

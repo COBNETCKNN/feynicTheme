@@ -621,13 +621,13 @@ video {
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
-}
-.mx-24 {
-  margin-left: 6rem;
-  margin-right: 6rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -668,6 +668,10 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 .mb-1 {
   margin-bottom: 0.25rem;
@@ -853,9 +857,6 @@ video {
 .w-\[330px\] {
   width: 330px;
 }
-.w-\[40\%\] {
-  width: 40%;
-}
 .w-\[50\%\] {
   width: 50%;
 }
@@ -904,9 +905,6 @@ video {
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .items-center {
   align-items: center;
@@ -1136,6 +1134,9 @@ video {
 .pb-5 {
   padding-bottom: 1.25rem;
 }
+.pt-0 {
+  padding-top: 0px;
+}
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1147,9 +1148,6 @@ video {
 }
 .pt-3 {
   padding-top: 0.75rem;
-}
-.pt-36 {
-  padding-top: 9rem;
 }
 .pt-5 {
   padding-top: 1.25rem;
@@ -1727,7 +1725,7 @@ ul.subnav,
 
 .contactForm_grid input {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 10px 10px;
   background-color: transparent;
   border-bottom: 1px solid white;
@@ -1739,7 +1737,7 @@ ul.subnav,
 }
 
 .contactForm_reason {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 100%;
   background-color: transparent;
   padding: 10px 10px;
@@ -1769,9 +1767,6 @@ ul.subnav,
   font-size: 22px;
   font-weight: 200;
   padding: 10px 10px;
-}
-.wpcf7-form p {
-  margin-top: 30px;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -1825,6 +1820,7 @@ ul.subnav,
 
 .submitButton_wrapper {
   text-align: center;
+  margin-top: 1.5rem;
 }
 
 .pageContent_wrapper h2 {
@@ -2259,6 +2255,32 @@ select {
     height: 300px;
     width: 400px;
   }
+  .contactForm_grid input,
+  .contactForm_reason,
+  .wpcf7-form label {
+    font-size: 18px;
+  }
+  #blogArchiveSingle {
+    background-size: initial;
+    background-position: unset;
+  }
+  .serachbar_input,
+  .searchsubmit {
+    background-color: transparent !important;
+  }
+  .custom-select {
+    min-width: 160px !important;
+  }
+  .custom-select::after {
+    --size: 0.5rem;
+    content: url(../assets/icons/dropdownArrow.svg);
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+    color: white;
+    top: 15%;
+    right: 7%;
+  }
 }
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
@@ -2373,6 +2395,10 @@ select {
   .md\:text-lg {
     font-size: 1.25rem;
   }
+
+  .md\:text-xl {
+    font-size: 1.75rem;
+  }
 }
 @media (min-width: 1024px) {
 
@@ -2396,6 +2422,20 @@ select {
   .lg\:mx-10 {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+  }
+
+  .lg\:mx-24 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .lg\:my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .lg\:mb-10 {
@@ -2446,8 +2486,20 @@ select {
     height: 93vh;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
+  .lg\:h-\[450px\] {
+    height: 450px;
+  }
+
   .lg\:w-\[38\%\] {
     width: 38%;
+  }
+
+  .lg\:w-\[40\%\] {
+    width: 40%;
   }
 
   .lg\:w-\[50\%\] {
@@ -2466,6 +2518,10 @@ select {
     width: 80%;
   }
 
+  .lg\:w-\[645px\] {
+    width: 645px;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2482,13 +2538,26 @@ select {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
   .lg\:justify-between {
     justify-content: space-between;
+  }
+
+  .lg\:p-14 {
+    padding: 3.5rem;
   }
 
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .lg\:px-7 {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
   }
 
   .lg\:py-14 {
@@ -2504,6 +2573,26 @@ select {
   .lg\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .lg\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .lg\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .lg\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .lg\:pb-20 {
@@ -2524,6 +2613,34 @@ select {
 
   .lg\:text-3xl {
     font-size: 2.625rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3.5rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 4.5rem;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.25rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.75rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 3.125rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 2.125rem;
+  }
+
+  .lg\:text-2\.5xl {
+    font-size: 2.375rem;
   }
 
   .lg\:font-normal {

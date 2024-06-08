@@ -497,7 +497,7 @@ ul.subnav,
 .contactForm_grid {
   input {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 10px 10px;
     background-color: transparent;
     border-bottom: 1px solid white;
@@ -513,7 +513,7 @@ ul.subnav,
 }
 
 .contactForm_reason {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 100%;
   background-color: transparent;
   padding: 10px 10px;
@@ -546,10 +546,6 @@ ul.subnav,
     font-size: 22px;
     font-weight: 200;
     padding: 10px 10px;
-  }
-
-  p {
-    margin-top: 30px;
   }
 }
 
@@ -603,6 +599,7 @@ ul.subnav,
 
 .submitButton_wrapper {
   text-align: center;
+  margin-top: 1.5rem;
 }
 
 // Page Template
@@ -1091,5 +1088,38 @@ select {
       width: 400px;
     }
   }
+  
+  .contactForm_grid input,
+  .contactForm_reason,
+  .wpcf7-form label {
+    font-size: 18px;
+  }
+
+  #blogArchiveSingle {
+    background-size: initial;
+    background-position: unset;
+  }
+
+  .serachbar_input,
+  .searchsubmit {
+    background-color: transparent !important;
+  }
+
+  .custom-select {
+    min-width: 160px !important;
+  }
+
+  .custom-select::after {
+    --size: 0.5rem;
+    content: url(../assets/icons/dropdownArrow.svg);
+    position: absolute;
+    right: 1rem;
+    pointer-events: none;
+    color: white;
+    top: 15%;
+    right: 7%;
+  }
+
+
 }
 

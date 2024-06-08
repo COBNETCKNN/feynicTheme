@@ -5,7 +5,7 @@
     <div class="container mx-auto">
         <!-- Breadcrumbs -->
         <div class="breadcrumbs_wrapper relative z-10">
-        <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-sm text-black font-light mb-10">
+        <nav role="navigation" aria-label="Feynic navigation" class="breadcrumb font-averta text-xs sm:text-sm text-black font-light mb-10">
             <ol>
                 <li>
                 <a class="text-black dark:text-white" href="<?php echo site_url(); ?>">Home</a>
@@ -25,15 +25,15 @@
             $aboutHeroSubtext = get_sub_field('about_hero_subtext');
             ?>
             <!-- Hero Content -->
-            <div class="mx-10">
+            <div class="lg:mx-10">
                 <div class="aboutHero_content pb-14 pt-10">
-                    <h1 class="font-averta text-black dark:text-white font-bold text-5xl text-center my-6"><?php echo $aboutHeroHeading; ?></h1>
+                    <h1 class="font-averta text-black dark:text-white font-bold text-4xl lg:text-5xl text-center my-6"><?php echo $aboutHeroHeading; ?></h1>
                     <div class="flex justify-center">
-                        <h4 class="text-black dark:text-white font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $aboutHeroSubtext; ?></h4>
+                        <h4 class="text-black dark:text-white font-averta text-center font-medium text-lg lg:text-xl lg:w-[80%] leading-tight"><?php echo $aboutHeroSubtext; ?></h4>
                     </div>
                 </div>
                 <!-- Spotlight Section -->
-                <div class="grid grid-cols-2 gap-4 py-14">
+                <div class="grid lg:grid-cols-2 gap-4 py-14">
                     <?php if( have_rows('about_spotlight_section') ): ?>
                         <?php while( have_rows('about_spotlight_section') ): the_row(); ?>
                         <!-- Content -->
@@ -52,7 +52,7 @@
                         <?php endif; ?>
                         </div>
                         <!-- Image -->
-                        <div class="spotlightContent_image flex justify-end">
+                        <div class="spotlightContent_image flex justify-end mt-10 lg:mt-0">
                             <?php
                             $aboutSpotlightImage = get_sub_field('about_spotlight_section_image');
                             $aboutSpotlightImageSize = 'approach-thumbnail';
@@ -69,19 +69,19 @@
             <?php endwhile; ?>
         <?php endif; ?>
         <!-- Featured Video -->
-        <div class="mx-10 py-14">
+        <div class="lg:mx-10 lg:py-14">
             <?php 
             $aboutVimeoVideo = get_field('featured_vimeo_video');
             ?>
             <!-- Vimeo Video -->
-            <div class="testmionialVimeo_wrapper h-[400px] relative">
+            <div class="testmionialVimeo_wrapper h-[250px] lg:h-[400px] relative">
                 <div class='embed-container'>
                     <iframe src='https://player.vimeo.com/video/<?php echo $aboutVimeoVideo; ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                 </div>
             </div>
         </div>
         <!-- Suppost Services -->
-        <div class="mx-10 py-14">
+        <div class="lg:mx-10 lg:py-14">
             <?php if( have_rows('about_innovation_support_services') ): ?>
                 <?php while( have_rows('about_innovation_support_services') ): the_row(); 
                 
@@ -89,9 +89,9 @@
                 $supportServicesSubtext = get_sub_field('Innovation Support Services_subtext');
                 ?>
 
-                <h2 class="font-averta text-black dark:text-white font-bold text-3xl text-center my-6"><?php echo $supportServicesHeading; ?></h2>
+                <h2 class="font-averta text-black dark:text-white font-bold text-xl lg:text-3xl text-center my-6"><?php echo $supportServicesHeading; ?></h2>
                 <div class="flex justify-center">
-                    <h4 class="text-black dark:text-white font-averta text-center font-medium text-xl w-[80%] leading-tight"><?php echo $supportServicesSubtext; ?></h4>
+                    <h4 class="text-black dark:text-white font-averta text-center font-medium text-lg lg:text-xl lg:w-[80%] leading-tight"><?php echo $supportServicesSubtext; ?></h4>
                 </div>
 
                 <?php endwhile; ?>
@@ -103,13 +103,13 @@
 <!-- Team -->
 <section id="Team" class="py-14 bg-white dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10">
-            <h2 class="text-black dark:text-white font-averta text-start font-bold text-1xl mb-10">The Team</h2>
+        <div class="lg:mx-10">
+            <h2 class="text-black dark:text-white font-averta text-center lg:text-start font-bold text-1xl mb-10">The Team</h2>
             <?php if( have_rows('about_team') ): ?>
                 <?php while( have_rows('about_team') ): the_row();  ?>
-                <div class="grid grid-cols-5 gap-4">
+                <div class="lg:grid lg:grid-cols-5 gap-4">
                     <!-- Image -->
-                    <div class="spotlightContent_image flex justify-start my-auto col-span-2">
+                    <div class="spotlightContent_image flex justify-center lg:justify-start my-auto col-span-2">
                         <?php 
                         $theTeamImage = get_sub_field('about_team_image');
                         $theTeamImageSize = 'about-team';
@@ -120,7 +120,7 @@
                         ?>
                     </div>
                     <!-- Content -->
-                    <div class="col-span-3 my-auto">
+                    <div class="col-span-3 my-auto mt-10 lg:mt-0">
                     <?php if( have_rows('about_team_about') ): ?>
                         <?php while( have_rows('about_team_about') ): the_row(); 
                         
@@ -181,15 +181,15 @@
 </section>
 
 <!-- Accrediations -->
-<section id="Accreditations" class="py-36 dark:bg-zinc-800">
+<section id="Accreditations" class="py-10 lg:py-36 dark:bg-zinc-800">
     <div class="container mx-auto">
-        <div class="mx-10">
+        <div class="lg:mx-10">
             <h2 class="text-black dark:text-white font-averta text-center font-bold text-1xl mb-10">Our Accreditations</h2>
             <?php 
             $aboutAccreditationImage = get_field('about_accreditations');
             $aboutAccreditationImagesize = 'about-accreditation'; // (thumbnail, medium, large, full or custom size)
             if( $aboutAccreditationImage ): ?>
-                <div class="flex justify-center">
+                <div class="block lg:flex justify-center">
                     <?php foreach( $aboutAccreditationImage as $accrediationImage ): ?>
                         <?php echo wp_get_attachment_image( $accrediationImage, $aboutAccreditationImagesize ); ?>
                     <?php endforeach; ?>
